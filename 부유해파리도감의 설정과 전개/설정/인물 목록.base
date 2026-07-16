@@ -1,0 +1,24 @@
+filters:
+  and:
+    - file.hasTag("인물")
+    - file.folder.contains("부유해파리 도감")
+formulas:
+  전통: note["구문 전통"]
+properties:
+  note.소속:
+    displayName: 소속
+  note.등급:
+    displayName: 등급
+  formula.전통:
+    displayName: 구문 전통
+  note.구문:
+    displayName: 주요 구문
+views:
+  - type: table
+    name: 인물
+    order:
+      - file.name
+      - 소속
+      - 등급
+      - formula.전통
+      - 구문

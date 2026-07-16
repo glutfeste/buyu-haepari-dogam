@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 660" font-family="'Noto Sans KR','Malgun Gothic','맑은 고딕',sans-serif">
+  <style>
+    .ln{stroke:#9aa0a6;stroke-width:2;fill:none}
+    .rk{fill:#6b4e2e;font-weight:700;font-size:16px}
+    .famA{fill:#9c3d2b;font-weight:700;font-size:15px}
+    .famB{fill:#245a86;font-weight:700;font-size:15px}
+    .sp{fill:#555;font-size:13px}
+    .cap{fill:#777;font-size:12px}
+    .ttl{fill:#222;font-weight:700;font-size:20px}
+    .amok{fill:#333;font-weight:700;font-size:14px}
+  </style>
+  <rect width="940" height="660" fill="#ffffff"/>
+  <text x="24" y="34" class="ttl">부유 해파리 계통수</text>
+
+  <path class="ln" d="M104,260 H160"/>
+  <path class="ln" d="M160,110 V410"/>
+  <path class="ln" d="M160,110 H310"/>
+  <path class="ln" d="M160,410 H310"/>
+  <path class="ln" d="M310,60 V160"/>
+  <path class="ln" d="M310,60 H450"/>
+  <path class="ln" d="M310,110 H450"/>
+  <path class="ln" d="M310,160 H450"/>
+  <path class="ln" d="M310,235 V585"/>
+  <path class="ln" d="M310,235 H450"/>
+  <path class="ln" d="M310,290 H450"/>
+  <path class="ln" d="M310,345 H450"/>
+  <path class="ln" d="M310,400 H450"/>
+  <path class="ln" d="M310,450 H450"/>
+  <path class="ln" d="M310,495 H450"/>
+  <path class="ln" d="M310,540 H450"/>
+  <path class="ln" d="M310,585 H450"/>
+
+  <text x="24" y="265" class="rk">부유해파리목</text>
+  <text x="176" y="103" class="amok">부양아목 · 부양의 구문</text>
+  <text x="176" y="403" class="amok">여과아목 · 촉수 체판</text>
+
+  <text x="460" y="65"><tspan class="famA">렌즈눈해파리과</tspan> <tspan class="sp">— 이리·초롱·노을·거품</tspan></text>
+  <text x="460" y="115"><tspan class="famA">고착해파리과</tspan> <tspan class="sp">— 닻·나락·땅</tspan></text>
+  <text x="460" y="165"><tspan class="famA">안개해파리과</tspan> <tspan class="sp">— 안개</tspan></text>
+  <text x="460" y="240"><tspan class="famB">광합성해파리과</tspan> <tspan class="sp">— 사막·해바라기</tspan></text>
+  <text x="460" y="295"><tspan class="famB">강막해파리과</tspan> <tspan class="sp">— 서리·굴뚝·그늘</tspan></text>
+  <text x="460" y="350"><tspan class="famB">표류해파리과</tspan> <tspan class="sp">— 돛·실 (근연 잠정)</tspan></text>
+  <text x="460" y="405"><tspan class="famB">청소해파리과</tspan> <tspan class="sp">— 송장·부두</tspan></text>
+  <text x="460" y="455"><tspan class="famB">들해파리과</tspan> <tspan class="sp">— 들</tspan></text>
+  <text x="460" y="500"><tspan class="famB">먹물해파리과</tspan> <tspan class="sp">— 먹물</tspan></text>
+  <text x="460" y="545"><tspan class="famB">쇳가루해파리과</tspan> <tspan class="sp">— 쇳가루</tspan></text>
+  <text x="460" y="590"><tspan class="famB">떼우산해파리과</tspan> <tspan class="sp">— 떼우산</tspan></text>
+
+  <text x="24" y="640" class="cap">공유 파생 형질로 묶은 계통. 부양아목은 부양의 구문을, 여과아목은 촉수 체판을 공유한다. 단형 4과는 근연 종이 없다.</text>
+</svg>

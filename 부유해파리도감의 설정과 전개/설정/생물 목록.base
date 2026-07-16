@@ -1,0 +1,19 @@
+filters:
+  and:
+    - file.hasTag("생태")
+    - file.folder.contains("부유해파리 도감")
+properties:
+  note.분류:
+    displayName: 분류
+  note.서식지:
+    displayName: 서식지
+  note.식성:
+    displayName: 식성
+views:
+  - type: table
+    name: 생물
+    order:
+      - file.name
+      - 분류
+      - 서식지
+      - 식성

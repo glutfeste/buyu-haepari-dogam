@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 760" font-family="'Pretendard','Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <!-- 한글 글꼴 대체: Pretendard → Noto Sans KR → Malgun Gothic → Apple SD Gothic Neo → sans-serif -->
+
+  <defs>
+    <pattern id="dispute" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#b3503e" stroke-width="2.2"/>
+    </pattern>
+  </defs>
+
+  <!-- 바다(트인 하늘) -->
+  <rect x="0" y="0" width="960" height="760" fill="#e4eef5"/>
+  <text x="30" y="725" font-size="13" fill="#7d96a8" font-style="italic">바다 — 땅이 끝나는 트인 하늘</text>
+
+  <!-- 제목 -->
+  <text x="30" y="46" font-size="22" font-weight="bold" fill="#3b3a33">아우렐리아 — 평면 지도</text>
+  <text x="30" y="68" font-size="13" fill="#6f6a55">다섯 권역과 오렌투스·샤르케니강 · 축척과 해안선 모양은 임시</text>
+
+  <!-- 방위 -->
+  <g transform="translate(915,60)">
+    <polygon points="0,-22 7,8 0,2 -7,8" fill="#5a6c7a"/>
+    <text x="0" y="24" font-size="13" fill="#5a6c7a" text-anchor="middle">북</text>
+  </g>
+
+  <!-- 대륙 본체 -->
+  <path d="M 90,230 C 110,120 240,75 380,90 C 470,78 560,85 640,110 C 730,120 790,170 805,235 C 845,260 860,300 850,345 C 835,395 800,415 770,430 C 800,480 790,540 745,585 C 700,635 640,665 575,660 C 520,690 440,690 380,665 C 300,680 200,655 150,600 C 90,560 60,470 70,400 C 50,330 55,270 90,230 Z"
+        fill="#f1ead8" stroke="#8a7f63" stroke-width="2.5"/>
+
+  <!-- 권역 채색 (세력 색) -->
+  <!-- 스톨 (스톨코비아, 면적 최대) -->
+  <path d="M 90,230 C 110,120 240,75 380,90 L 430,95 C 428,160 422,220 412,280 L 400,330 L 370,380 L 250,395 L 120,410 L 70,400 C 50,330 55,270 90,230 Z"
+        fill="#c9d4e4" fill-opacity="0.75"/>
+  <!-- 글루트 (글루트페스테) -->
+  <path d="M 430,95 C 470,80 560,85 640,110 C 730,120 790,170 805,235 L 740,250 L 720,280 L 640,300 L 560,300 L 520,330 L 495,335 L 440,310 L 412,280 C 422,220 428,160 430,95 Z"
+        fill="#d9c2bb" fill-opacity="0.75"/>
+  <!-- 아메나 (글루트페스테 본토) -->
+  <path d="M 560,300 L 640,300 L 720,280 L 740,330 L 700,380 L 620,390 L 560,360 L 520,330 Z"
+        fill="#d9c2bb" fill-opacity="0.6"/>
+  <!-- 리토레아 (뤼흐트스타트) -->
+  <path d="M 720,280 L 740,250 L 805,235 C 845,260 860,300 850,345 C 835,395 800,415 770,430 L 740,400 L 740,330 Z"
+        fill="#f0d9b0" fill-opacity="0.8"/>
+  <!-- 오렌티아 완충지대 -->
+  <path d="M 440,310 L 495,335 L 520,330 L 560,360 L 560,420 L 540,470 L 480,490 L 430,470 L 410,400 L 420,350 Z"
+        fill="#ece5d0" fill-opacity="0.9"/>
+  <!-- 베스페라 (뤼메리-훈디아) -->
+  <path d="M 70,400 L 120,410 L 250,395 L 370,380 L 400,330 L 420,350 L 410,400 L 430,470 L 440,530 L 420,580 L 380,665 C 300,680 200,655 150,600 C 90,560 60,470 70,400 Z"
+        fill="#d8cce6" fill-opacity="0.75"/>
+  <!-- 아이스투아리아 (벡실리아) -->
+  <path d="M 480,490 L 540,470 L 560,420 L 620,390 L 700,380 L 740,400 L 770,430 C 800,480 790,540 745,585 C 700,635 640,665 575,660 C 520,690 440,690 380,665 L 420,580 L 440,530 L 460,510 Z"
+        fill="#bdd7e3" fill-opacity="0.75"/>
+
+  <!-- 영토 분쟁지: 철의 장막 군관구 -->
+  <path d="M 292,392 L 372,380 L 392,424 L 332,446 L 296,430 Z" fill="url(#dispute)" fill-opacity="0.55" stroke="#b3503e" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <text x="240" y="464" font-size="10" fill="#8a3a2c">철의 장막 군관구(분쟁지)</text>
+
+  <!-- 벡실룸 배후지 (섬+배후지 함단) -->
+  <path d="M 740,540 L 768,527 L 783,557 L 752,586 Z" fill="#9fc3d6" fill-opacity="0.9" stroke="#2d5f7a" stroke-width="1"/>
+  <text x="700" y="528" font-size="9" fill="#2d5f7a">벡실룸 배후지</text>
+
+  <!-- 앞바다 도시-섬 (벡실리아) -->
+  <ellipse cx="835" cy="600" rx="17" ry="12" fill="#bdd7e3" stroke="#2d5f7a" stroke-width="1.5"/>
+  <ellipse cx="775" cy="668" rx="8" ry="6" fill="#bdd7e3" stroke="#2d5f7a" stroke-width="1.2"/>
+  <ellipse cx="872" cy="532" rx="7" ry="5" fill="#bdd7e3" stroke="#2d5f7a" stroke-width="1.2"/>
+  <ellipse cx="885" cy="470" rx="9" ry="7" fill="#bdd7e3" stroke="#2d5f7a" stroke-width="1.5"/>
+
+  <!-- 강 오렌투스 -->
+  <path d="M 320,170 C 380,150 430,160 450,190 C 472,222 482,260 488,300 C 491,318 493,328 495,335"
+        fill="none" stroke="#4a7fb5" stroke-width="4" stroke-linecap="round"/>
+  <!-- 남쪽 본류 -->
+  <path d="M 495,335 C 490,380 482,420 476,470 C 472,520 500,570 545,610 C 570,633 595,650 612,660"
+        fill="none" stroke="#4a7fb5" stroke-width="4" stroke-linecap="round"/>
+  <!-- 동쪽 지류 브라키움 -->
+  <path d="M 495,335 C 540,332 580,330 632,336 C 690,343 760,348 850,347"
+        fill="none" stroke="#4a7fb5" stroke-width="3" stroke-linecap="round"/>
+  <text x="470" y="290" font-size="12" font-weight="bold" fill="#33618f" transform="rotate(72 470 290)">오렌투스</text>
+  <text x="700" y="332" font-size="11" font-style="italic" fill="#33618f">브라키움</text>
+  <text x="628" y="690" font-size="11" fill="#33618f">▼ 대폭포</text>
+
+  <!-- 강 샤르케니 (샤르케니 산괴 발원 → 베스페라를 휘감아 서남쪽 땅 끝으로) -->
+  <path d="M 312,620 C 304,584 306,562 292,544 C 272,521 252,524 232,529 C 194,539 158,550 122,559"
+        fill="none" stroke="#4a7fb5" stroke-width="3" stroke-linecap="round"/>
+  <text x="248" y="548" font-size="11" font-weight="bold" fill="#33618f" transform="rotate(-12 248 548)">샤르케니강</text>
+  <text x="96" y="556" font-size="10" fill="#33618f">▼</text>
+
+  <!-- 산맥 -->
+  <g fill="#6f6a55">
+    <path d="M 425,140 l 8,14 h-16 Z"/><path d="M 418,180 l 8,14 h-16 Z"/><path d="M 411,222 l 8,14 h-16 Z"/><path d="M 405,264 l 8,14 h-16 Z"/><path d="M 399,306 l 8,14 h-16 Z"/>
+    <path d="M 330,148 l 7,12 h-14 Z"/><path d="M 360,138 l 7,12 h-14 Z"/>
+    <path d="M 300,618 l 7,12 h-14 Z"/><path d="M 326,630 l 7,12 h-14 Z"/>
+  </g>
+  <text x="436" y="210" font-size="11" fill="#6f6a55" transform="rotate(82 436 210)">헬름그라트 산맥</text>
+  <text x="295" y="650" font-size="10" fill="#6f6a55">샤르케니 산괴</text>
+
+  <!-- 권역 이름 -->
+  <text x="230" y="300" font-size="20" font-weight="bold" fill="#41597e" letter-spacing="2">스톨</text>
+  <text x="105" y="330" font-size="12" font-style="italic" fill="#41597e">비소키 스테프</text>
+  <text x="570" y="170" font-size="20" font-weight="bold" fill="#7a4a3c" letter-spacing="2">글루트</text>
+  <text x="690" y="165" font-size="11" fill="#7a4a3c">그리펜란트</text>
+  <text x="220" y="490" font-size="20" font-weight="bold" fill="#5d4a7a" letter-spacing="2">베스페라</text>
+  <text x="600" y="555" font-size="20" font-weight="bold" fill="#2d5f7a" letter-spacing="2">아이스투아리아</text>
+  <text x="610" y="575" font-size="11" fill="#2d5f7a">테라피르마</text>
+  <text x="415" y="385" font-size="13" font-weight="bold" fill="#6f6a55" transform="rotate(80 415 385)">오렌티아</text>
+  <text x="502" y="320" font-size="10" font-weight="bold" fill="#7a4a3c">트리비움</text>
+  <text x="610" y="315" font-size="14" font-weight="bold" fill="#7a4a3c">아메나</text>
+  <text x="795" y="265" font-size="14" font-weight="bold" fill="#8a6a2f">리토레아</text>
+
+  <!-- 도시 -->
+  <g font-size="11" fill="#3b3a33">
+    <!-- 스톨 -->
+    <circle cx="300" cy="250" r="5" fill="#41597e"/><text x="310" y="246">즈보노그라드 ★</text>
+    <circle cx="232" cy="332" r="4" fill="#41597e"/><text x="242" y="336">젤레즈노그라드</text>
+    <!-- 글루트 -->
+    <circle cx="560" cy="200" r="5" fill="#7a4a3c"/><text x="570" y="196">포이어베르크 ★</text>
+    <circle cx="645" cy="230" r="4" fill="#7a4a3c"/><text x="655" y="234">글뤼하임</text>
+    <circle cx="730" cy="200" r="4" fill="#7a4a3c"/><text x="740" y="196">그리펜부르크</text>
+    <!-- 아메나 -->
+    <circle cx="634" cy="336" r="5" fill="#7a4a3c"/><text x="640" y="358">아우렐리아(옛 도시)</text>
+    <!-- 리토레아 -->
+    <circle cx="806" cy="318" r="4" fill="#8a6a2f"/><text x="772" y="308">한델스포르트 ★</text>
+    <circle cx="792" cy="378" r="4" fill="#8a6a2f"/><text x="760" y="396">스타펠스타트</text>
+    <!-- 오렌티아 완충지대 -->
+    <circle cx="510" cy="368" r="3.5" fill="#6f6a55"/><text x="519" y="365" font-size="10">오르텔라</text>
+    <circle cx="487" cy="410" r="3.5" fill="#6f6a55"/><text x="496" y="408" font-size="10">메디아나</text>
+    <circle cx="455" cy="438" r="3.5" fill="#6f6a55"/><text x="378" y="436" font-size="10">아이테르나</text>
+    <circle cx="470" cy="468" r="3.5" fill="#6f6a55"/><text x="408" y="466" font-size="10">아퀼로네</text>
+    <circle cx="500" cy="455" r="3.5" fill="#6f6a55"/><text x="509" y="453" font-size="10">스트룸스타트</text>
+    <!-- 베스페라 -->
+    <circle cx="250" cy="510" r="5" fill="#5d4a7a"/><text x="260" y="506">아스트라갈 ★</text>
+    <circle cx="320" cy="558" r="4" fill="#5d4a7a"/><text x="330" y="562">코르빈바르</text>
+    <circle cx="352" cy="415" r="4" fill="#5d4a7a"/><text x="318" y="436" font-size="10">케메니바르</text>
+    <circle cx="150" cy="565" r="4" fill="#5d4a7a"/><text x="100" y="588" font-size="10">포르도레</text>
+    <!-- 아이스투아리아 -->
+    <circle cx="618" cy="657" r="4" fill="#2d5f7a"/><text x="540" y="678" font-size="10">포르투스 페록스</text>
+    <circle cx="690" cy="618" r="4" fill="#2d5f7a"/><text x="640" y="612" font-size="10">포르타노바</text>
+    <circle cx="745" cy="492" r="4" fill="#2d5f7a"/><text x="690" y="486" font-size="10">벤다발</text>
+    <text x="816" y="586" font-size="10" fill="#2d5f7a">벡실룸 ★</text>
+    <text x="858" y="452" font-size="10" fill="#2d5f7a">아네모이</text>
+  </g>
+
+  <!-- 범례 -->
+  <g transform="translate(30,86)" font-size="12" fill="#3b3a33">
+    <rect x="-10" y="-6" width="200" height="222" fill="#ffffff" fill-opacity="0.85" stroke="#b9b09a"/>
+    <rect x="0" y="4" width="16" height="12" fill="#c9d4e4"/><text x="22" y="14">스톨코비아</text>
+    <rect x="0" y="26" width="16" height="12" fill="#d9c2bb"/><text x="22" y="36">글루트페스테</text>
+    <rect x="0" y="48" width="16" height="12" fill="#d8cce6"/><text x="22" y="58">뤼메리-훈디아 이중제국</text>
+    <rect x="0" y="70" width="16" height="12" fill="#bdd7e3"/><text x="22" y="80">벡실리아 공화국</text>
+    <rect x="0" y="92" width="16" height="12" fill="#f0d9b0"/><text x="22" y="102">뤼흐트스타트</text>
+    <rect x="0" y="114" width="16" height="12" fill="#ece5d0"/><text x="22" y="124">완충지대(오렌티아)</text>
+    <rect x="0" y="136" width="16" height="12" fill="url(#dispute)" fill-opacity="0.6" stroke="#b3503e" stroke-width="1"/><text x="22" y="146">영토 분쟁지</text>
+    <line x1="0" y1="168" x2="16" y2="168" stroke="#4a7fb5" stroke-width="4"/><text x="22" y="172">강(오렌투스·샤르케니)</text>
+    <path d="M 4,182 l 7,12 h-14 Z" fill="#6f6a55"/><text x="22" y="194">산맥 · ★ 수도</text>
+  </g>
+</svg>

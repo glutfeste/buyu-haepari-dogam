@@ -1,0 +1,19 @@
+filters:
+  and:
+    - file.hasTag("문헌")
+    - file.folder.contains("부유해파리 도감")
+formulas:
+  종류: note["문헌 종류"]
+  관련: note["관련 세력"]
+properties:
+  formula.종류:
+    displayName: 문헌 종류
+  formula.관련:
+    displayName: 관련 세력
+views:
+  - type: table
+    name: 문헌
+    order:
+      - file.name
+      - formula.종류
+      - formula.관련

@@ -1,0 +1,21 @@
+filters:
+  and:
+    - file.hasTag("세력")
+    - file.folder.contains("부유해파리 도감")
+formulas:
+  종주: note["종주 세력"]
+properties:
+  note.지위:
+    displayName: 지위
+  note.상태:
+    displayName: 상태
+  formula.종주:
+    displayName: 종주 세력
+views:
+  - type: table
+    name: 세력
+    order:
+      - file.name
+      - 지위
+      - 상태
+      - formula.종주
