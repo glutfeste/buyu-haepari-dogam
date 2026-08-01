@@ -1,0 +1,10 @@
+# 운영체제와 편집기가 만드는 임시 파일
+.DS_Store
+Thumbs.db
+Desktop.ini
+~$*
+*.tmp
+
+# 로컬 도구가 만드는 캐시와 로그
+.codex/
+.claude/
