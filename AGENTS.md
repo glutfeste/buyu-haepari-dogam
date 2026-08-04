@@ -24,7 +24,7 @@ tags: [창작, 메타]
 
 ## 작업 절차와 Git
 
-1. 작업을 시작하기 전에 현재 상태를 확인하고, 요청 범위 밖의 변경이 있는지 살핀다.
+1. 작업을 시작하기 전에 `powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\git-preflight.ps1`을 실행해 저장소 루트·origin·main 브랜치·HEAD·커밋 작성자 설정을 확인하고, 현재 상태와 요청 범위 밖의 변경을 살핀다. 점검이 실패하면 문서 편집을 시작하지 말고 `powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\restore-git-metadata.ps1`로 원격의 Git 메타데이터를 복구한 뒤 다시 점검한다.
 2. 편집 대상과 직접 이어지는 현재 문서를 읽는다. 최근 변경의 맥락이 필요하면 해당 경로의 Git 기록과 diff를 확인한다.
 3. 설정을 고치면 그 사실이 놓일 대표 문서를 먼저 고치고, 같은 작업 단위 안에서 연관 문서를 정렬한다.
 4. 그림을 바꾸면 파일을 다시 쓰고, 삽입된 문서에서 위치와 표시를 확인한다.
@@ -34,6 +34,8 @@ tags: [창작, 메타]
 8. 커밋 전에 잘못 고친 내용은 git restore로 되돌린다. 커밋한 뒤 잘못 고친 내용은 git revert로 되돌린다.
 
 저장소는 https://github.com/glutfeste/buyu-haepari-dogam 이고 비공개다. 로컬 폴더와 이 저장소가 origin으로 연결되어 있다. Git이 변경 이력의 유일한 기록이므로 별도 변경 로그를 만들거나 문서 본문에 수정 경위를 적지 않는다.
+
+`.git`은 작업 폴더에 있어야 한다. 메타데이터가 사라졌을 때 `powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\restore-git-metadata.ps1`은 임시 clone에서 `.git`만 복사하고 `git reset --mixed HEAD`로 index를 재구성하며, 원격 최신 커밋의 작성자 정보를 이 저장소에 설정한다. 작업 파일은 덮어쓰지 않으며, 복구 뒤 `powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\git-preflight.ps1`을 다시 실행한다.
 
 ## 작성 태도
 
