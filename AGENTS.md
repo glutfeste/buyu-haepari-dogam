@@ -23,6 +23,10 @@ tags: [창작, 메타]
 
 ## 작업 절차와 Git
 
+- 모든 읽기·편집·Git 명령은 `C:\Users\user\Documents\2026-04부터\전체\창작\부유해파리 도감`에서 수행한다.
+- `P:\2026-04부터\전체\창작\부유해파리 도감`은 pCloud 양방향 동기화 복제본으로만 사용한다. 작업 경로와 Git 작업 트리는 C: 저장소로 고정한다.
+- pCloud 동기화에서 `.git`을 제외한다. Git 메타데이터는 C: 작업 폴더와 GitHub에 둔다.
+
 1. 작업을 시작하기 전에 `powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\git-preflight.ps1`을 실행해 저장소 루트·origin·main 브랜치·HEAD·커밋 작성자 설정을 확인하고, 현재 상태와 요청 범위 밖의 변경을 살핀다. 점검이 실패하면 문서 편집을 시작하지 말고 `powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\restore-git-metadata.ps1`로 원격의 Git 메타데이터를 복구한 뒤 다시 점검한다.
 2. 편집 대상과 직접 이어지는 현재 문서를 읽는다. 최근 변경의 맥락이 필요하면 해당 경로의 Git 기록과 diff를 확인한다.
 3. 설정을 고치면 그 사실이 놓일 대표 문서를 먼저 고치고, 같은 작업 단위 안에서 연관 문서를 정렬한다.
