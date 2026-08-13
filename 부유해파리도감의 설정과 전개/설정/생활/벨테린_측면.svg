@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" width="1200" height="720" role="img" aria-label="원양 탐사선 에루나벨의 측면과 내부 구획도">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" width="1200" height="720" role="img" aria-label="원양 탐사선 벨테린의 측면과 내부 구획도">
   <style>
     text{font-family:'Pretendard','Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif;}
     .label{font-size:15px;font-weight:600;fill:#3d382f;}
@@ -28,8 +28,8 @@
 
   <rect width="1200" height="720" fill="#f5efe3"/>
   <rect x="42" y="90" width="1116" height="480" rx="8" fill="url(#sky)" stroke="#c9c0ae"/>
-  <text x="70" y="52" font-size="27" font-weight="700" fill="#373229">에루나벨 — 측면과 내부 구획</text>
-  <text x="70" y="76" font-size="14" fill="#756c5e">코룬에서 얻어 세계를 한 바퀴 돈 24미터급 무장 원양 탐사선·밀폐 인양선</text>
+  <text x="70" y="52" font-size="27" font-weight="700" fill="#373229">벨테린 — 측면과 내부 구획</text>
+  <text x="70" y="76" font-size="14" fill="#756c5e">코룬에서 인수한 24미터급 무장 원양 탐사선·밀폐 인양선</text>
 
   <!-- 임모타 잠수 전환 -->
   <g>
