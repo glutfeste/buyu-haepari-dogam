@@ -2,7 +2,7 @@ filters:
   and:
     - file.hasTag("이야기")
     - file.folder.contains("에피소드")
-    - note.순서 >= 0
+    - note.순서
 properties:
   note.순서:
     displayName: 순서
