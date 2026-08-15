@@ -3,17 +3,32 @@ filters:
     - file.hasTag("생태")
     - file.folder.contains("부유해파리 도감")
 properties:
+  note.계:
+    displayName: 계
+  note.문:
+    displayName: 문
+  note.강:
+    displayName: 강
+  note.목:
+    displayName: 목
   note.분류:
-    displayName: 분류
+    displayName: 분류·길드
   note.서식지:
     displayName: 서식지
   note.식성:
     displayName: 식성
+  note.영양:
+    displayName: 영양
 views:
   - type: table
     name: 생물
     order:
       - file.name
-      - 분류
+      - 계
+      - 문
+      - 강
+      - 목
+      - 분류·길드
       - 서식지
       - 식성
+      - 영양
