@@ -1,52 +1,111 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 705" font-family="'Noto Sans KR','Malgun Gothic','맑은 고딕',sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 1040" font-family="'Noto Serif CJK KR','UnDotum','Malgun Gothic','맑은 고딕',sans-serif">
   <style>
-    .ln{stroke:#9aa0a6;stroke-width:2;fill:none}
-    .rk{fill:#6b4e2e;font-weight:700;font-size:16px}
-    .famA{fill:#9c3d2b;font-weight:700;font-size:15px}
-    .famB{fill:#245a86;font-weight:700;font-size:15px}
-    .sp{fill:#555;font-size:13px}
-    .cap{fill:#777;font-size:12px}
-    .ttl{fill:#222;font-weight:700;font-size:20px}
-    .amok{fill:#333;font-weight:700;font-size:14px}
+    .bg{fill:#ffffff}
+    .line{stroke:#7d848b;stroke-width:2;fill:none}
+    .likely{stroke:#7d848b;stroke-width:2;stroke-dasharray:7 5;fill:none}
+    .root{fill:#4b3d2a;font-weight:700;font-size:17px}
+    .rank{fill:#28323c;font-weight:700;font-size:16px}
+    .famA{fill:#8a3e32;font-weight:700;font-size:15px}
+    .famB{fill:#245f82;font-weight:700;font-size:15px}
+    .sp{fill:#4f565d;font-size:12.5px}
+    .note{fill:#6a7178;font-size:12px}
+    .title{fill:#20252a;font-weight:700;font-size:22px}
+    .status{font-size:12px;font-weight:700}
   </style>
-  <rect width="940" height="705" fill="#ffffff"/>
-  <text x="24" y="34" class="ttl">부유 해파리 계통수</text>
+  <rect class="bg" width="1180" height="1040"/>
+  <text x="24" y="34" class="title">부유해파리강과 부유해파리목의 자연분류</text>
 
-  <path class="ln" d="M104,260 H160"/>
-  <path class="ln" d="M160,110 V410"/>
-  <path class="ln" d="M160,110 H310"/>
-  <path class="ln" d="M160,410 H310"/>
-  <path class="ln" d="M310,60 V160"/>
-  <path class="ln" d="M310,60 H450"/>
-  <path class="ln" d="M310,110 H450"/>
-  <path class="ln" d="M310,160 H450"/>
-  <path class="ln" d="M310,235 V630"/>
-  <path class="ln" d="M310,235 H450"/>
-  <path class="ln" d="M310,290 H450"/>
-  <path class="ln" d="M310,345 H450"/>
-  <path class="ln" d="M310,400 H450"/>
-  <path class="ln" d="M310,450 H450"/>
-  <path class="ln" d="M310,495 H450"/>
-  <path class="ln" d="M310,540 H450"/>
-  <path class="ln" d="M310,585 H450"/>
-  <path class="ln" d="M310,630 H450"/>
+  <path class="line" d="M115,520 H180"/>
+  <path class="line" d="M180,90 V520"/>
+  <path class="line" d="M180,90 H300"/>
+  <path class="line" d="M180,520 H300"/>
 
-  <text x="24" y="265" class="rk">부유해파리목</text>
-  <text x="176" y="103" class="amok">부양아목 · 부양의 구문</text>
-  <text x="176" y="403" class="amok">여과아목 · 촉수 체판</text>
+  <text x="22" y="506" class="root">기낭폴립</text>
+  <text x="22" y="526" class="note">먼 외군</text>
 
-  <text x="460" y="65"><tspan class="famA">렌즈눈해파리과</tspan> <tspan class="sp">— 이리·초롱·노을·거품</tspan></text>
-  <text x="460" y="115"><tspan class="famA">고착해파리과</tspan> <tspan class="sp">— 닻·나락·땅</tspan></text>
-  <text x="460" y="165"><tspan class="famA">안개해파리과</tspan> <tspan class="sp">— 안개</tspan></text>
-  <text x="460" y="240"><tspan class="famB">광합성해파리과</tspan> <tspan class="sp">— 사막·해바라기</tspan></text>
-  <text x="460" y="295"><tspan class="famB">강막해파리과</tspan> <tspan class="sp">— 서리·굴뚝·그늘</tspan></text>
-  <text x="460" y="350"><tspan class="famB">표류해파리과</tspan> <tspan class="sp">— 돛·실 (근연 잠정)</tspan></text>
-  <text x="460" y="405"><tspan class="famB">청소해파리과</tspan> <tspan class="sp">— 송장·부두</tspan></text>
-  <text x="460" y="455"><tspan class="famB">들해파리과</tspan> <tspan class="sp">— 들</tspan></text>
-  <text x="460" y="500"><tspan class="famB">먹물해파리과</tspan> <tspan class="sp">— 먹물</tspan></text>
-  <text x="460" y="545"><tspan class="famB">쇳가루해파리과</tspan> <tspan class="sp">— 쇳가루</tspan></text>
-  <text x="460" y="590"><tspan class="famB">떼우산해파리과</tspan> <tspan class="sp">— 떼우산</tspan></text>
-  <text x="460" y="635"><tspan class="famB">젖해파리과</tspan> <tspan class="sp">— 젖</tspan></text>
+  <text x="194" y="82" class="rank">부유해파리강</text>
+  <text x="194" y="102" class="note">Nephomedusae</text>
 
-  <text x="24" y="685" class="cap">공유 파생 형질로 묶은 계통. 부양아목은 부양의 구문을, 여과아목은 촉수 체판을 공유한다. 단형 5과는 각각 한 종으로 이루어진다.</text>
+  <path class="line" d="M300,90 H380"/>
+  <path class="line" d="M300,90 V180"/>
+  <path class="line" d="M300,180 H380"/>
+  <text x="390" y="84" class="rank">활강해파리목</text>
+  <text x="390" y="104" class="sp">활강해파리</text>
+  <text x="390" y="174" class="rank">부유해파리목</text>
+  <text x="390" y="194" class="note">Aeromedusae · 영구 기낭</text>
+
+  <path class="line" d="M530,180 H600"/>
+  <path class="line" d="M600,150 V690"/>
+  <path class="line" d="M600,150 H700"/>
+  <path class="line" d="M600,690 H700"/>
+
+  <text x="616" y="142" class="rank">부양아목</text>
+  <text x="616" y="162" class="note">부양 구문 · 확립</text>
+  <text x="616" y="682" class="rank">여과아목</text>
+  <text x="616" y="702" class="note">촉수 체판 · 확립</text>
+
+  <path class="line" d="M700,150 V300"/>
+  <path class="line" d="M700,185 H790"/>
+  <path class="likely" d="M700,235 H790"/>
+  <path class="likely" d="M700,285 H790"/>
+
+  <text x="800" y="190"><tspan class="famA">렌즈눈해파리과</tspan><tspan class="status" fill="#3c7b52">  확립</tspan></text>
+  <text x="800" y="209" class="sp">이리·초롱·노을·거품·잔방울</text>
+  <text x="800" y="240"><tspan class="famA">고착해파리과</tspan><tspan class="status" fill="#9a6a20">  유력</tspan></text>
+  <text x="800" y="259" class="sp">닻·절벽걸이·나락·땅</text>
+  <text x="800" y="290"><tspan class="famA">안개해파리과</tspan><tspan class="status" fill="#9a6a20">  유력</tspan></text>
+  <text x="800" y="309" class="sp">안개·잔안개</text>
+
+  <path class="line" d="M700,365 V990"/>
+  <path class="line" d="M700,380 H790"/>
+  <path class="line" d="M700,430 H790"/>
+  <path class="likely" d="M700,480 H790"/>
+  <path class="likely" d="M700,530 H790"/>
+  <path class="likely" d="M700,580 H790"/>
+  <path class="likely" d="M700,630 H790"/>
+  <path class="likely" d="M700,680 H790"/>
+  <path class="likely" d="M700,730 H790"/>
+  <path class="likely" d="M700,780 H790"/>
+  <path class="line" d="M700,830 H790"/>
+  <path class="line" d="M700,880 H790"/>
+  <path class="likely" d="M700,930 H790"/>
+
+  <text x="800" y="385"><tspan class="famB">광합성해파리과</tspan><tspan class="status" fill="#3c7b52">  확립</tspan></text>
+  <text x="800" y="404" class="sp">사막·해바라기·황혼</text>
+
+  <text x="800" y="435"><tspan class="famB">서리해파리과</tspan><tspan class="status" fill="#3c7b52">  확립</tspan></text>
+  <text x="800" y="454" class="sp">서리·눈송이</text>
+
+  <text x="800" y="485"><tspan class="famB">굴뚝해파리과</tspan><tspan class="status" fill="#9a6a20">  유력</tspan></text>
+  <text x="800" y="504" class="sp">굴뚝·연기</text>
+
+  <text x="800" y="535"><tspan class="famB">그늘해파리과</tspan><tspan class="status" fill="#9a6a20">  유력</tspan></text>
+  <text x="800" y="554" class="sp">그늘·밑그늘</text>
+
+  <text x="800" y="585"><tspan class="famB">돛해파리과</tspan><tspan class="status" fill="#9a6a20">  유력</tspan></text>
+  <text x="800" y="604" class="sp">돛·쌍돛</text>
+
+  <text x="800" y="635"><tspan class="famB">실해파리과</tspan><tspan class="status" fill="#9a6a20">  유력</tspan></text>
+  <text x="800" y="654" class="sp">실·빗실</text>
+
+  <text x="800" y="685"><tspan class="famB">청소해파리과</tspan><tspan class="status" fill="#9a6a20">  유력</tspan></text>
+  <text x="800" y="704" class="sp">송장·뼈·부두</text>
+
+  <text x="800" y="735"><tspan class="famB">들해파리과</tspan><tspan class="status" fill="#9a6a20">  유력</tspan></text>
+  <text x="800" y="754" class="sp">들·갈대</text>
+
+  <text x="800" y="785"><tspan class="famB">먹물해파리과</tspan><tspan class="status" fill="#9a6a20">  유력</tspan></text>
+  <text x="800" y="804" class="sp">먹물·재먹물</text>
+
+  <text x="800" y="835"><tspan class="famB">쇳가루해파리과</tspan><tspan class="status" fill="#3c7b52">  확립</tspan></text>
+  <text x="800" y="854" class="sp">쇳가루·쇠비늘</text>
+
+  <text x="800" y="885"><tspan class="famB">젖해파리과</tspan><tspan class="status" fill="#3c7b52">  확립</tspan></text>
+  <text x="800" y="904" class="sp">젖·돌풍</text>
+
+  <text x="800" y="935"><tspan class="famB">떼우산해파리과</tspan><tspan class="status" fill="#9a6a20">  유력</tspan></text>
+  <text x="800" y="954" class="sp">떼우산·폭우산</text>
+
+  <text x="24" y="1004" class="note">실선은 확립된 분기, 점선은 유력한 분기를 뜻한다. 종별 위치는 형태·발생·자포낭형·생체 구문과 외군 비교를 함께 사용한다.</text>
+  <text x="24" y="1024" class="note">초판의 미확정형은 계통수에서 제외하며 새 표본이 확보되면 분기와 확실도를 다시 계산한다.</text>
 </svg>
