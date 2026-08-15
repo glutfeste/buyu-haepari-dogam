@@ -1,0 +1,102 @@
+name: repository-audit
+
+on:
+  push:
+    branches:
+      - agent/full-discussion-integration-20260815
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Scan repository
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          import zipfile
+
+          root = Path('.')
+          files = [p for p in root.rglob('*') if p.is_file() and '.git' not in p.parts]
+          texts = {}
+          for p in files:
+              if p.suffix.lower() in {'.md', '.svg', '.txt', '.yml', '.yaml'}:
+                  try:
+                      texts[p] = p.read_text(encoding='utf-8')
+                  except UnicodeDecodeError:
+                      texts[p] = p.read_text(encoding='utf-8', errors='replace')
+
+          patterns = {
+              'replacement-character': r'�',
+              'obsolete-born-syntax': r'생득 구문',
+              'reverse-engineering': r'역설계',
+              'regeneration-part': r'재생부',
+              'organism-control-theme': r'생물의 통제권|생물을 존중|통제 기술로 완성',
+              'meta-emphasis': r'이 장면은|이 점을 강조|작품은 .*강조|주제를 드러낸',
+              'old-episode-links': r'\[\[(?:16 먹물해파리와 마량|17 하늘길|18 골롬트|19 서리해파리와 스톨|20 이리해파리와 코르빈바르|21 부두해파리와 아스트라갈|22 쇳가루해파리와 트리비움|23 보레아 비밀 기지|24 콘라트의 몰락|25 보레아 결전)(?:\||\]\])',
+              'old-episode-count': r'스물다섯 편|25편과 후일담|본편 25편',
+              'company-present-rule': r'잔다라 무역회사가 .*통치|회사가 .*개간|회사가 .*관할|회사가 .*다스',
+              'typo-sarak': r'사라크이|사라크은|사라크과',
+          }
+
+          lines = []
+          lines.append('== EPISODES ==')
+          episode_dir = root / '부유해파리도감의 설정과 전개' / '이야기' / '에피소드'
+          for p in sorted(episode_dir.glob('*.md')):
+              first = p.read_text(encoding='utf-8').splitlines()[:8]
+              order = next((x.split(':',1)[1].strip() for x in first if x.startswith('순서:')), '')
+              lines.append(f'{p.name}\t순서={order}')
+
+          for label, pattern in patterns.items():
+              lines.append(f'\n== {label} ==')
+              rx = re.compile(pattern)
+              count = 0
+              for p, text in sorted(texts.items(), key=lambda kv: str(kv[0])):
+                  for no, line in enumerate(text.splitlines(), 1):
+                      if rx.search(line):
+                          lines.append(f'{p}:{no}: {line}')
+                          count += 1
+              lines.append(f'COUNT={count}')
+
+          lines.append('\n== TARGET FILES ==')
+          targets = [
+              '부유해파리도감의 설정과 전개/설정/생태/외재 정보유산.md',
+              '부유해파리도감의 설정과 전개/설정/생태/수문비버.md',
+              '부유해파리도감의 설정과 전개/설정/생태/잔다라매듭거미.md',
+              '부유해파리도감의 설정과 전개/설정/세력/옛 세력/니다라.md',
+              '부유해파리도감의 설정과 전개/설정/세력/독립 세력/첫그물.md',
+              '부유해파리도감의 설정과 전개/이야기/에피소드/28 보레아 결전.md',
+          ]
+          for t in targets:
+              lines.append(f'{t}\t{(root / t).exists()}')
+
+          Path('audit-report.txt').write_text('\n'.join(lines) + '\n', encoding='utf-8')
+
+          with zipfile.ZipFile('repository-snapshot.zip', 'w', zipfile.ZIP_DEFLATED) as zf:
+              for p in files:
+                  if p.name in {'repository-snapshot.zip'}:
+                      continue
+                  zf.write(p, p.as_posix())
+          PY
+
+      - name: Upload audit and snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: repository-audit
+          path: |
+            audit-report.txt
+            repository-snapshot.zip
+          if-no-files-found: error
+          retention-days: 7
