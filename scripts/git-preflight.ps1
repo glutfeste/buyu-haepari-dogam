@@ -61,22 +61,30 @@ function Invoke-GitText {
 
     $stderrPath = [IO.Path]::GetTempFileName()
     try {
-        $stdout = & git -C $workspace @Arguments 2> $stderrPath
+        $stdout = @(& git -C $workspace @Arguments 2> $stderrPath)
         $exitCode = $LASTEXITCODE
-        $stderr = if (Test-Path -LiteralPath $stderrPath) {
-            (Get-Content -LiteralPath $stderrPath -Raw -ErrorAction SilentlyContinue).Trim()
+
+        $stderrRaw = if (Test-Path -LiteralPath $stderrPath) {
+            Get-Content -LiteralPath $stderrPath -Raw -ErrorAction SilentlyContinue
         }
         else {
+            $null
+        }
+        $stderr = if ($null -eq $stderrRaw) { '' } else { ([string]$stderrRaw).Trim() }
+
+        $stdoutText = if ($null -eq $stdout) {
             ''
+        }
+        else {
+            (($stdout | ForEach-Object { [string]$_ }) -join [Environment]::NewLine).Trim()
         }
 
         if ($exitCode -ne 0) {
-            $stdoutText = (($stdout | ForEach-Object { [string]$_ }) -join [Environment]::NewLine).Trim()
             $details = @($stdoutText, $stderr) | Where-Object { -not [String]::IsNullOrWhiteSpace($_) }
             throw "Git 점검 명령이 실패했다: git $($Arguments -join ' ')`n$($details -join [Environment]::NewLine)"
         }
 
-        return (($stdout | ForEach-Object { [string]$_ }) -join [Environment]::NewLine).Trim()
+        return [string]$stdoutText
     }
     finally {
         Remove-Item -LiteralPath $stderrPath -Force -ErrorAction SilentlyContinue
@@ -88,7 +96,7 @@ if (-not (Test-Path -LiteralPath $gitDirectory)) {
     throw "Git 메타데이터가 없다: $gitDirectory`n먼저 .\scripts\restore-git-metadata.ps1을 실행한다."
 }
 
-$repositoryRootText = Invoke-GitText @('rev-parse', '--show-toplevel')
+$repositoryRootText = [string](Invoke-GitText @('rev-parse', '--show-toplevel'))
 if ([String]::IsNullOrWhiteSpace($repositoryRootText)) {
     throw 'Git 저장소 루트를 읽지 못했다.'
 }
@@ -104,26 +112,28 @@ if (-not [String]::Equals($repositoryRoot, $normalizedWorkspace, [StringComparis
     throw "Git 저장소 루트가 작업 폴더와 다르다.`n작업 폴더: $normalizedWorkspace`n저장소 루트: $repositoryRoot"
 }
 
-$origin = Invoke-GitText @('remote', 'get-url', 'origin')
+$origin = [string](Invoke-GitText @('remote', 'get-url', 'origin'))
 $normalizedOrigin = ConvertTo-NormalizedRemote $origin
 $normalizedExpectedOrigin = ConvertTo-NormalizedRemote $expectedOrigin
 if (-not [String]::Equals($normalizedOrigin, $normalizedExpectedOrigin, [StringComparison]::OrdinalIgnoreCase)) {
     throw "origin이 예상 저장소와 다르다.`n예상: $expectedOrigin`n현재: $origin"
 }
 
-$branch = Invoke-GitText @('branch', '--show-current')
+$branch = [string](Invoke-GitText @('branch', '--show-current'))
 if ($branch -ne 'main') {
     throw "현재 브랜치가 main이 아니다: $branch"
 }
 
-$userName = (Invoke-GitText @('config', '--get', 'user.name')).Trim()
-$userEmail = (Invoke-GitText @('config', '--get', 'user.email')).Trim()
+$userName = [string](Invoke-GitText @('config', '--get', 'user.name'))
+$userEmail = [string](Invoke-GitText @('config', '--get', 'user.email'))
+$userName = $userName.Trim()
+$userEmail = $userEmail.Trim()
 if ([String]::IsNullOrWhiteSpace($userName) -or [String]::IsNullOrWhiteSpace($userEmail)) {
     throw 'Git 커밋 작성자 설정이 없다. 복구 스크립트를 실행하거나 이 저장소에 user.name과 user.email을 설정한다.'
 }
 
-$head = Invoke-GitText @('rev-parse', '--verify', 'HEAD')
-$statusText = Invoke-GitText @('status', '--short')
+$head = [string](Invoke-GitText @('rev-parse', '--verify', 'HEAD'))
+$statusText = [string](Invoke-GitText @('status', '--short'))
 
 [PSCustomObject]@{
     Repository = $repositoryRoot
