@@ -5,17 +5,20 @@ param(
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
-function Resolve-ExistingPath {
+function Resolve-ExistingDirectory {
     param(
         [Parameter(Mandatory)]
         [string]$LiteralPath
     )
 
-    $resolved = Resolve-Path -LiteralPath $LiteralPath -ErrorAction Stop
-    return $resolved.ProviderPath
+    $item = Get-Item -LiteralPath $LiteralPath -Force -ErrorAction Stop
+    if (-not $item.PSIsContainer) {
+        throw "디렉터리가 아니다: $LiteralPath"
+    }
+    return $item.FullName
 }
 
-$workspace = Resolve-ExistingPath (Join-Path -Path $PSScriptRoot -ChildPath '..')
+$workspace = Resolve-ExistingDirectory (Join-Path -Path $PSScriptRoot -ChildPath '..')
 $expectedOrigin = 'https://github.com/glutfeste/buyu-haepari-dogam.git'
 $targetGit = Join-Path -Path $workspace -ChildPath '.git'
 
@@ -23,7 +26,7 @@ if (Test-Path -LiteralPath $targetGit) {
     throw "작업 폴더에 이미 Git 메타데이터가 있다: $targetGit"
 }
 
-$tempRoot = Resolve-ExistingPath ([IO.Path]::GetTempPath())
+$tempRoot = [IO.Path]::GetTempPath().TrimEnd([char[]]@([IO.Path]::DirectorySeparatorChar, [IO.Path]::AltDirectorySeparatorChar))
 $tempRepository = Join-Path -Path $tempRoot -ChildPath ('buyu-haepari-git-recovery-' + [guid]::NewGuid().ToString('N'))
 New-Item -ItemType Directory -Path $tempRepository -Force | Out-Null
 
@@ -53,24 +56,25 @@ try {
     }
     $identityParts = (($identity | Out-String).Trim()) -split "`t", 2
     if ($identityParts.Count -ne 2 -or [String]::IsNullOrWhiteSpace($identityParts[0]) -or [String]::IsNullOrWhiteSpace($identityParts[1])) {
-        throw "복구한 저장소에 커밋 작성자 정보가 없다. user.name과 user.email을 직접 설정한다."
+        throw '복구한 저장소에 커밋 작성자 정보가 없다. user.name과 user.email을 직접 설정한다.'
     }
+
     & git -C $workspace config --local user.name $identityParts[0]
     if ($LASTEXITCODE -ne 0) {
-        throw "복구한 저장소에 user.name을 설정하지 못했다."
+        throw '복구한 저장소에 user.name을 설정하지 못했다.'
     }
     & git -C $workspace config --local user.email $identityParts[1]
     if ($LASTEXITCODE -ne 0) {
-        throw "복구한 저장소에 user.email을 설정하지 못했다."
+        throw '복구한 저장소에 user.email을 설정하지 못했다.'
     }
 
-    Write-Output "Git 메타데이터를 origin/main에서 복구했다. 기존 커밋의 작성자 정보를 이 저장소에 설정했다. 작업 파일은 덮어쓰지 않았다."
+    Write-Output 'Git 메타데이터를 origin/main에서 복구했다. 기존 커밋의 작성자 정보를 이 저장소에 설정했다. 작업 파일은 덮어쓰지 않았다.'
     & git -C $workspace remote -v
     & git -C $workspace status --short
 }
 finally {
     if (Test-Path -LiteralPath $tempRepository) {
-        $resolvedTempRepository = Resolve-ExistingPath $tempRepository
+        $resolvedTempRepository = (Get-Item -LiteralPath $tempRepository -Force).FullName
         $allowedPrefix = $tempRoot + [IO.Path]::DirectorySeparatorChar
         if ($resolvedTempRepository.StartsWith($allowedPrefix, [StringComparison]::OrdinalIgnoreCase)) {
             Remove-Item -LiteralPath $resolvedTempRepository -Recurse -Force
