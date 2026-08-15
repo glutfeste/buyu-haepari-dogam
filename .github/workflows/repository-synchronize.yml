@@ -19,76 +19,53 @@ jobs:
           ref: agent/full-discussion-integration-20260815
           fetch-depth: 0
 
-      - name: Synchronize links and remove obsolete redirect
+      - name: Apply final integration patch
+        shell: bash
+        run: |
+          shopt -s nullglob
+          parts=(.integration-final.patch.gz.b64.part*)
+          if (( ${#parts[@]} == 0 )); then
+            echo "No final integration payload"
+            exit 0
+          fi
+          cat "${parts[@]}" | base64 --decode | gzip --decompress > /tmp/final-integration.patch
+          git apply --check /tmp/final-integration.patch
+          git apply /tmp/final-integration.patch
+          rm -f "${parts[@]}"
+
+      - name: Validate exact final files
         shell: bash
         run: |
           python3 - <<'PY'
           from pathlib import Path
+          import hashlib
 
-          root = Path('.')
-          replacements = {
-              '[[16 축열석과 벽진항': '[[16 축열석과 벽진항',
-              '[[20 하늘길': '[[20 하늘길',
-              '[[21 골롬트': '[[21 골롬트',
-              '[[22 서리해파리와 스톨': '[[22 서리해파리와 스톨',
-              '[[23 이리해파리와 코르빈바르': '[[23 이리해파리와 코르빈바르',
-              '[[24 부두해파리와 아스트라갈': '[[24 부두해파리와 아스트라갈',
-              '[[25 쇳가루해파리와 트리비움': '[[25 쇳가루해파리와 트리비움',
-              '[[26 보레아 비밀 기지': '[[26 보레아 비밀 기지',
-              '[[27 콘라트의 몰락': '[[27 콘라트의 몰락',
-              '[[28 보레아 결전': '[[28 보레아 결전',
-              '스물여덟 편': '스물여덟 편',
-              '28편과 후일담': '28편과 후일담',
-              '본편 28편': '본편 28편',
-              '[[군락 초식동물]]': '[[군락 초식동물]]',
-              '군락 초식동물·고래·용': '군락 초식동물·고래·용',
-              '사라크가': '사라크가',
-              '사라크는': '사라크는',
-              '사라크와': '사라크와',
-              '차분기관은 작동 중인 보글이의 재생 구문 전체를 기록 원통에 복제하고, 넬라는 그 과정을 직접 본다.': '차분기관은 작동 중인 보글이의 재생 구문 전체를 기록 원통에 복제하고, 넬라는 그 과정을 직접 본다.',
-              '카를은 작동 중인 보글이의 재생 구문 전체를 인간의 구문에 복제한다. 넬라는 비밀 기지에서 재생 정지 조건과 입력부가 함께 기록되는 모습을 보고, 같은 조건이 카를의 구문에도 들어 있음을 알아낸다.': '카를은 작동 중인 보글이의 재생 구문 전체를 인간의 구문에 복제한다. 넬라는 비밀 기지에서 재생 정지 조건과 입력부가 함께 기록되는 모습을 보고, 같은 조건이 카를의 구문에도 들어 있음을 알아낸다.',
-              '해파리의 체내 매체는 구문의 배열을 보존하고, 신경망은 감각 입력과 몸의 상태를 받아 배열을 연산한다. 넬라는 저장 매체, 연산 주체, 작용 조직과 산출을 분리해 기록한다. 유전 정보가 신경계를 발생시키는 과정은 발생 자료로 다루며, 구문의 저장과 실행을 설명하는 항목과 구분한다.\n\n[[보글이]]의 빠른 재생에서는 체내 매체의 배열과 막 전체의 신경 연결, 입력·조직 변화·종료 판정을 연속 기록한다. 재생 기능만 따로 떼면 호출 관계가 닫히지 않으며, 카를은 이 완결된 분산 구조 전체를 인간의 구문에 복제한다.': '해파리의 체내 기록체는 구문의 배열을 보존하고, 신경망은 감각 입력과 몸의 상태를 받아 배열을 연산한다. 넬라는 저장 매체, 연산체, 작용 조직과 산출을 각각 기록한다.\n\n[[보글이]]의 빠른 재생에서는 체내 기록체, 막 전체의 신경 연결, 입력, 조직 변화와 실행 종료를 연속 기록한다. 카를은 작동 중인 재생 구문 전체를 인간의 구문에 복제한다.',
-              '고래에게 각인한 조건 회로의 전말과 포로 신분으로 대면하며': '고래에게 각인한 조건 회로의 전말과 포로 신분으로 대면하며',
+          expected = {
+              'scripts/git-preflight.ps1': 'd3ec6551f91ec5f3f2cbfd29af3b7ae711eaedfbd4ce4c2d083c1b4cbef9c453',
+              'scripts/restore-git-metadata.ps1': '35c3e30c5040b78a2a5c1746bc913e2fa99365e366f3d8aa7a0a423528744bdc',
+              '투고 작품기획서.md': '72edae1b4edce4a5d229a885313a2523583adc72f18e8dcf187198e2798165da',
+              '부유해파리도감의 설정과 전개/설정/부유해파리도감 설정 바이블.md': '18859b3bea929c42e3e85c9dbaab376d94ac69a9cc18d5763f8b3f4bb143cc28',
+              '부유해파리도감의 설정과 전개/설정/인물/일행/넬라 베린디스.md': '502ef8990ca7730c8734ecf3e20e6b626230a97cd4b1cfc9145d25b8c1355c9f',
+              '부유해파리도감의 설정과 전개/설정/인물/일행/마량.md': 'a14a0fa2392115f8f1d022a6878bdeaeb51774bece2916295d9f141c7ead6350',
+              '부유해파리도감의 설정과 전개/설정/생태/수문비버.md': '2a2dcf1a6e9b0a918942a0faf2801acd5cbcd010bb138c4c92906553b760a559',
+              '부유해파리도감의 설정과 전개/이야기/에피소드/27 콘라트의 몰락.md': '2a1744406c82520692f99f377e8e04cd176f9f4272dc37d8b3b1562c3db7c269',
           }
-
-          for path in root.rglob('*'):
-              if not path.is_file() or '.git' in path.parts:
-                  continue
-              if path.suffix.lower() not in {'.md', '.svg', '.txt', '.yml', '.yaml'}:
-                  continue
-              text = path.read_text(encoding='utf-8')
-              new = text
-              for old, replacement in replacements.items():
-                  new = new.replace(old, replacement)
-              if new != text:
-                  path.write_text(new, encoding='utf-8')
-
-          epilogue = root / '부유해파리도감의 설정과 전개/이야기/에피소드/후일담 첫 인쇄본.md'
-          text = epilogue.read_text(encoding='utf-8')
-          if text.startswith('---\n순서: 26\n'):
-              text = text.replace('---\n순서: 26\n', '---\n순서: 후일담\n', 1)
-          epilogue.write_text(text, encoding='utf-8')
-
-          guild = root / '부유해파리도감의 설정과 전개/설정/생태/군락 초식동물.md'
-          text = guild.read_text(encoding='utf-8')
-          text = text.replace('aliases:\n  - 부유 초식 짐승\n', '')
-          text = text.replace(' 뱃사람은 이 생물을 통틀어 부유 초식 짐승이라고 부른다.', '')
-          guild.write_text(text, encoding='utf-8')
-
-          obsolete = root / '부유해파리도감의 설정과 전개/설정/생태/부유 초식 짐승.md'
-          if obsolete.exists():
-              obsolete.unlink()
+          for name, digest in expected.items():
+              actual = hashlib.sha256(Path(name).read_bytes()).hexdigest()
+              if actual != digest:
+                  raise SystemExit(f'hash mismatch: {name}: {actual} != {digest}')
+          print(f'validated {len(expected)} exact files')
           PY
 
-      - name: Commit synchronization
+      - name: Commit final integration
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
           if git diff --cached --quiet; then
-            echo "No synchronization changes"
+            echo "No final integration changes"
             exit 0
           fi
-          git commit -m "에피소드 링크와 폐기 표현을 전역 동기화하다"
+          git commit -m "전역 설정 문서와 Git 사전검사를 마무리하다"
           git push origin HEAD:agent/full-discussion-integration-20260815
