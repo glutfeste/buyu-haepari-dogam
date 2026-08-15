@@ -5,16 +5,26 @@ param(
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
-$workspace = [IO.Path]::GetFullPath((Split-Path -Parent $PSScriptRoot))
+function Resolve-ExistingPath {
+    param(
+        [Parameter(Mandatory)]
+        [string]$LiteralPath
+    )
+
+    $resolved = Resolve-Path -LiteralPath $LiteralPath -ErrorAction Stop
+    return $resolved.ProviderPath
+}
+
+$workspace = Resolve-ExistingPath (Join-Path -Path $PSScriptRoot -ChildPath '..')
 $expectedOrigin = 'https://github.com/glutfeste/buyu-haepari-dogam.git'
-$targetGit = Join-Path $workspace '.git'
+$targetGit = Join-Path -Path $workspace -ChildPath '.git'
 
 if (Test-Path -LiteralPath $targetGit) {
     throw "작업 폴더에 이미 Git 메타데이터가 있다: $targetGit"
 }
 
-$tempRoot = [IO.Path]::GetFullPath([IO.Path]::GetTempPath()).TrimEnd('\') + '\'
-$tempRepository = Join-Path $tempRoot ('buyu-haepari-git-recovery-' + [guid]::NewGuid().ToString('N'))
+$tempRoot = Resolve-ExistingPath ([IO.Path]::GetTempPath())
+$tempRepository = Join-Path -Path $tempRoot -ChildPath ('buyu-haepari-git-recovery-' + [guid]::NewGuid().ToString('N'))
 New-Item -ItemType Directory -Path $tempRepository -Force | Out-Null
 
 try {
@@ -23,7 +33,7 @@ try {
         throw "원격 저장소를 임시로 내려받지 못했다:`n$($cloneOutput | Out-String)"
     }
 
-    $sourceGit = Join-Path $tempRepository '.git'
+    $sourceGit = Join-Path -Path $tempRepository -ChildPath '.git'
     if (-not (Test-Path -LiteralPath $sourceGit)) {
         throw "임시 clone에서 Git 메타데이터를 찾지 못했다: $sourceGit"
     }
@@ -59,8 +69,11 @@ try {
     & git -C $workspace status --short
 }
 finally {
-    $resolvedTempRepository = [IO.Path]::GetFullPath($tempRepository)
-    if ($resolvedTempRepository.StartsWith($tempRoot, [StringComparison]::OrdinalIgnoreCase) -and (Test-Path -LiteralPath $resolvedTempRepository)) {
-        Remove-Item -LiteralPath $resolvedTempRepository -Recurse -Force
+    if (Test-Path -LiteralPath $tempRepository) {
+        $resolvedTempRepository = Resolve-ExistingPath $tempRepository
+        $allowedPrefix = $tempRoot + [IO.Path]::DirectorySeparatorChar
+        if ($resolvedTempRepository.StartsWith($allowedPrefix, [StringComparison]::OrdinalIgnoreCase)) {
+            Remove-Item -LiteralPath $resolvedTempRepository -Recurse -Force
+        }
     }
 }
