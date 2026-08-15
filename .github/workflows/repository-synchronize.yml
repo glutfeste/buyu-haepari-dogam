@@ -1,0 +1,94 @@
+name: repository-synchronize
+
+on:
+  push:
+    branches:
+      - agent/full-discussion-integration-20260815
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  synchronize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/full-discussion-integration-20260815
+          fetch-depth: 0
+
+      - name: Synchronize links and remove obsolete redirect
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          root = Path('.')
+          replacements = {
+              '[[16 먹물해파리와 마량': '[[16 축열석과 벽진항',
+              '[[17 하늘길': '[[20 하늘길',
+              '[[18 골롬트': '[[21 골롬트',
+              '[[19 서리해파리와 스톨': '[[22 서리해파리와 스톨',
+              '[[20 이리해파리와 코르빈바르': '[[23 이리해파리와 코르빈바르',
+              '[[21 부두해파리와 아스트라갈': '[[24 부두해파리와 아스트라갈',
+              '[[22 쇳가루해파리와 트리비움': '[[25 쇳가루해파리와 트리비움',
+              '[[23 보레아 비밀 기지': '[[26 보레아 비밀 기지',
+              '[[24 콘라트의 몰락': '[[27 콘라트의 몰락',
+              '[[25 보레아 결전': '[[28 보레아 결전',
+              '스물다섯 편': '스물여덟 편',
+              '25편과 후일담': '28편과 후일담',
+              '본편 25편': '본편 28편',
+              '[[부유 초식 짐승]]': '[[군락 초식동물]]',
+              '부유 초식 짐승·고래·용': '군락 초식동물·고래·용',
+              '사라크이': '사라크가',
+              '사라크은': '사라크는',
+              '사라크과': '사라크와',
+              '넬라는 기술자들이 재생부만 추출하는 대신 보글이의 회로 전체를 복제하는 과정을 직접 본다.': '차분기관은 작동 중인 보글이의 재생 구문 전체를 기록 원통에 복제하고, 넬라는 그 과정을 직접 본다.',
+              '카를은 재생부를 분리할 수 없어 보글이의 분산 재생 구조 전체를 인간의 구문에 복제한다. 넬라는 비밀 기지에서 조건 회로까지 함께 전사되는 장면을 보았기에, 종료 판정에 연결된 재생 정지 조건반사도 카를에게 옮겨졌음을 알아낸다.': '카를은 작동 중인 보글이의 재생 구문 전체를 인간의 구문에 복제한다. 넬라는 비밀 기지에서 재생 정지 조건과 입력부가 함께 기록되는 모습을 보고, 같은 조건이 카를의 구문에도 들어 있음을 알아낸다.',
+              '해파리의 체내 매체는 구문의 배열을 보존하고, 신경망은 감각 입력과 몸의 상태를 받아 배열을 연산한다. 넬라는 저장 매체, 연산 주체, 작용 조직과 산출을 분리해 기록한다. 유전 정보가 신경계를 발생시키는 과정은 발생 자료로 다루며, 구문의 저장과 실행을 설명하는 항목과 구분한다.\n\n[[보글이]]의 빠른 재생에서는 체내 매체의 배열과 막 전체의 신경 연결, 입력·조직 변화·종료 판정을 연속 기록한다. 재생 기능만 따로 떼면 호출 관계가 닫히지 않으며, 카를은 이 완결된 분산 구조 전체를 인간의 구문에 복제한다.': '해파리의 체내 기록체는 구문의 배열을 보존하고, 신경망은 감각 입력과 몸의 상태를 받아 배열을 연산한다. 넬라는 저장 매체, 연산체, 작용 조직과 산출을 각각 기록한다.\n\n[[보글이]]의 빠른 재생에서는 체내 기록체, 막 전체의 신경 연결, 입력, 조직 변화와 실행 종료를 연속 기록한다. 카를은 작동 중인 재생 구문 전체를 인간의 구문에 복제한다.',
+              '옛 제자의 연구를 생명 통제에 사용한 결과와 포로 신분으로 대면하며': '고래에게 각인한 조건 회로의 전말과 포로 신분으로 대면하며',
+          }
+
+          for path in root.rglob('*'):
+              if not path.is_file() or '.git' in path.parts:
+                  continue
+              if path.suffix.lower() not in {'.md', '.svg', '.txt', '.yml', '.yaml'}:
+                  continue
+              text = path.read_text(encoding='utf-8')
+              new = text
+              for old, replacement in replacements.items():
+                  new = new.replace(old, replacement)
+              if new != text:
+                  path.write_text(new, encoding='utf-8')
+
+          epilogue = root / '부유해파리도감의 설정과 전개/이야기/에피소드/후일담 첫 인쇄본.md'
+          text = epilogue.read_text(encoding='utf-8')
+          if text.startswith('---\n순서: 26\n'):
+              text = text.replace('---\n순서: 26\n', '---\n순서: 후일담\n', 1)
+          epilogue.write_text(text, encoding='utf-8')
+
+          guild = root / '부유해파리도감의 설정과 전개/설정/생태/군락 초식동물.md'
+          text = guild.read_text(encoding='utf-8')
+          text = text.replace('aliases:\n  - 부유 초식 짐승\n', '')
+          text = text.replace(' 뱃사람은 이 생물을 통틀어 부유 초식 짐승이라고 부른다.', '')
+          guild.write_text(text, encoding='utf-8')
+
+          obsolete = root / '부유해파리도감의 설정과 전개/설정/생태/부유 초식 짐승.md'
+          if obsolete.exists():
+              obsolete.unlink()
+          PY
+
+      - name: Commit synchronization
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No synchronization changes"
+            exit 0
+          fi
+          git commit -m "에피소드 링크와 폐기 표현을 전역 동기화하다"
+          git push origin HEAD:agent/full-discussion-integration-20260815
