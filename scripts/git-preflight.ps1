@@ -5,8 +5,40 @@ param(
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
-$workspace = [IO.Path]::GetFullPath((Split-Path -Parent $PSScriptRoot))
-$expectedOrigin = 'https://github.com/glutfeste/buyu-haepari-dogam.git'
+function Resolve-ExistingPath {
+    param(
+        [Parameter(Mandatory)]
+        [string]$LiteralPath
+    )
+
+    $resolved = Resolve-Path -LiteralPath $LiteralPath -ErrorAction Stop
+    return $resolved.ProviderPath
+}
+
+function ConvertTo-NormalizedRemote {
+    param(
+        [Parameter(Mandatory)]
+        [string]$Url
+    )
+
+    $normalized = $Url.Trim()
+    if ($normalized -match '^git@github\.com:(?<path>.+)$') {
+        $normalized = "https://github.com/$($Matches['path'])"
+    }
+    elseif ($normalized -match '^ssh://git@github\.com/(?<path>.+)$') {
+        $normalized = "https://github.com/$($Matches['path'])"
+    }
+
+    $normalized = $normalized.TrimEnd('/')
+    if ($normalized.EndsWith('.git', [StringComparison]::OrdinalIgnoreCase)) {
+        $normalized = $normalized.Substring(0, $normalized.Length - 4)
+    }
+
+    return $normalized.ToLowerInvariant()
+}
+
+$workspace = Resolve-ExistingPath (Join-Path -Path $PSScriptRoot -ChildPath '..')
+$expectedOrigin = 'https://github.com/glutfeste/buyu-haepari-dogam'
 
 function Get-GitValue {
     param(
@@ -23,18 +55,20 @@ function Get-GitValue {
     return (($result | Out-String).Trim())
 }
 
-$gitDirectory = Join-Path $workspace '.git'
+$gitDirectory = Join-Path -Path $workspace -ChildPath '.git'
 if (-not (Test-Path -LiteralPath $gitDirectory)) {
     throw "Git 메타데이터가 없다: $gitDirectory`n먼저 .\scripts\restore-git-metadata.ps1을 실행한다."
 }
 
-$repositoryRoot = [IO.Path]::GetFullPath((Get-GitValue @('rev-parse', '--show-toplevel')))
+$repositoryRoot = Resolve-ExistingPath (Get-GitValue @('rev-parse', '--show-toplevel'))
 if (-not [String]::Equals($repositoryRoot, $workspace, [StringComparison]::OrdinalIgnoreCase)) {
     throw "Git 저장소 루트가 작업 폴더와 다르다.`n작업 폴더: $workspace`n저장소 루트: $repositoryRoot"
 }
 
-$origin = (Get-GitValue @('remote', 'get-url', 'origin')).TrimEnd('/')
-if (-not [String]::Equals($origin, $expectedOrigin.TrimEnd('/'), [StringComparison]::OrdinalIgnoreCase)) {
+$origin = Get-GitValue @('remote', 'get-url', 'origin')
+$normalizedOrigin = ConvertTo-NormalizedRemote $origin
+$normalizedExpectedOrigin = ConvertTo-NormalizedRemote $expectedOrigin
+if (-not [String]::Equals($normalizedOrigin, $normalizedExpectedOrigin, [StringComparison]::OrdinalIgnoreCase)) {
     throw "origin이 예상 저장소와 다르다.`n예상: $expectedOrigin`n현재: $origin"
 }
 
