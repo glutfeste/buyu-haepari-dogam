@@ -44,17 +44,20 @@
   <text x="616" y="682" class="rank">여과아목</text>
   <text x="616" y="702" class="note">촉수 체판 · 확립</text>
 
-  <path class="line" d="M700,150 V300"/>
+  <path class="line" d="M700,150 V335"/>
   <path class="line" d="M700,185 H790"/>
-  <path class="likely" d="M700,235 H790"/>
+  <path class="line" d="M700,235 H790"/>
   <path class="likely" d="M700,285 H790"/>
+  <path class="likely" d="M700,335 H790"/>
 
   <text x="800" y="190"><tspan class="famA">렌즈눈해파리과</tspan><tspan class="status" fill="#3c7b52">  확립</tspan></text>
-  <text x="800" y="209" class="sp">이리·초롱·노을·거품·잔방울</text>
-  <text x="800" y="240"><tspan class="famA">고착해파리과</tspan><tspan class="status" fill="#9a6a20">  유력</tspan></text>
-  <text x="800" y="259" class="sp">닻·절벽걸이·나락·땅</text>
-  <text x="800" y="290"><tspan class="famA">안개해파리과</tspan><tspan class="status" fill="#9a6a20">  유력</tspan></text>
-  <text x="800" y="309" class="sp">안개·잔안개</text>
+  <text x="800" y="209" class="sp">이리·초롱·거품·잔방울</text>
+  <text x="800" y="240"><tspan class="famA">땅해파리과</tspan><tspan class="status" fill="#3c7b52">  확립</tspan></text>
+  <text x="800" y="259" class="sp">땅·노을</text>
+  <text x="800" y="290"><tspan class="famA">고착해파리과</tspan><tspan class="status" fill="#9a6a20">  유력</tspan></text>
+  <text x="800" y="309" class="sp">닻·절벽걸이·나락</text>
+  <text x="800" y="340"><tspan class="famA">안개해파리과</tspan><tspan class="status" fill="#9a6a20">  유력</tspan></text>
+  <text x="800" y="359" class="sp">안개·잔안개</text>
 
   <path class="line" d="M700,365 V990"/>
   <path class="line" d="M700,380 H790"/>
