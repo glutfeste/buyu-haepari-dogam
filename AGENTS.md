@@ -8,6 +8,18 @@ tags: [창작, 메타]
 
 프로젝트의 설정과 작품 내용은 각 설정·이야기 문서가 현재의 기준이다. 이 파일은 작업 방법과 문서 작성 규칙을 정한다. 별도의 작업지침 문서나 업데이트 로그는 두지 않는다. 변경 이력은 Git의 커밋·diff·revert 기록으로 관리한다.
 
+## 사용자용 — GitHub 최신본을 옵시디언 볼트에 덮어쓰기
+
+GitHub의 `main` 브랜치를 프로젝트 원본으로 본다. `C:\Users\user\Documents\2026-04부터\전체\창작\부유해파리 도감` 로컬 폴더는 작업·열람용 복사본이며, 사용자가 최신본을 내려받을 때 로컬의 추적 파일 변경은 보존하지 않고 GitHub 상태로 덮어쓰는 것이 의도다.
+
+PowerShell을 열고 아래 한 줄을 그대로 붙여넣고 Enter를 누른다.
+
+```powershell
+Set-Location 'C:\Users\user\Documents\2026-04부터\전체\창작\부유해파리 도감'; if (-not (Test-Path .git)) { powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\restore-git-metadata.ps1 }; git fetch origin main; git reset --hard origin/main
+```
+
+이 명령은 GitHub `main`의 추적 파일과 동일하게 로컬 파일을 덮어쓰며, 커밋하지 않은 로컬 수정도 버린다. `git clean`은 실행하지 않으므로 Git이 추적하지 않는 로컬 전용 파일은 삭제하지 않는다. 에이전트가 GitHub를 수정한 뒤 사용자가 로컬 옵시디언 볼트에 최신본을 받고 싶다고 하면 위 한 줄만 안내한다.
+
 ## 프로젝트 개요
 
 떠 있는 세계를 무대로 한 창작 설정 보관소다. 넬라 베린디스가 반려 거품해파리 보글이와 비행선을 갈아타며 세계를 돌고, 부유 해파리를 연구하여 분류하고 도감에 기재한다. 그 여정에 보레아 영구기관과 카를 얀센을 둘러싼 줄거리가 흐른다.
