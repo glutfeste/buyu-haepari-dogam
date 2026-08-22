@@ -1,0 +1,78 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+
+import subprocess
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[2]
+
+
+def replace_once(rel: str, old: str, new: str) -> None:
+    path = ROOT / rel
+    text = path.read_text(encoding="utf-8")
+    count = text.count(old)
+    if count != 1:
+        raise AssertionError(f"{rel}: expected one match, found {count}")
+    path.write_text(text.replace(old, new, 1), encoding="utf-8")
+
+
+replace_once(
+    "원고/본문/10 사천 리브라.md",
+    "테오도어는 자기 발밑의 `감광판` 상자와 담보목록을 번갈아 보다가 촬영자 칸의 빈자리에서 시선을 멈췄다. 파비아가 “촬영 날짜하고 대상 번호를 붙여 여기 편철할 겁니다.”라고 하자, 그는 상자 뚜껑에 매단 표찰을 다시 확인했다.",
+    "테오도어는 발밑 상자의 `감광판` 표찰을 읽은 뒤 담보목록의 빈 촬영자 칸을 손끝으로 짚었다. 파비아가 “촬영 날짜하고 대상 번호를 붙여 여기 편철할 겁니다.”라고 하자, 그는 표찰의 대상 번호를 다시 읽었다.",
+)
+
+replace_once(
+    "원고/본문/23 손바닥 위의 항로.md",
+    "파비아의 시선이 해도 위에서 멈췄다.\n\n“돌아간 게 아니군.”\n\n젊은 추심관리가 고개를 들었다. “예?”\n\n파비아는 탄중 사뭇 가지 중간과 남서쪽으로 굽는 하층풍 표시를 번갈아 봤다.",
+    "파비아는 탄중 사뭇 가지 중간에서 남서쪽 하층풍 표시를 따라 아쿠아 알타 외항까지 연필선을 그었다.\n\n“돌아간 게 아니군.”\n\n젊은 추심관리가 고개를 들었다. “예?”\n\n파비아는 연필 끝으로 탄중 사뭇 가지 중간을 찍었다.",
+)
+
+# 최종 전수 검증 보고서를 최신 본문으로 다시 생성한다.
+subprocess.run(["python", ".github/scripts/buyu_audit_verify.py"], cwd=ROOT, check=True)
+
+b10 = (ROOT / "원고/본문/10 사천 리브라.md").read_text(encoding="utf-8")
+b15 = (ROOT / "원고/본문/15 정정 소견.md").read_text(encoding="utf-8")
+b19 = (ROOT / "원고/본문/19 뒷문.md").read_text(encoding="utf-8")
+b20 = (ROOT / "원고/본문/20 반환 목록.md").read_text(encoding="utf-8")
+b23 = (ROOT / "원고/본문/23 손바닥 위의 항로.md").read_text(encoding="utf-8")
+
+assert "촬영자 칸의 빈자리에서 시선을 멈췄다" not in b10
+assert "그래서 저 군인들이 아까 그 아가씨를 계속 살폈군." in b10
+assert "벡실리아를 제1의 강대국으로 세계에 군림하게 하는 핵심 기반이에요." in b10
+assert "종국적으로는 그렇지 않아. 현실적으로는 그렇지." in b15
+assert "24,000리브라 상당의 적격 담보 제공 또는 채무 이행" in b15
+assert all(x in b19 for x in ("가출 한번 해 봐", "사춘기가 조금 늦었지만", "네 침대는 안 치울 테니까"))
+assert all(x in b20 for x in ("도적단 따위가.", "내 짐 챙겨 올게.", "네가 필요해."))
+assert "파비아의 시선이 해도 위에서 멈췄다" not in b23
+assert all(x in b23 for x in ("탄중 사뭇. 내일도 여기로 가는 척할 거야.", "이 계획은 거기에 걸어.", "돌아간 게 아니군.", "아쿠아 알타야."))
+assert len(list((ROOT / "원고/본문").glob("*.md"))) == 23
+
+subprocess.run(["git", "diff", "--check"], cwd=ROOT, check=True)
+
+# 완료된 작업 문서와 일회성 자동화는 최종 트리에서 전부 제거한다.
+temporary = [
+    "원고/본문 전수 개고 체크리스트.md",
+    "원고/본문 전수 개고 감사 보고서.md",
+    ".github/scripts/buyu_audit_apply.py",
+    ".github/scripts/buyu_audit_verify.py",
+    ".github/scripts/buyu_audit_finalize.py",
+    ".github/workflows/buyu-audit-apply.yml",
+    ".github/workflows/buyu-audit-verify.yml",
+    ".github/workflows/buyu-audit-finalize.yml",
+]
+subprocess.run(["git", "rm", "--", *temporary], cwd=ROOT, check=True)
+subprocess.run(
+    ["git", "add", "--", "원고/본문/10 사천 리브라.md", "원고/본문/23 손바닥 위의 항로.md"],
+    cwd=ROOT,
+    check=True,
+)
+
+message = """개고: 본문 전수 감사 완료 및 작업 문서 정리
+
+Rules: RULE:PROCESS-PROSE-PATTERN-AUDIT, RULE:PROCESS-ALL-RULES-AUDIT, RULE:PROSE-NO-TEMPLATE-BEATS, RULE:PROCESS-RULE-SYNC, RULE:GIT-RULE-TRACE
+Reason: 후속 전수 감사에서 남은 10·23화의 범용 시선 정지 동작을 실제 문서·해도 조작으로 바꾸고, 보호항목·정본·전역 패턴 검증을 모두 통과했다. 작업용 체크리스트와 일회성 도구는 완료 뒤 저장소에서 제거하되 앞선 커밋 이력으로 보존한다.
+Changes: 10화의 촬영자 칸 확인과 23화의 하층풍 재계산을 물리적 작업으로 개고했다. 체크리스트, 감사 보고서, 적용·검증·최종화 스크립트와 세 워크플로를 삭제했다.
+"""
+subprocess.run(["git", "commit", "-F", "-"], cwd=ROOT, input=message, text=True, check=True)
+subprocess.run(["git", "push", "origin", "HEAD:main"], cwd=ROOT, check=True)
