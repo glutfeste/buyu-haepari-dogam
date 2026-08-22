@@ -1,0 +1,48 @@
+name: Fix focus continuity
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/fix-focus-continuity.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  revise:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Apply continuity fix
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('원고/본문/02 거품형 기낭 해파리 — 임시 표제.md')
+          text = path.read_text(encoding='utf-8')
+          old = '활공수와 초식동물이 시야 바깥으로 흘러나가자 넬라는 따라가던 렌즈를 죽은 줄기 그늘로 돌렸다. 투명한 막이 그곳에서 다시 번쩍였다.'
+          new = '활공수와 초식동물이 시야 바깥으로 흘러나가자 넬라는 몸을 돌려 죽은 줄기 그늘 쪽으로 한 걸음 옮겼다. 투명한 막이 그곳에서 다시 번쩍였다.'
+          if text.count(old) != 1:
+              raise RuntimeError(f'expected 1 match, found {text.count(old)}')
+          path.write_text(text.replace(old, new, 1), encoding='utf-8')
+          PY
+
+      - name: Validate and commit
+        shell: bash
+        run: |
+          git diff --check
+          rm .github/workflows/fix-focus-continuity.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --all
+          git commit \
+            -m '개고(2화): 초점 이동의 물리적 연속성 보정' \
+            -m 'Rules: RULE:SCENE-PHYSICAL-CONTINUITY, RULE:PROSE-NO-TEMPLATE-BEATS' \
+            -m 'Reason: 렌즈를 돌린 직후 다시 렌즈를 드는 동작 충돌을 제거한다.' \
+            -m 'Changes: 해파리를 발견하는 전환을 렌즈 조작 대신 몸을 돌려 그늘로 이동하는 동작으로 바꿨다.'
+          git push origin HEAD:main
