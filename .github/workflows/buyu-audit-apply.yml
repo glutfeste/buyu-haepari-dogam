@@ -1,0 +1,59 @@
+name: Apply buyu manuscript audit checklist
+
+on:
+  push:
+    paths:
+      - '.github/workflows/buyu-audit-apply.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Apply checklist revisions and assertions
+        run: python .github/scripts/buyu_audit_apply.py
+
+      - name: Validate and capture diff
+        run: |
+          git diff --check
+          git diff --stat | tee /tmp/buyu-audit-stat.txt
+          git diff --no-ext-diff --binary > /tmp/buyu-audit.diff
+          test -s /tmp/buyu-audit.diff
+
+      - name: Upload audit evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: buyu-manuscript-audit-evidence
+          path: |
+            /tmp/buyu_audit_report.md
+            /tmp/buyu-audit-stat.txt
+            /tmp/buyu-audit.diff
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Commit manuscript and canon revisions
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- '원고/본문' '부유해파리도감의 설정과 전개/이야기/에피소드'
+          git commit -F - <<'EOF'
+          개고(2-23화): 전수 감사 체크리스트 적용
+
+          Rules: RULE:PROCESS-GLOBAL-PATTERN-AUDIT, RULE:PROCESS-ALL-RULES-AUDIT, RULE:PROSE-NO-TEMPLATE-BEATS, RULE:NELLA-METHOD-IMPLICIT-AFTER-ESTABLISHED, RULE:DIALOGUE-NO-READER-QUESTION-STEPS, RULE:PROSE-TECHNICAL-CAUSAL-PRECISION, RULE:PROCESS-IMPACT-TRACE
+          Reason: 보호항목의 법률·관계·전력·세계질서 의미를 유지하면서 반복된 정지 동작, 확립된 연구법 재설명, 군중 웃음 박자, 질문 사다리와 행정 문장 밀도를 전수 감사했다.
+          Changes: 2·5·9·10·13~23화의 국소 문체와 설명 구조를 개고하고, 에피소드 5·7·8을 현재 본문과 동기화했다. 10화 제1강대국 정보, 15화 연대채무 대조, 19화 가출·사춘기, 20화 무손실 압승, 23화 단일 화 구조는 보존했다.
+          EOF
+          git push origin HEAD:main
