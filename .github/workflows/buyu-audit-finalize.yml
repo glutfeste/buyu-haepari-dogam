@@ -24,8 +24,8 @@ jobs:
           python-version: '3.12'
 
       - name: Apply final two prose revisions
-        shell: python
         run: |
+          python - <<'PY'
           from pathlib import Path
 
           def replace_once(path: Path, old: str, new: str) -> None:
@@ -48,6 +48,7 @@ jobs:
               '파비아의 시선이 해도 위에서 멈췄다.\n\n“돌아간 게 아니군.”\n\n젊은 추심관리가 고개를 들었다. “예?”\n\n파비아는 탄중 사뭇 가지 중간과 남서쪽으로 굽는 하층풍 표시를 번갈아 봤다.',
               '파비아는 탄중 사뭇 가지 중간에서 남서쪽 하층풍 표시를 따라 아쿠아 알타 외항까지 연필선을 그었다.\n\n“돌아간 게 아니군.”\n\n젊은 추심관리가 고개를 들었다. “예?”\n\n파비아는 연필 끝으로 탄중 사뭇 가지 중간을 찍었다.',
           )
+          PY
 
       - name: Run final full verification
         run: |
