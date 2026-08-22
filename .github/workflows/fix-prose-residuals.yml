@@ -1,0 +1,64 @@
+name: Fix residual prose patterns
+
+on:
+  push:
+    paths:
+      - '.github/workflows/fix-prose-residuals.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Apply two prose fixes
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          def replace_once(path, old, new):
+              p = Path(path)
+              s = p.read_text(encoding='utf-8')
+              n = s.count(old)
+              if n != 1:
+                  raise SystemExit(f'{path}: expected one match, found {n}')
+              p.write_text(s.replace(old, new, 1), encoding='utf-8')
+
+          replace_once(
+              '원고/본문/10 사천 리브라.md',
+              '테오도어가 창밖에서 멀어지는 검은 제복을 봤다.\n\n테오도어는 감광판 상자 위의 장갑을 집어 꼈다. “그래서 저 군인들이 아까 그 아가씨를 계속 살폈군.”',
+              '창밖으로 검은 제복이 멀어지는 동안 테오도어는 감광판 상자 위의 장갑을 집어 꼈다. “그래서 저 군인들이 아까 그 아가씨를 계속 살폈군.”'
+          )
+
+          replace_once(
+              '원고/본문/21 정오선.md',
+              '넬라는 항해도 위 베라사 늪 표시와 표본 도해를 나란히 놓았다.\n\n넬라는 표본 단면의 넓은 밑판을 항해도 위 베라사 늪의 수위선에 겹쳐 놓았다.',
+              '넬라는 표본 단면의 넓은 밑판을 항해도 위 베라사 늪의 수위선에 겹쳐 놓았다.'
+          )
+
+          b10 = Path('원고/본문/10 사천 리브라.md').read_text(encoding='utf-8')
+          b21 = Path('원고/본문/21 정오선.md').read_text(encoding='utf-8')
+          assert '그래서 저 군인들이 아까 그 아가씨를 계속 살폈군.' in b10
+          assert '벡실리아를 제1의 강대국으로 세계에 군림하게 하는 핵심 기반이에요.' in b10
+          assert '넬라는 항해도 위 베라사 늪 표시와 표본 도해를 나란히 놓았다.' not in b21
+          PY
+
+      - name: Commit and remove temporary workflow
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm -- '.github/workflows/fix-prose-residuals.yml'
+          git add -- '원고/본문/10 사천 리브라.md' '원고/본문/21 정오선.md'
+          git commit -F - <<'EOF'
+          개고(10·21화): 잔여 문두·중복 동작 정리
+
+          Rules: RULE:PROSE-SUBJECT-OPENING-VARIATION, RULE:PROSE-PATTERN-FATIGUE, RULE:PROCESS-PROSE-PATTERN-AUDIT
+          Reason: 10화의 연속 테오도어 문두와 21화의 동일 소품 배치 동작 중복을 제거하되 대사·학술 정보·장면 기능은 그대로 보존한다.
+          Changes: 10화는 검은 제복의 이동과 테오도어의 장갑 동작을 한 호흡으로 합쳤고, 21화는 베라사 늪 자료를 두 번 배치하던 첫 문장을 삭제했다.
+          EOF
+          git push origin HEAD:main
