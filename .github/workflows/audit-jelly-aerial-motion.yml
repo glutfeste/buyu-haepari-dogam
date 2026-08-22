@@ -1,0 +1,95 @@
+name: Audit jelly aerial motion
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/audit-jelly-aerial-motion.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build contextual audit
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          root = Path('원고/본문')
+          out = []
+          motion_terms = (
+              '떠', '날', '박동', '수축', '이완', '오르', '올라', '내려', '낮추', '높이',
+              '고도', '따라', '다가', '접근', '멀어', '움직', '돌아', '비켜', '밀려',
+              '흘러', '기류', '바람', '선회', '촉수', '머물', '붙', '쫓', '피하', '빠져'
+          )
+          static_terms = ('떠 있', '머물', '따라왔', '다가왔', '접근했', '붙었', '곁에 있')
+          aerial_terms = ('고도', '기류', '바람', '선회', '호를 그', '밀려', '촉수가 뒤', '촉수가 바람', '박동', '수축', '이완')
+
+          files = sorted(root.glob('*.md'))
+          out.append('# 부유 해파리 공중 운동 묘사 전수 감사')
+          out.append('')
+          out.append(f'원고 파일 수: {len(files)}')
+          out.append('')
+
+          for path in files:
+              text = path.read_text(encoding='utf-8')
+              lines = text.splitlines()
+              paras = []
+              start = None
+              buf = []
+              for i, line in enumerate(lines, start=1):
+                  if line.strip():
+                      if start is None:
+                          start = i
+                      buf.append(line)
+                  elif buf:
+                      paras.append((start, i - 1, '\n'.join(buf)))
+                      start = None
+                      buf = []
+              if buf:
+                  paras.append((start, len(lines), '\n'.join(buf)))
+
+              selected = []
+              for s, e, para in paras:
+                  has_jelly = '보글이' in para or '해파리' in para
+                  has_motion = any(t in para for t in motion_terms)
+                  if '보글이' in para or (has_jelly and has_motion):
+                      selected.append((s, e, para))
+
+              if not selected:
+                  continue
+
+              static_count = sum(text.count(t) for t in static_terms)
+              aerial_count = sum(text.count(t) for t in aerial_terms)
+              out.append(f'## {path.name}')
+              out.append('')
+              out.append(f'- 후보 문단: {len(selected)} · 정적 위치 표현 적중: {static_count} · 공중 운동 표현 적중: {aerial_count}')
+              out.append('')
+              for s, e, para in selected:
+                  out.append(f'### L{s}–L{e}')
+                  out.append('```text')
+                  out.append(para)
+                  out.append('```')
+                  out.append('')
+
+          Path('부유 해파리 공중 운동 감사.tmp.md').write_text('\n'.join(out), encoding='utf-8')
+          PY
+
+      - name: Commit audit report and remove workflow
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          rm .github/workflows/audit-jelly-aerial-motion.yml
+          git add --all
+          git commit -m '작업: 부유 해파리 공중 운동 묘사 감사 자료 생성'
+          git push origin HEAD:main
