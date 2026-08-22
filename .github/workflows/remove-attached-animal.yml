@@ -1,0 +1,48 @@
+name: Remove attached-animal beat
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/remove-attached-animal.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  revise:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Remove paragraph
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('원고/본문/02 거품형 기낭 해파리 — 임시 표제.md')
+          text = path.read_text(encoding='utf-8')
+          paragraph = '굵은 줄기 밑에는 빠져나가지 못한 붙박이 동물 하나가 몸을 늘어뜨린 채 매달려 있었다. 기저부가 줄기 안쪽까지 박혀 있어 떼어 내면 몸부터 찢어질 터라, 넬라는 꺼냈던 작은 칼을 다시 넣었다.\n\n'
+          count = text.count(paragraph)
+          if count != 1:
+              raise RuntimeError(f'expected one matching paragraph, found {count}')
+          path.write_text(text.replace(paragraph, '', 1), encoding='utf-8')
+          PY
+
+      - name: Validate and commit
+        shell: bash
+        run: |
+          git diff --check
+          rm .github/workflows/remove-attached-animal.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --all
+          git commit \
+            -m '개고(2화): 붙박이 동물 장면 제거' \
+            -m 'Rules: RULE:PROCESS-CURRENT-TEXT-REVISION-TARGET, RULE:SCENE-PHYSICAL-CONTINUITY' \
+            -m 'Reason: 군락 장면의 해파리 초점을 유지하고 요청된 붙박이 동물 대목을 삭제한다.' \
+            -m 'Changes: 붙박이 동물을 떼면 몸이 찢어진다는 두 문장짜리 대목을 제거하고 주변 장면을 그대로 연결했다.'
+          git push origin HEAD:main
