@@ -1,0 +1,46 @@
+name: Verify buyu manuscript audit
+
+on:
+  push:
+    paths:
+      - '.github/workflows/buyu-audit-verify.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  verify-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run full follow-up audit
+        run: python .github/scripts/buyu_audit_verify.py
+
+      - name: Validate report
+        run: |
+          git diff --check
+          test -s '원고/본문 전수 개고 감사 보고서.md'
+
+      - name: Commit follow-up audit report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- '원고/본문 전수 개고 감사 보고서.md'
+          git commit -F - <<'EOF'
+          감사: 본문 전수 개고 후속 검증 보고서
+
+          Rules: RULE:PROCESS-PROSE-PATTERN-AUDIT, RULE:PROCESS-ALL-RULES-AUDIT, RULE:PROCESS-READ-STATE, RULE:PROCESS-IMPACT-TRACE
+          Reason: 체크리스트 적용 뒤 1~23화 전체와 관련 에피소드 문서를 다시 검사해 보호항목, 잔존 옛 문장, 분량, 정지 동작, 방법론 표지와 웃음 박자를 확인했다.
+          Changes: 자동 보호·정본 검사 결과와 수동 기능 판정, 삭제 전 남은 절차를 임시 감사 보고서로 기록했다.
+          EOF
+          git push origin HEAD:main
