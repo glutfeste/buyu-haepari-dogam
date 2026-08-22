@@ -1,0 +1,100 @@
+name: Apply requested manuscript revisions
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/apply-requested-revision.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  revise:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Apply revisions
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          def replace_once(text: str, old: str, new: str, label: str) -> str:
+              count = text.count(old)
+              if count != 1:
+                  raise RuntimeError(f"{label}: expected 1 match, found {count}")
+              return text.replace(old, new, 1)
+
+          chapter1 = Path('원고/본문/01 해파리 당직.md')
+          text = chapter1.read_text(encoding='utf-8')
+          text = replace_once(
+              text,
+              '출항 전날 선장은 넬라의 3급 연금술사 면허증과 해도청 승선 협조 공문을 차례로 읽었다. 공문에는 원양 측량 조사관이 민간 상선이나 측량선의 빈 선석을 직접 계약하며, 승선선박과 항로를 해도청에 등록한다는 내용이 적혀 있었다.',
+              '출항 전날 선장은 넬라의 3급 연금술사 면허증과 해도청 승선 협조 공문을 차례로 읽었다.',
+              'chapter1 redundant policy explanation',
+          )
+          text = replace_once(
+              text,
+              '“승선료하고 표본병, 보존액이 같은 조사비에서 나가요. 낮 견시를 보조하고 갑판 잡무도 맡을게요. 항로 기록과 관찰지도 정리할 수 있어요.”',
+              '“돈은 있어요. 표본병 살 돈이라서 그렇죠. 낮 견시를 보조하고 갑판 잡무도 맡을게요. 항로 기록과 관찰지도 정리할 수 있어요.”',
+              'chapter1 Nella money line',
+          )
+          text = replace_once(
+              text,
+              '첫 배와 항로를 등록한 뒤 입항지마다 관측보고를 보내 주십시오.',
+              '첫 배와 항로를 등록한 뒤 정기적으로 관측보고를 보내 주십시오.',
+              'chapter1 reporting cadence',
+          )
+          chapter1.write_text(text, encoding='utf-8')
+
+          university = Path('부유해파리도감의 설정과 전개/설정/조직/벡실리아/벡실리아 대학.md')
+          text = university.read_text(encoding='utf-8')
+          text = replace_once(
+              text,
+              '조사관은 첫 승선선박과 항로를 등록하고 입항지마다 관측보고를 보낸다.',
+              '조사관은 첫 승선선박과 항로를 등록하고 정기적으로 관측보고를 보낸다.',
+              'university reporting cadence',
+          )
+          university.write_text(text, encoding='utf-8')
+
+          chapter2 = Path('원고/본문/02 거품형 기낭 해파리 — 임시 표제.md')
+          text = chapter2.read_text(encoding='utf-8')
+          text = replace_once(
+              text,
+              '“저런 기낭은 표본으로만 봤어요. 살아 움직이는 개체는 저도 처음이에요.”',
+              '“저런 기낭은 표본으로만 봤어요. 살아 있을 때 기낭실이 찌그러지고 돌아오는 순서는 현장에서만 확인할 수 있어요.”',
+              'chapter2 repeated first-observation phrasing',
+          )
+          text = replace_once(
+              text,
+              '“먹을 것도 거의 끝났어. 갑판장한테 말해. 항로 수첩에서 이 군락은 빼야겠어.”',
+              '“먹을 것도 거의 끝났어. 갑판장한테 말해. 항로 수첩에서 보급 거점 표시는 빼야겠어.”',
+              'chapter2 route notebook precision',
+          )
+          text = replace_once(
+              text,
+              '앞머리를 그을린 갑판원이 그쪽을 보며 말했다. “사는 놈들도 다 빠져나간다. 오래 못 버티겠어.”\n\n활공수와 초식동물이 시야 바깥으로 흘러나가는 동안, 넬라의 시선은 죽은 줄기 그늘에서 거듭 번쩍이는 투명한 막에 멈췄다.',
+              '앞머리를 그을린 갑판원이 그쪽을 보며 말했다. “사는 놈들도 다 빠져나간다. 오래 못 버티겠어.”\n\n굵은 줄기 밑에는 빠져나가지 못한 붙박이 동물 하나가 몸을 늘어뜨린 채 매달려 있었다. 기저부가 줄기 안쪽까지 박혀 있어 떼어 내면 몸부터 찢어질 터라, 넬라는 꺼냈던 작은 칼을 다시 넣었다.\n\n활공수와 초식동물이 시야 바깥으로 흘러나가자 넬라는 따라가던 렌즈를 죽은 줄기 그늘로 돌렸다. 투명한 막이 그곳에서 다시 번쩍였다.',
+              'chapter2 physical focus shift and attached animal beat',
+          )
+          chapter2.write_text(text, encoding='utf-8')
+          PY
+
+      - name: Validate and commit
+        shell: bash
+        run: |
+          git diff --check
+          rm .github/workflows/apply-requested-revision.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --all
+          git commit \
+            -m '개고(1·2화): 승선 동기와 군락 장면 국소 정리' \
+            -m 'Rules: RULE:DIALOGUE-MOTIVATED, RULE:PROSE-NO-TEMPLATE-BEATS, RULE:PROSE-SEMANTIC-PRECISION, RULE:PROCESS-IMPACT-TRACE' \
+            -m 'Reason: 원양 조사관의 보고 주기를 유연하게 정리하고, 넬라의 절약 성향과 2화의 물리적 초점·보급 거점 판정을 선명하게 한다.' \
+            -m 'Changes: 관측보고를 정기 보고로 바꾸고 중복 제도 설명을 덜었으며, 표본병 대사를 복원했다. 2화의 반복 표현·항로 수첩 대사·시선 정지 문형을 고치고 붙박이 동물의 짧은 장면을 되살렸다.'
+          git push origin HEAD:main
