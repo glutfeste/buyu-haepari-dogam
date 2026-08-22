@@ -17,7 +17,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Revise chapter 4, lantern jelly canon, and manuscript markup
+      - name: Revise chapter 4, lantern-jelly canon, and manuscript markup
         shell: bash
         run: |
           python - <<'PY'
@@ -41,20 +41,20 @@ jobs:
               text,
               '# 4화. 불러도 답하지 않음',
               '# 4화. 거짓 등불',
-              'chapter 4 title',
+              'chapter title',
           )
 
-          # 처음 본 군락의 성체를 선원들이 계속 발견할 수 있다는 잘못된 전제를 제거한다.
+          # 처음 본 거품해파리 군락의 성체를 선원들이 계속 발견한다는 잘못된 전제를 삭제한다.
           start = text.index('지나가던 갑판원이 그림을 훑어본 뒤')
           end_marker = '“좋아요. 건드리기 전에 위치부터 알려 주세요. 회복 속도 비교하려면 처음 상태가 필요해요.”'
           end = text.index(end_marker, start) + len(end_marker)
           text = text[:start] + text[end:]
 
-          # 선원의 반문을 자동적인 '~는데?' 말투가 아니라 실제 의문으로 고친다.
+          # 반문을 습관적인 '~는데?'가 아니라 실제 질문으로 고친다.
           start = text.index('그 무렵 선원 몇은 보글이를 벌써')
           end_marker = '넬라는 `배 해파리`를 **선상 통칭** 칸에 적었다. 선원은 보글이에게 과일을 건넸다.'
           end = text.index(end_marker, start) + len(end_marker)
-          naming_block = '''그 무렵 선원 몇은 보글이를 벌써 `배 해파리`라고 부르고 있었다. 한 선원이 과일 조각을 들고 “배 해파리, 또 왔다.”라고 하자 넬라는 수첩에서 고개를 들었다.
+          naming = '''그 무렵 선원 몇은 보글이를 벌써 `배 해파리`라고 부르고 있었다. 한 선원이 과일 조각을 들고 “배 해파리, 또 왔다.”라고 하자 넬라는 수첩에서 고개를 들었다.
 
 “그건 이 배에서만 부르는 이름으로 해 주세요.”
 
@@ -65,20 +65,20 @@ jobs:
 “그럼 네가 먼저 이름을 정해.”
 
 넬라는 기록 칸에 `배 해파리 — 선상 통칭`이라고 적었다. 선원은 보글이에게 과일을 건넸다.'''
-          text = text[:start] + naming_block + text[end:]
+          text = text[:start] + naming + text[end:]
 
-          # 초롱해파리의 핵심인 거짓 등불 유인과 늦은 인지를 장면의 인과로 복원한다.
+          # 불완전한 목격담만 남겨 둔 상태에서 거짓 등불에 실제로 유인되도록 장면을 다시 쓴다.
           tail_start = text.index('접힌 페이지 하나에는 삐뚤어진 동그라미')
-          lantern_tail = '''접힌 페이지 하나에는 안개 속에 홀로 뜬 노란 점과, 그 아래를 가로지르는 굵은 선들이 그려져 있었다. 같은 면에 여러 사람이 덧붙여 쓴 듯 글씨의 크기와 잉크색이 달랐다.
+          tail = '''접힌 페이지 하나에는 안개 속에 홀로 뜬 노란 점과 그 아래를 가로지르는 굵은 선들이 그려져 있었다. 같은 면에 여러 사람이 덧붙여 쓴 듯 글씨의 크기와 잉크색이 달랐다.
 
 초롱 — 선상 통칭.
-항구도 계류탑도 없는 무풍지대에서 노란 등 하나가 보이면 그쪽으로 기수를 돌리지 말 것.
-안개가 걷혀도 불빛 아래에 탑이나 선체가 보이지 않으면 즉시 이탈할 것.
-가까이 가서 정체를 확인하려 들면 늦는다.
+깊은 무풍지대에서 보이는 노란 등.
+항구가 없는 공역에서도 나타난다는 말이 있음.
+가까이에서 확인한 기록은 없음.
 
-마지막 줄 옆에는 `등불 아래의 선을 밧줄로 보지 마라`라는 문장이 번진 잉크로 붙어 있었다. 넬라는 동그라미 아래의 선들이 등을 매단 줄인지, 경고가 가리키는 다른 무엇인지 판단하지 못해 그림을 옮기지 않았다.
+마지막 줄 옆에는 누군가 `등 아래의 선은 계류삭일지도 모름`이라고 덧붙여 놓았다. 넬라는 노란 점이 배의 등인지 항로표지인지조차 알 수 없어, 통칭과 목격 위치만 자기 수첩에 옮겼다.
 
-수첩 위를 작은 원으로 돌던 보글이의 갓이 갑자기 오므라들었다. 촉수가 한쪽으로 쓸리며 선회가 끊겼고 렌즈눈 두 개가 선수 우현을 향했다. 평소라면 새로운 냄새나 물건 쪽으로 먼저 다가갔지만, 이번에는 고도를 낮춰 넬라의 목 가까이로 파고들었다.
+그때 수첩 위를 작은 원으로 돌던 보글이의 갓이 갑자기 오므라들었다. 촉수가 한쪽으로 쓸리며 선회가 끊겼고 렌즈눈 두 개가 선수 우현을 향했다. 평소라면 새로운 냄새나 물건 쪽으로 먼저 다가갔지만, 이번에는 고도를 낮춰 넬라의 목 가까이로 파고들었다.
 
 넬라는 기록보다 망루를 먼저 올려다봤다. “견시, 우현 앞쪽을 다시 봐 주세요. 보글이가 계속 저쪽을 경계해요.”
 
@@ -86,29 +86,31 @@ jobs:
 
 넬라도 난간 안쪽에서 렌즈를 들었다. 노란 빛은 일정한 간격으로 밝아졌다가 흐려졌고, 짙은 안개 때문에 그 아래에 무엇이 있는지는 보이지 않았다. 선장이 선교 밖으로 나오자 항해사는 항로도에서 현재 공역을 짚었다. 가까운 항구도 계류탑도 표시되어 있지 않았다.
 
-“새 표지인지 안개에 가린 배인지 확인한다.” 선장은 조타수에게 손짓했다. “기관 미속. 우현으로 다섯 도. 너무 붙지는 마.”
+“표류선일 수도 있다.” 선장은 조타수에게 손짓했다. “기관 미속. 우현으로 다섯 도. 신호부터 보내.”
 
-기수가 조금 돌아가자 노란 빛은 선수 앞의 안개 속에 놓였다. 탑도 선체도 보이지 않았지만, 다른 기준점이 모두 사라진 공역에서 그 빛만은 항로를 잡아 주는 표지처럼 같은 높이를 지켰다. 상선은 낮은 출력으로 빛을 향해 나아갔다.
+갑판원이 선수 항법등의 차폐판을 여닫아 접근 신호를 보냈다. 노란 빛은 답신 대신 원래의 느린 간격으로 밝아졌다가 어두워졌다. 안개에 갇힌 배가 신호를 보지 못했거나, 사람이 없는 자동 표지일 수도 있었다.
 
-몇 분이 지나자 망원경 속 노란 원은 조금씩 커졌고 가장자리도 또렷해졌다. 그런데 빛을 받쳐야 할 탑이나 기낭, 돛대의 그림자는 끝내 나타나지 않았다. 난간에 기대 있던 갑판원이 먼저 중얼거렸다.
+기수가 조금 돌아가자 노란 빛은 선수 정면의 안개 속에 놓였다. 탑도 선체도 보이지 않았지만 다른 기준점이 모두 사라진 공역에서 그 빛만은 항로를 잡아 주는 표지처럼 같은 높이를 지켰고, 상선은 낮은 출력으로 그쪽을 향해 나아갔다.
 
-“계류등이면 기둥이 보여야 하는데.”
+몇 분이 지나자 망원경 속 노란 원은 조금씩 커졌고 가장자리도 또렷해졌다. 그런데 불빛을 받쳐야 할 탑이나 기낭, 돛대의 그림자는 끝내 나타나지 않았다. 난간에 기대 있던 갑판원이 먼저 중얼거렸다.
 
-넬라의 손이 펼쳐 둔 수첩 마지막 줄에서 멈췄다. 안개 속 노란 빛 아래로 아주 옅은 선 하나가 비스듬히 지나갔다. 바람에 흔들리는 밧줄처럼 보였지만 시작점도 끝점도 찾을 수 없었다.
+“배라면 불만 보일 리가 없는데.”
 
-“기수 돌려요.” 넬라는 망원경을 내리지 않은 채 말했다. “저건 배도 표지도 아니에요.”
+넬라의 손이 펼쳐 둔 항로 수첩에서 멈췄다. 안개 속 노란 빛 아래로 아주 옅은 선 하나가 비스듬히 지나갔다. 계류삭처럼 보였지만 시작점도 끝점도 찾을 수 없었고, 바람이 거의 없는데도 선 끝이 천천히 말렸다.
+
+“기수 돌려요.” 넬라는 망원경을 내리지 않은 채 말했다. “저건 밧줄이 아니에요.”
 
 선장은 곧바로 “좌현 전타. 원침로 복귀!”라고 외쳤다.
 
-조타수가 바퀴를 돌리고 기관 출력이 올라갔다. 선체가 왼쪽으로 기울기 시작했지만 기수는 예상만큼 따라오지 않았다. 우현 아래에서 젖은 밧줄이 목재를 문지르는 듯한 소리가 길게 났고, 곧 좌현에서도 같은 마찰음이 이어졌다.
+조타수가 바퀴를 돌리고 기관 출력이 올라갔다. 선체가 왼쪽으로 기울기 시작했지만 기수는 예상만큼 따라오지 않았다. 우현 아래에서 젖은 밧줄이 목재를 문지르는 듯한 소리가 길게 났고 곧 좌현에서도 같은 마찰음이 이어졌다.
 
 안개가 잠깐 얇아졌다.
 
-노란 등은 허공에 따로 떠 있는 불빛이 아니었다. 사람 머리만 한 발광부가 거대한 반투명 막 아래에 붙어 있었고, 조금 전까지 밧줄로 보이던 선들은 선체 아래와 돛줄 사이를 이미 가로지른 긴 촉수였다.
+노란 등은 허공에 따로 뜬 불빛이 아니었다. 사람 머리만 한 발광부가 거대한 반투명 막 아래에 붙어 있었고, 조금 전까지 계류삭으로 보이던 선들은 선체 아래와 돛줄 사이를 이미 가로지른 긴 촉수였다.
 
-“초롱이에요.” 넬라가 외쳤다. “등불이 아니라 해파리의 발광부예요!”
+“초롱해파리예요!” 넬라가 외쳤다. “저 빛이 발광부예요!”
 
-첫 촉수가 우현 난간을 지나 돛줄에 감겼고, 두 번째는 선체 아래를 훑으며 좌현으로 올라왔다. 상선은 빛을 확인하려 접근하는 동안 이미 여러 촉수 사이로 들어와 있었다.
+첫 촉수가 우현 난간을 지나 돛줄에 감겼고 두 번째는 선체 아래를 훑으며 좌현으로 올라왔다. 상선은 등불의 주인을 찾는 동안 이미 여러 촉수 사이로 들어와 있었다.
 
 “후진 전속!”
 
@@ -117,54 +119,50 @@ jobs:
 “숙여요!”
 
 넬라의 외침과 거의 동시에 첫 촉수가 갑판을 휩쓸었다.'''
-          text = text[:tail_start] + lantern_tail + '\n'
-
+          text = text[:tail_start] + tail + '\n'
           new_path.write_text(text, encoding='utf-8')
           old_path.unlink()
 
-          # 파일명·표제·링크에 남은 옛 제목을 전역에서 갱신한다.
-          for path in Path('.').rglob('*'):
-              if not path.is_file() or '.git' in path.parts:
+          # 옛 파일명과 표제를 마크다운 문서에서 갱신한다.
+          for path in Path('.').rglob('*.md'):
+              if '.git' in path.parts:
                   continue
-              try:
-                  current = path.read_text(encoding='utf-8')
-              except UnicodeDecodeError:
-                  continue
+              current = path.read_text(encoding='utf-8')
               updated = current.replace('04 불러도 답하지 않음.md', '04 거짓 등불.md')
               updated = updated.replace('불러도 답하지 않음', '거짓 등불')
               if updated != current:
                   path.write_text(updated, encoding='utf-8')
 
-          # 초롱해파리 설정에서도 발광부만 먼저 보여 먹이가 촉수 안으로 들어가는 유인 구조를 명시한다.
+          # 설정도 '발광부만 먼저 보임 → 스스로 접근 → 정체를 알 때에는 포획 범위'의 구조로 맞춘다.
           setting_path = Path('부유해파리도감의 설정과 전개/설정/생태/해파리/초롱해파리.md')
           setting = setting_path.read_text(encoding='utf-8')
           setting = replace_once(
               setting,
               '> 막의 발광기로 먹이를 유인하여 긴 촉수로 포획하는 매복형 포식 해파리. 그 빛을 등불로 오인한 뱃사람의 괴담이 따른다.',
               '> 노란 발광부를 항로표지나 등불처럼 보여 먹이가 스스로 촉수 사이로 들어오게 하는 매복형 포식 해파리. 몸과 촉수는 안개 속에서 거의 보이지 않아 정체를 알아챌 때에는 이미 포획 범위에 든 경우가 많다.',
-              'lantern jelly summary',
+              'setting summary',
           )
           setting = replace_once(
               setting,
               "머리 크기다. 막 아래에 발광기가 있어 어두운 환경에서 노란색 빛을 발한다. 통칭 '초롱'이 이 빛에서 유래한다. 빛 아래로 점착성 긴 촉수를 여러 가닥 드리운다.",
               "안개 속에서 먼저 보이는 것은 사람 머리 크기의 노란 발광부다. 막의 나머지 부분은 넓고 투명하여 빛이 약한 곳에서는 윤곽을 알아보기 어렵다. 통칭 '초롱'은 이 발광부에서 유래한다. 점착성 긴 촉수는 발광부 아래와 주변으로 넓게 뻗으며, 멀리서는 발광부만 떨어져 보여 계류등이나 항로표지처럼 보인다.",
-              'lantern jelly form',
+              'setting form',
           )
           setting = replace_once(
               setting,
               '빛이 약한 깊은 무풍지대와 두꺼운 구름의 그늘에 서식한다. 한 위치에 부유하며 발광기를 점등하여, 빛에 집결하는 소형 동물과 플랑크톤을 섭식하는 소형 해파리를 유인한다. 먹이가 촉수 범위에 진입하면 점착성 촉수로 포박하여 견인한다.',
               '빛이 약한 깊은 무풍지대와 두꺼운 구름의 그늘에 서식한다. 한 위치에 부유하며 발광부만 안개 밖으로 드러내 소형 동물과 플랑크톤을 섭식하는 해파리를 유인한다. 먹이는 빛을 향해 접근하는 동안 투명한 촉수 사이로 들어가며, 몸의 윤곽을 알아볼 거리에서는 이미 점착성 촉수가 닿을 수 있다. 촉수에 걸린 먹이는 포박한 뒤 막 아래로 견인한다.',
-              'lantern jelly hunting',
+              'setting hunting',
           )
           setting = replace_once(
               setting,
               '짙은 구름 속이나 야간에 낙오한 소형선과 선원이 초롱해파리의 빛을 항구의 등불로 오인하여 접근하는 사례가 있다. 빛을 추종하여 촉수에 근접한 사람은 점착성 촉수에 포박되고 독에 화상을 입는다. 어둠 속의 등불을 추종하지 말라는 뱃사람의 괴담이 이 종에서 유래했다. [[유랑방주]]는 이 빛을 거짓 등불로 운용하여 선박을 유인한다는 소문이 있다.',
               '짙은 구름 속이나 야간에 낙오한 소형선과 선원이 초롱해파리의 발광부를 항구의 등불, 계류등, 항로표지로 오인하여 접근하는 사례가 있다. 안개 때문에 탑이나 선체가 보이지 않는다는 사실을 의심할 무렵에는 배가 이미 투명한 촉수 사이에 들어간 경우가 많다. 촉수에 포박된 사람은 독에 화상을 입는다. 어둠 속의 등불을 추종하지 말라는 뱃사람의 괴담이 이 종에서 유래했다. [[유랑방주]]는 이 빛을 거짓 등불로 운용하여 선박을 유인한다는 소문이 있다.',
-              'lantern jelly people',
+              'setting people',
           )
           setting_path.write_text(setting, encoding='utf-8')
 
-          # 원고 본문의 굵게·기울임용 별표를 전부 제거한다.
+          # 소설 본문의 굵게·기울임 마크다운 별표를 모두 제거한다.
           body_paths = sorted(Path('원고/본문').glob('*.md'))
           for path in body_paths:
               current = path.read_text(encoding='utf-8')
@@ -172,42 +170,40 @@ jobs:
               if cleaned != current:
                   path.write_text(cleaned, encoding='utf-8')
 
-          # 재발 방지 원칙과 점검 항목을 추가한다.
+          # 재발 방지 원칙과 체크를 동기화한다.
           rules_path = Path('원고/집필 원칙.md')
           rules = rules_path.read_text(encoding='utf-8')
-          anchor = '- `[RULE:DESCRIPTION-SELECTIVE]` 묘사를 늘린다고 모든 사물을 같은 밀도로 나열하지 않는다. 시점 인물이 주목할 만한 것, 행동에 영향을 주는 것, 분위기나 관계를 바꾸는 것, 나중의 판단에 증거가 되는 세부를 골라 구체적으로 쓴다.'
+          rule_anchor = '- `[RULE:DESCRIPTION-SELECTIVE]` 묘사를 늘린다고 모든 사물을 같은 밀도로 나열하지 않는다. 시점 인물이 주목할 만한 것, 행동에 영향을 주는 것, 분위기나 관계를 바꾸는 것, 나중의 판단에 증거가 되는 세부를 골라 구체적으로 쓴다.'
           rule = '- `[RULE:PROSE-NO-MARKDOWN-EMPHASIS]` 원고 본문에서는 굵게·기울임 마크다운으로 중요도를 대신하지 않는다. 독자가 알아야 할 강조는 문장 순서, 반복, 인물의 반응과 장면의 결과로 만든다. 표제·기록문·외침도 별표로 감싸지 않는다.'
           if 'RULE:PROSE-NO-MARKDOWN-EMPHASIS' not in rules:
-              rules = replace_once(rules, anchor, anchor + '\n' + rule, 'markdown emphasis rule')
+              rules = replace_once(rules, rule_anchor, rule_anchor + '\n' + rule, 'rule insertion')
           check_anchor = '56. `[RULE:SCENE-DESCRIPTION-CARRIES]` 대사를 지워도 공간과 행동이 그려지는가?'
           check = '56a. `[RULE:PROSE-NO-MARKDOWN-EMPHASIS]` 원고 본문에 굵게·기울임용 별표가 남아 있지 않은가?'
           if check not in rules:
-              rules = replace_once(rules, check_anchor, check_anchor + '\n' + check, 'markdown emphasis checklist')
+              rules = replace_once(rules, check_anchor, check_anchor + '\n' + check, 'check insertion')
           rules_path.write_text(rules, encoding='utf-8')
 
           # 검증
           if old_path.exists() or not new_path.exists():
-              raise RuntimeError('chapter 4 rename failed')
+              raise RuntimeError('chapter rename failed')
           chapter4 = new_path.read_text(encoding='utf-8')
-          forbidden = [
+          forbidden = (
               '성체 중에 상처 난 놈',
               '우리가 학술지 낼 일도 없는데?',
               '언젠가 만나면 적어도 어느 쪽이 몸인지는 그려야겠네.',
               '해파리예요. 지금 거리에서 돌아요.',
               '불러도 답하지 않음',
-          ]
+          )
           for phrase in forbidden:
               if phrase in chapter4:
-                  raise RuntimeError(f'forbidden chapter 4 residue: {phrase}')
-
+                  raise RuntimeError(f'chapter 4 residue: {phrase}')
           for path in body_paths:
               if '*' in path.read_text(encoding='utf-8'):
-                  raise RuntimeError(f'markdown emphasis marker remains in {path}')
-
+                  raise RuntimeError(f'markdown emphasis remains: {path}')
           setting_check = setting_path.read_text(encoding='utf-8')
-          for phrase in ('항로표지', '이미 포획 범위', '투명한 촉수 사이'):
+          for phrase in ('항로표지', '포획 범위', '투명한 촉수 사이'):
               if phrase not in setting_check:
-                  raise RuntimeError(f'lantern setting synchronization missing: {phrase}')
+                  raise RuntimeError(f'setting synchronization missing: {phrase}')
           PY
 
       - name: Validate, clean, and commit
@@ -221,5 +217,5 @@ jobs:
           git commit \
             -m '개고(4화·초롱해파리): 거짓 등불 유인 복원과 본문 강조 표기 제거' \
             -m 'Reason: 성체 관찰 대사와 일부 문장이 인물의 지식·의미·말투에 맞지 않았고, 초롱해파리의 핵심 포식 방식인 등불 오인과 지연된 인지가 장면에서 사라져 있었다.' \
-            -m 'Changes: 4화를 거짓 등불로 개제하고 접근부터 포획까지의 유인 인과를 다시 썼으며, 초롱해파리 설정을 동기화하고 원고 본문의 별표 강조를 전부 제거했다.'
+            -m 'Changes: 4화를 거짓 등불로 개제하고 불완전한 목격담·등불 오인·접근·뒤늦은 촉수 인지의 인과를 다시 썼으며, 설정을 동기화하고 원고 본문의 별표 강조를 전부 제거했다.'
           git push origin HEAD:main
