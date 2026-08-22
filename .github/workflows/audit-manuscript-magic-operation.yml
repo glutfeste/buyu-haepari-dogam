@@ -1,0 +1,66 @@
+name: Audit manuscript magic operation contexts
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/audit-manuscript-magic-operation.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Extract every manuscript magic-operation context
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          pattern = re.compile(r'은침의|은판|은선|연금술|배열|결속|구문|사역|발동|실행')
+          out = ['# 원고 연금술·매체 운용 문맥 전수 감사', '']
+          total = 0
+          for path in sorted(Path('원고/본문').glob('*.md')):
+              lines = path.read_text(encoding='utf-8').splitlines()
+              hits = [i for i, line in enumerate(lines) if pattern.search(line)]
+              if not hits:
+                  continue
+              total += len(hits)
+              out.append(f'## {path.name} — {len(hits)}줄')
+              out.append('')
+              merged = []
+              for i in hits:
+                  a, b = max(0, i - 1), min(len(lines), i + 2)
+                  if merged and a <= merged[-1][1]:
+                      merged[-1] = (merged[-1][0], max(merged[-1][1], b))
+                  else:
+                      merged.append((a, b))
+              for a, b in merged:
+                  out.append(f'### L{a+1}–L{b}')
+                  out.append('```text')
+                  for j in range(a, b):
+                      marker = '>>' if pattern.search(lines[j]) else '  '
+                      out.append(f'{marker} {j+1:04d}: {lines[j]}')
+                  out.append('```')
+                  out.append('')
+          out.insert(2, f'총 적중 줄 수: {total}')
+          out.insert(3, '')
+          Path('원고 연금술 운용 전수 감사.tmp.md').write_text('\n'.join(out) + '\n', encoding='utf-8')
+          PY
+
+      - name: Commit report and remove workflow
+        shell: bash
+        run: |
+          rm .github/workflows/audit-manuscript-magic-operation.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --all
+          git commit -m '작업: 원고 연금술 운용 전수 감사 결과 생성'
+          git push origin HEAD:main
