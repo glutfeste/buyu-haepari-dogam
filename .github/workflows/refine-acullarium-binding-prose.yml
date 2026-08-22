@@ -1,0 +1,77 @@
+name: Refine acularium binding prose
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/refine-acullarium-binding-prose.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  revise:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Refine technical phrasing
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          def replace_once(path: Path, old: str, new: str, label: str) -> None:
+              text = path.read_text(encoding='utf-8')
+              count = text.count(old)
+              if count != 1:
+                  raise RuntimeError(f'{label}: expected 1 match, found {count}')
+              path.write_text(text.replace(old, new, 1), encoding='utf-8')
+
+          p = Path('원고/본문/03 죽어 가는 섬.md')
+          replace_once(
+              p,
+              '은침의에 장착해 둔 건조 배열에 장갑만 대상 결속해 실행하자',
+              '은침의에 장착해 둔 건조 배열의 대상에 장갑만 결속해 실행하자',
+              'chapter 3 binding grammar',
+          )
+
+          p = Path('원고/본문/05 등불을 따라가지 말 것.md')
+          replace_once(
+              p,
+              '넬라는 그 수축 순서를 해파리 사역 배열에 결속했지만,',
+              '넬라는 관찰한 수축 순서에 맞춰 세 촉수를 해파리 사역 배열의 대상에 결속했지만,',
+              'chapter 5 target binding precision',
+          )
+          replace_once(
+              p,
+              '다음 수축이 시작되기 직전 첫 가닥에 결속한 신호를 늦추자',
+              '다음 수축이 시작되기 직전 첫 가닥의 수축 신호만 늦추자',
+              'chapter 5 signal precision',
+          )
+
+          p = Path('원고/본문/09 한 장 40센티모.md')
+          replace_once(
+              p,
+              '매체의 구조를 비교해 보이려고 넬라는 자기 은침의를 열어 은판 하나를 반쯤 뽑아 옆에 놓았다.',
+              '매체의 구조를 비교해 보이려고 넬라는 자기 은침의를 열어 은판 하나를 꺼내 정시기 옆에 놓았다.',
+              'chapter 9 comparison movement',
+          )
+          PY
+
+      - name: Validate and commit
+        shell: bash
+        run: |
+          git diff --check
+          rm .github/workflows/refine-acullarium-binding-prose.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --all
+          git commit \
+            -m '개고(3·5·9화): 은침의 운용 문장 정밀 보정' \
+            -m 'Rules: RULE:MEDIA-ACULARIUM-CLOSED-LOADOUT, RULE:MEDIA-ROLE-SEPARATION, RULE:PROSE-TECHNICAL-CAUSAL-PRECISION' \
+            -m 'Reason: 닫힌 은침의 운용을 반영한 뒤에도 대상 결속의 문법과 비교 장면의 물리 동작을 더 정확하게 맞출 필요가 있었다.' \
+            -m 'Changes: 배열의 대상에 실제 물체와 촉수를 결속하도록 문장을 고치고, 9화에서는 매체 비교를 위해 판을 의도적으로 꺼내는 동작을 명확히 했다.'
+          git push origin HEAD:main
