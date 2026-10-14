@@ -1,14 +1,41 @@
 {
   "schema_version": 1,
-  "revision": 0,
+  "revision": 2,
   "project": "부유 해파리 도감",
   "repository": "glutfeste/buyu-haepari-dogam",
   "branch": "main",
   "execution": "chat_turn",
-  "active_job": null,
-  "resume_job": null,
-  "jobs": {},
-  "last_event": {},
+  "active_job": "marton-borea-20261015",
+  "resume_job": "marton-borea-20261015",
+  "jobs": {
+    "marton-borea-20261015": {
+      "chapter": 5,
+      "request": "내 생각에 너개 영구기관의 성격을 계속 착각하는거같아ㅡ영구기관으느이우없이 악행히거니 냉정히거나 ㄱ,런 저직이 아니야 그냥 다른 국가랑 똑같은 정도로 냉정해 애초에 국가가 냉정하다는게 뭔데 그런건 없어. 영구기관의 특징은 카를 얀센이 자기 자신을 보호하기 위한 방어설비로서 공격적 현실주의를 챠택해서 절대적 안보랄 추구한다는게 특징적인 덧일뿐이야 그리고 이 절대적 안버난 다른 세력들도 정도의 차이가 잇을뿐 다 하는거야. 자끄 시발 당연한걸 마치 영구기광만의 특징인 것처럼 하지마그리거 전투구문사가 므ㅓㄴ데 시발 진짜 떠 구채적으로 해 구체적ㅇ,로",
+      "stage": "context",
+      "sources": {
+        "AGENTS.md": "38fe8d1e86591e0d136a9cee2cf6b35d9e3e69f1",
+        "scripts/novel_workflow.py": "cc41f7f9a8e37dd33c91df07a55614443ea67dc1",
+        "부유해파리도감의 설정과 전개/설정/인물/뤼메리-훈디아/마르톤 케메니.md": "b560d5fc4ba5436352133f86b5692efa399b25e6",
+        "부유해파리도감의 설정과 전개/설정/인물/뤼메리-훈디아/벤체 케메니.md": "0c1255f4ad6947d65aa3eb2fb0c1a121f5e377a5",
+        "부유해파리도감의 설정과 전개/설정/인물/보레아 영구기관/카를 얀센.md": "caa337b521ca019d444e65e14003eb140bb0fe2b",
+        "원고/집필 원칙.md": "2b96a608058a57ec051526914ebfcd6bfe94f73e",
+        "집필시스템/시작.md": "56b47d54df989435424ff589d584e32d2447de04",
+        "집필시스템/원고목록.json": "90fbc1a3ea03586ec957d7d0de078d18639764d5"
+      },
+      "artifacts": {},
+      "partial": {
+        "path": "집필시스템/작업/marton-borea-20261015/context.md",
+        "sha": "bc133e70ee1c3c20aa8efd46f2e0af71fb5996e3",
+        "stage": "context"
+      },
+      "read_attestation": {},
+      "review_decision": {}
+    }
+  },
+  "last_event": {
+    "id": "marton-borea-20261015-ideas-v1",
+    "fingerprint": "877782291aaba7eda47c23df064c294e1fd14901699678d386661d83136b93ef"
+  },
   "installation": {
     "date": "2026-10-14",
     "existing_manuscript_count": 24,
