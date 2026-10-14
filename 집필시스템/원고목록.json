@@ -1,0 +1,170 @@
+{
+  "schema_version": 1,
+  "repository": "glutfeste/buyu-haepari-dogam",
+  "branch": "main",
+  "source_head": "ab007031e31c6b80187c2382cd534c30bfa92341",
+  "checked_at": "2026-10-14",
+  "scope": "file_inventory",
+  "manuscript_directory": "원고/본문",
+  "manuscript_tree_sha": "23b845381259156449a1786e0ec1df20e4400cae",
+  "source_roots": [
+    "부유해파리도감의 설정과 전개/설정",
+    "부유해파리도감의 설정과 전개/이야기",
+    "원고/본문"
+  ],
+  "rule_paths": [
+    "AGENTS.md",
+    "원고/집필 원칙.md"
+  ],
+  "planning_paths": [
+    "투고 완결 시놉시스.md",
+    "투고 작품기획서.md",
+    "부유해파리도감의 설정과 전개/이야기/줄거리.md"
+  ],
+  "manuscripts": [
+    {
+      "chapter": 1,
+      "path": "원고/본문/01 해파리 당직.md",
+      "sha": "4f694042a0ca9012b964c90b6afd3ad3901d942a",
+      "reading": "catalogued"
+    },
+    {
+      "chapter": 2,
+      "path": "원고/본문/02 거품형 기낭 해파리 — 임시 표제.md",
+      "sha": "c2d2cd62bdaaccf7ea5ca665ef7ddecdc5ccfeeb",
+      "reading": "catalogued"
+    },
+    {
+      "chapter": 3,
+      "path": "원고/본문/03 죽어 가는 섬.md",
+      "sha": "3f8106d916ada599f43cb051cb27bd28581486bd",
+      "reading": "catalogued"
+    },
+    {
+      "chapter": 4,
+      "path": "원고/본문/04 선체가 보이기 전에는 접근하지 말 것.md",
+      "sha": "3040aee0e5c27b184f7565fb2eb8833349294198",
+      "reading": "catalogued"
+    },
+    {
+      "chapter": 5,
+      "path": "원고/본문/05 등불을 따라가지 말 것.md",
+      "sha": "4dec9db20728503bf3b2a1581349595d51b436f1",
+      "reading": "catalogued"
+    },
+    {
+      "chapter": 6,
+      "path": "원고/본문/06 미확인 대형 부유생물.md",
+      "sha": "31820e3a4500770916ee466891c000688ab57846",
+      "reading": "catalogued"
+    },
+    {
+      "chapter": 7,
+      "path": "원고/본문/07 사진사 찾을 것.md",
+      "sha": "16b2d7e3f0e680401b52a6716282b6d61251ad3b",
+      "reading": "catalogued"
+    },
+    {
+      "chapter": 8,
+      "path": "원고/본문/08 땅해파리.md",
+      "sha": "96976464df58f78c1f48827d77b0cbcbbd9f7ed4",
+      "reading": "catalogued"
+    },
+    {
+      "chapter": 9,
+      "path": "원고/본문/09 한 장 40센티모.md",
+      "sha": "a2641f894f5785ec34d9b96278e8908c87404a09",
+      "reading": "catalogued"
+    },
+    {
+      "chapter": 10,
+      "path": "원고/본문/10 사천 리브라.md",
+      "sha": "4677ada51582bcd5869fede3faaf15662fa872af",
+      "reading": "catalogued"
+    },
+    {
+      "chapter": 11,
+      "path": "원고/본문/11 비늘 아래의 붉은 선.md",
+      "sha": "6c15feb3cfbaf4761c1240062e68cb4247a1bdf2",
+      "reading": "catalogued"
+    },
+    {
+      "chapter": 12,
+      "path": "원고/본문/12 정확한 평가.md",
+      "sha": "28215b5d562e3a3f1720f2ca1b90c3291065aa94",
+      "reading": "catalogued"
+    },
+    {
+      "chapter": 13,
+      "path": "원고/본문/13 첫 배.md",
+      "sha": "90f0ec936d20e2b94e0ae879005778cbcbaf1b78",
+      "reading": "catalogued"
+    },
+    {
+      "chapter": 14,
+      "path": "원고/본문/14 노을해파리.md",
+      "sha": "39c9da1a197aacf4b6007fa55ec702fa02705aa6",
+      "reading": "catalogued"
+    },
+    {
+      "chapter": 15,
+      "path": "원고/본문/15 정정 소견.md",
+      "sha": "b0885829d68992a6c889682803a724b23e36c6d9",
+      "reading": "catalogued"
+    },
+    {
+      "chapter": 16,
+      "path": "원고/본문/16 실해파리 — 현장명.md",
+      "sha": "2a54a4464d9a7bea3cd3ae4fe7e5b91e6ec9efc7",
+      "reading": "catalogued"
+    },
+    {
+      "chapter": 17,
+      "path": "원고/본문/17 도난 목록.md",
+      "sha": "b13cad260915777e442a41f6059dd9f17fe300c1",
+      "reading": "catalogued"
+    },
+    {
+      "chapter": 18,
+      "path": "원고/본문/18 공모 혐의.md",
+      "sha": "206030a67a1dab6948c67bff75ffca5a95ad89e5",
+      "reading": "catalogued"
+    },
+    {
+      "chapter": 19,
+      "path": "원고/본문/19 뒷문.md",
+      "sha": "48b4e4624ac94b294f4929892832303dbc753825",
+      "reading": "catalogued"
+    },
+    {
+      "chapter": 20,
+      "path": "원고/본문/20 반환 목록.md",
+      "sha": "2880cf05f81da57f1e211befccf99f4684c29615",
+      "reading": "catalogued"
+    },
+    {
+      "chapter": 21,
+      "path": "원고/본문/21 정오선.md",
+      "sha": "6936c9cc84c00a119f51fa4dc7e2cf5e7c223fd0",
+      "reading": "catalogued"
+    },
+    {
+      "chapter": 22,
+      "path": "원고/본문/22 첫 대양.md",
+      "sha": "d1d7b814498fd78028153965686ee1f1b7897f04",
+      "reading": "catalogued"
+    },
+    {
+      "chapter": 23,
+      "path": "원고/본문/23 손바닥 위의 항로.md",
+      "sha": "b3ae560683073aa3da0e47352b1f0b0d7169bd64",
+      "reading": "catalogued"
+    },
+    {
+      "chapter": 24,
+      "path": "원고/본문/24 해도에 없는 길.md",
+      "sha": "91e4f2826c79bcd10359e04387b14a025e68e72f",
+      "reading": "catalogued"
+    }
+  ]
+}

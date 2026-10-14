@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "revision": 0,
+  "project": "부유 해파리 도감",
+  "repository": "glutfeste/buyu-haepari-dogam",
+  "branch": "main",
+  "execution": "chat_turn",
+  "active_job": null,
+  "resume_job": null,
+  "jobs": {},
+  "last_event": {},
+  "installation": {
+    "date": "2026-10-14",
+    "existing_manuscript_count": 24,
+    "catalog": "집필시스템/원고목록.json",
+    "source_head": "ab007031e31c6b80187c2382cd534c30bfa92341"
+  }
+}
