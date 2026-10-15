@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": 5,
+  "revision": 7,
   "project": "부유 해파리 도감",
   "repository": "glutfeste/buyu-haepari-dogam",
   "branch": "main",
@@ -15,11 +15,16 @@
       "sources": {
         "AGENTS.md": "38fe8d1e86591e0d136a9cee2cf6b35d9e3e69f1",
         "scripts/novel_workflow.py": "cc41f7f9a8e37dd33c91df07a55614443ea67dc1",
+        "부유해파리도감의 설정과 전개/설정/세력/강대국/뤼메리-훈디아 이중제국.md": "78fea5af0fa82124d4b90e0971738bb56288102d",
         "부유해파리도감의 설정과 전개/설정/세력/독립 세력/보레아 영구기관.md": "9620b528d70c551bea917f5ecbe9d6301f55dcf0",
+        "부유해파리도감의 설정과 전개/설정/세력/뤼메리-훈디아 권속/훈디아 왕국.md": "83f287a8d652f3bc73d65d9113c543cb29252a18",
+        "부유해파리도감의 설정과 전개/설정/속성/등급/뤼메리-훈디아/두 왕관 훈장.md": "7f066d242104f4a0318fbbbff6610811caf6abd4",
         "부유해파리도감의 설정과 전개/설정/인물/뤼메리-훈디아/마르톤 케메니.md": "b560d5fc4ba5436352133f86b5692efa399b25e6",
         "부유해파리도감의 설정과 전개/설정/인물/뤼메리-훈디아/벤체 케메니.md": "0c1255f4ad6947d65aa3eb2fb0c1a121f5e377a5",
         "부유해파리도감의 설정과 전개/설정/인물/보레아 영구기관/카를 얀센.md": "caa337b521ca019d444e65e14003eb140bb0fe2b",
         "부유해파리도감의 설정과 전개/설정/인물/일행/요런 펠트만.md": "36c390909e9d98d9777d7b41f6d9276c6891bdd0",
+        "부유해파리도감의 설정과 전개/설정/조직/뤼메리-훈디아/공동 각료회의.md": "e4258d3edd0e441b2331e6a4cd58b9d549b22a4a",
+        "부유해파리도감의 설정과 전개/이야기/에피소드/26 보레아 결전.md": "4bbf593ca74fcc15c4eb14d0d73098f8f9e044fe",
         "원고/집필 원칙.md": "2b96a608058a57ec051526914ebfcd6bfe94f73e",
         "집필시스템/시작.md": "56b47d54df989435424ff589d584e32d2447de04",
         "집필시스템/원고목록.json": "90fbc1a3ea03586ec957d7d0de078d18639764d5"
@@ -27,7 +32,7 @@
       "artifacts": {},
       "partial": {
         "path": "집필시스템/작업/marton-borea-20261015/context.md",
-        "sha": "34bd1a96620699d5f185e6e2371a2c3de65aa514",
+        "sha": "3a9f1703202158516672e787471e8a577341dd9e",
         "stage": "context"
       },
       "read_attestation": {},
@@ -35,8 +40,8 @@
     }
   },
   "last_event": {
-    "id": "marton-borea-20261015-options-v3",
-    "fingerprint": "5c4a35c5be447425edd6a873dc4b2f1d40baf71acf5adad4e7b934a71da78647"
+    "id": "marton-armin-20261015-expansion-v4",
+    "fingerprint": "15fb6ac58bd92b394313828f046448cd5b463e30ec30f08f910563cca7063a8c"
   },
   "installation": {
     "date": "2026-10-14",
