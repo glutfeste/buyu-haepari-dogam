@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": 17,
+  "revision": 18,
   "project": "부유 해파리 도감",
   "repository": "glutfeste/buyu-haepari-dogam",
   "branch": "main",
@@ -57,7 +57,7 @@
       "artifacts": {},
       "partial": {
         "path": "집필시스템/작업/marton-borea-20261015/context.md",
-        "sha": "e987fd36ed3a51f5b4b754379a7098a212b38541",
+        "sha": "8e065c61e2cd963d817bb92b8493a9a329666d92",
         "stage": "context"
       },
       "read_attestation": {},
@@ -65,8 +65,8 @@
     }
   },
   "last_event": {
-    "id": "borea-six-20261015-abilities-v10",
-    "fingerprint": "cfeff41426c30710e9575c7d5a5335bcdf7e32c0e5fcb1ae798f07695dd9f04b"
+    "id": "marton-borea-20261015-rename-approved-v11",
+    "fingerprint": "482bcd2329976228696510ec1c1f8d1c5d7fcd09100fc5f7b47328d2d9733e6b"
   },
   "installation": {
     "date": "2026-10-14",
