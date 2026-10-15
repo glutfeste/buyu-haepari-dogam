@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": 8,
+  "revision": 10,
   "project": "부유 해파리 도감",
   "repository": "glutfeste/buyu-haepari-dogam",
   "branch": "main",
@@ -15,6 +15,7 @@
       "sources": {
         "AGENTS.md": "38fe8d1e86591e0d136a9cee2cf6b35d9e3e69f1",
         "scripts/novel_workflow.py": "cc41f7f9a8e37dd33c91df07a55614443ea67dc1",
+        "부유해파리도감의 설정과 전개/설정/문헌/동기화된 기계에 대하여.md": "0fef76acae8c6ca8dc96f6487b04041c51ce0189",
         "부유해파리도감의 설정과 전개/설정/세력/강대국/뤼메리-훈디아 이중제국.md": "78fea5af0fa82124d4b90e0971738bb56288102d",
         "부유해파리도감의 설정과 전개/설정/세력/독립 세력/보레아 영구기관.md": "9620b528d70c551bea917f5ecbe9d6301f55dcf0",
         "부유해파리도감의 설정과 전개/설정/세력/뤼메리-훈디아 권속/훈디아 왕국.md": "83f287a8d652f3bc73d65d9113c543cb29252a18",
@@ -32,7 +33,7 @@
       "artifacts": {},
       "partial": {
         "path": "집필시스템/작업/marton-borea-20261015/context.md",
-        "sha": "1c600f0ff4136a70622791406694f2637e016b6e",
+        "sha": "18173f679223d0812de6c3c79bc3b6a803b01ecd",
         "stage": "context"
       },
       "read_attestation": {},
@@ -40,8 +41,8 @@
     }
   },
   "last_event": {
-    "id": "marton-borea-20261015-selfdefense-v5",
-    "fingerprint": "52dfae8e6b5e4a93c736368c91baaf98172b6368b1dc65e995cbe512f31593e9"
+    "id": "borea-revolution-20261015-interpretation-v6",
+    "fingerprint": "d9a943136269ec720795fac02fbea2b5074875991fa6f455b993b8efb309a9c7"
   },
   "installation": {
     "date": "2026-10-14",
