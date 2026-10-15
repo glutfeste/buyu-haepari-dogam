@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": 10,
+  "revision": 12,
   "project": "부유 해파리 도감",
   "repository": "glutfeste/buyu-haepari-dogam",
   "branch": "main",
@@ -22,9 +22,14 @@
         "부유해파리도감의 설정과 전개/설정/속성/등급/뤼메리-훈디아/두 왕관 훈장.md": "7f066d242104f4a0318fbbbff6610811caf6abd4",
         "부유해파리도감의 설정과 전개/설정/인물/뤼메리-훈디아/마르톤 케메니.md": "b560d5fc4ba5436352133f86b5692efa399b25e6",
         "부유해파리도감의 설정과 전개/설정/인물/뤼메리-훈디아/벤체 케메니.md": "0c1255f4ad6947d65aa3eb2fb0c1a121f5e377a5",
+        "부유해파리도감의 설정과 전개/설정/인물/벡실리아/티투스 코르넬리우스.md": "326a55406b6db4b7f8597c6a3616430354f8f1a4",
+        "부유해파리도감의 설정과 전개/설정/인물/보레아 영구기관/루모.md": "d101d51ed730f3632f498f59f53548d3411ffacc",
+        "부유해파리도감의 설정과 전개/설정/인물/보레아 영구기관/마그누스 카르빌리우스.md": "4fa4253a02129ef4b994fec652313514e2b4e200",
+        "부유해파리도감의 설정과 전개/설정/인물/보레아 영구기관/발도.md": "8b4182c44247e99e834a99487bc7069f8e06507f",
         "부유해파리도감의 설정과 전개/설정/인물/보레아 영구기관/카를 얀센.md": "caa337b521ca019d444e65e14003eb140bb0fe2b",
         "부유해파리도감의 설정과 전개/설정/인물/일행/요런 펠트만.md": "36c390909e9d98d9777d7b41f6d9276c6891bdd0",
         "부유해파리도감의 설정과 전개/설정/조직/뤼메리-훈디아/공동 각료회의.md": "e4258d3edd0e441b2331e6a4cd58b9d549b22a4a",
+        "부유해파리도감의 설정과 전개/이야기/에피소드/19 골롬트.md": "b6feab6d148b6bc1da31cbbf875eb5c1c8929705",
         "부유해파리도감의 설정과 전개/이야기/에피소드/26 보레아 결전.md": "4bbf593ca74fcc15c4eb14d0d73098f8f9e044fe",
         "원고/집필 원칙.md": "2b96a608058a57ec051526914ebfcd6bfe94f73e",
         "집필시스템/시작.md": "56b47d54df989435424ff589d584e32d2447de04",
@@ -33,7 +38,7 @@
       "artifacts": {},
       "partial": {
         "path": "집필시스템/작업/marton-borea-20261015/context.md",
-        "sha": "18173f679223d0812de6c3c79bc3b6a803b01ecd",
+        "sha": "9889c1c74f000fc535c746ed22bb340923456880",
         "stage": "context"
       },
       "read_attestation": {},
@@ -41,8 +46,8 @@
     }
   },
   "last_event": {
-    "id": "borea-revolution-20261015-interpretation-v6",
-    "fingerprint": "d9a943136269ec720795fac02fbea2b5074875991fa6f455b993b8efb309a9c7"
+    "id": "armin-valdo-20261015-proposal-v7",
+    "fingerprint": "81545505645de8502ba28d50982fc39d4b949a0a94f0fc7ade10ee58fc5243d3"
   },
   "installation": {
     "date": "2026-10-14",
