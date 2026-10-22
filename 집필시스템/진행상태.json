@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "revision": 18,
+  "revision": 21,
   "project": "부유 해파리 도감",
   "repository": "glutfeste/buyu-haepari-dogam",
   "branch": "main",
   "execution": "chat_turn",
-  "active_job": "marton-borea-20261015",
-  "resume_job": "marton-borea-20261015",
+  "active_job": "julien-karl-infiltration",
+  "resume_job": "julien-karl-infiltration",
   "jobs": {
     "marton-borea-20261015": {
       "chapter": 5,
@@ -62,11 +62,40 @@
       },
       "read_attestation": {},
       "review_decision": {}
+    },
+    "julien-karl-infiltration": {
+      "chapter": 12,
+      "request": "이거 어떻ㄱ ㅔ생각해? 쥘리앵 캐릭터를 확 바꾸자. 카를도 캐릭터를 좀 바꾸자. 지금 영구기관이 세계에 침투한 스파이들은 많은데 반대는 한명도 없는게 좀 균형이 안 맞는거같아. 물론 영구기관은 세력을 숨기고 있으니까 그건 현실적이긴해. 그래서 쥘리앵 캐릭터를 카를의 오른팔인게 아니라 카를의 오른팔로 위장한 이중간첩으로 하는거야. 정확히는 그는 독자적으로 영구기관을 무너뜨릴 계획인거야. 그는 혁명으로 가족을 잃었고, 카를에 대해서 연구하다가 그를 통상적인 방법으로 죽일 수 없다는걸 알게되는거지. 이 부분을 카를을 좀 수정하는거야. 카를을 볼드모트의 호크룩스처럼 그는 차분기관이 살아있는 이상, 그의 정신 기억의 백업본들을 모두 파괴하지 않으면 차분기관이 그를 부활시킬 수 있는거야. 그래서 쥘리앵은 카를을 포로로 잡았어도 이 '우위'는 카를을 죽이는 순간 다시 카를은 숨어버릴 거싱고 다시 부활할거라는걸 알게되지. 그래서 쥘리앵은 기존의 변호사였는데 검사로 역할을 바꾸고, 그래서 그는 카를에게 투항하는척하고 그의 신임을 얻어서 차분기관을 파괴할 생각인거지. 아 근데 그 기억 백업본은 신체까지 부활시키는건 아니라서 카를은 인간의 구문을 얻고 싶어하는건 유지해야해. 결국 카를은 한번은 죽여야하는데 어떻게 해야할지 모르겠네\n\n이렇게 하는 이유는 아르민에게 자리를 주기 위해서야. 지금 마르톤은 아르민이랑 싸우고 쥘리앵이랑 사우고 최종적으로는 카를일아도 싸우는데 너무 많이 싸워. 그래서 벤체랑 만나는 그 에피소드에서 아르민이 쥘리앵을 죽이고, 쥘리앵의 명검을 차지(솔라티스랑 동등 이상의 보물 특수한 능력이 있는)하고 이어서 벤체를 죽이는걸로 하자. 어때?\n",
+      "stage": "context",
+      "sources": {
+        "AGENTS.md": "38fe8d1e86591e0d136a9cee2cf6b35d9e3e69f1",
+        "scripts/novel_workflow.py": "cc41f7f9a8e37dd33c91df07a55614443ea67dc1",
+        "부유해파리도감의 설정과 전개/설정/구문/변성/기억의 구문.md": "c4b40c4abdaf8c43484ce2c691eecbdcc4761650",
+        "부유해파리도감의 설정과 전개/설정/구문/변성/인간의 구문.md": "05f79ae57ad97df178551880b6fcc41a28bde5a7",
+        "부유해파리도감의 설정과 전개/설정/구문/차분기관.md": "ec8a1642488cecfd41c119ad92e1a28f1c5e66a3",
+        "부유해파리도감의 설정과 전개/설정/기물/솔라티스.md": "b95af131bae2195dac65aedfb0d885fb192ee93b",
+        "부유해파리도감의 설정과 전개/설정/인물/뤼메리-훈디아/벤체 케메니.md": "0c1255f4ad6947d65aa3eb2fb0c1a121f5e377a5",
+        "부유해파리도감의 설정과 전개/설정/인물/보레아 영구기관/쥘리앵 드 라세르.md": "05c1436dc0b6bb92635e491b646edfbf50e5a011",
+        "부유해파리도감의 설정과 전개/설정/인물/보레아 영구기관/카를 얀센.md": "caa337b521ca019d444e65e14003eb140bb0fe2b",
+        "부유해파리도감의 설정과 전개/이야기/에피소드/12 왕보글이와 축열석.md": "dea263224f677c595bc3f70f87b14c81f07727b8",
+        "부유해파리도감의 설정과 전개/이야기/에피소드/26 보레아 결전.md": "4bbf593ca74fcc15c4eb14d0d73098f8f9e044fe",
+        "원고/집필 원칙.md": "2b96a608058a57ec051526914ebfcd6bfe94f73e",
+        "집필시스템/시작.md": "56b47d54df989435424ff589d584e32d2447de04",
+        "집필시스템/작업/marton-borea-20261015/context.md": "8e065c61e2cd963d817bb92b8493a9a329666d92"
+      },
+      "artifacts": {},
+      "partial": {
+        "path": "집필시스템/작업/julien-karl-infiltration/context.md",
+        "sha": "8cb363111d7f6e4daadcb1931bb7290b41f777b8",
+        "stage": "context"
+      },
+      "read_attestation": {},
+      "review_decision": {}
     }
   },
   "last_event": {
-    "id": "marton-borea-20261015-rename-approved-v11",
-    "fingerprint": "482bcd2329976228696510ec1c1f8d1c5d7fcd09100fc5f7b47328d2d9733e6b"
+    "id": "julien-infiltration-partial-v1",
+    "fingerprint": "be9a9080c50c884c553c507e004e6f346457c2a79c9a34d83f921ba153d24998"
   },
   "installation": {
     "date": "2026-10-14",
