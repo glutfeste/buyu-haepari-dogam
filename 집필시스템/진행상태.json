@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": 24,
+  "revision": 25,
   "project": "부유 해파리 도감",
   "repository": "glutfeste/buyu-haepari-dogam",
   "branch": "main",
@@ -86,7 +86,7 @@
       "artifacts": {},
       "partial": {
         "path": "집필시스템/작업/julien-karl-infiltration/context.md",
-        "sha": "e27a8c7992943f6fa0d5149f30701c515545caf8",
+        "sha": "10851125fd76945aeabca2ea5fdc3ae7c0f6858f",
         "stage": "context"
       },
       "read_attestation": {},
@@ -94,8 +94,8 @@
     }
   },
   "last_event": {
-    "id": "julien-past-bodyloss-20261022-correction-v5",
-    "fingerprint": "11b7e5754720c9924effe0806490bf7bdfd352f372e9ba840bb6807dcaa0d998"
+    "id": "julien-joining-motive-20261022-v6",
+    "fingerprint": "4406b861e09b152510aced3dedfa3513d27f433d75d4d9d8c79124205a16a0d1"
   },
   "installation": {
     "date": "2026-10-14",
