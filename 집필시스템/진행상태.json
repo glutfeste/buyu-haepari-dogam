@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": 25,
+  "revision": 33,
   "project": "부유 해파리 도감",
   "repository": "glutfeste/buyu-haepari-dogam",
   "branch": "main",
@@ -57,7 +57,7 @@
       "artifacts": {},
       "partial": {
         "path": "집필시스템/작업/marton-borea-20261015/context.md",
-        "sha": "8e065c61e2cd963d817bb92b8493a9a329666d92",
+        "sha": "d7fe8d19d8d06e4d860b324b9848ddbdb935f477",
         "stage": "context"
       },
       "read_attestation": {},
@@ -81,12 +81,12 @@
         "부유해파리도감의 설정과 전개/이야기/에피소드/26 보레아 결전.md": "4bbf593ca74fcc15c4eb14d0d73098f8f9e044fe",
         "원고/집필 원칙.md": "2b96a608058a57ec051526914ebfcd6bfe94f73e",
         "집필시스템/시작.md": "56b47d54df989435424ff589d584e32d2447de04",
-        "집필시스템/작업/marton-borea-20261015/context.md": "8e065c61e2cd963d817bb92b8493a9a329666d92"
+        "집필시스템/작업/marton-borea-20261015/context.md": "d7fe8d19d8d06e4d860b324b9848ddbdb935f477"
       },
       "artifacts": {},
       "partial": {
         "path": "집필시스템/작업/julien-karl-infiltration/context.md",
-        "sha": "10851125fd76945aeabca2ea5fdc3ae7c0f6858f",
+        "sha": "8d1064a90a6b655b0e13f51da244aa57898f12d4",
         "stage": "context"
       },
       "read_attestation": {},
@@ -94,8 +94,8 @@
     }
   },
   "last_event": {
-    "id": "julien-joining-motive-20261022-v6",
-    "fingerprint": "4406b861e09b152510aced3dedfa3513d27f433d75d4d9d8c79124205a16a0d1"
+    "id": "setting-prose-20261023-v7-8",
+    "fingerprint": "c46091577c1cca5aad3a8b5dd7c3b9abb589e7124df298d48207055ff4279a14"
   },
   "installation": {
     "date": "2026-10-14",
