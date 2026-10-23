@@ -1,5 +1,51 @@
 {
   "schema_version": 1,
-  "characters": {},
-  "threads": {}
+  "characters": {
+    "julien-independent": {
+      "id": "julien-independent",
+      "value": "검사 출신으로 처형 전에 가담하고 삼주축으로 독자적인 복수를 준비한다.",
+      "kind": "planned",
+      "evidence": {
+        "path": "부유해파리도감의 설정과 전개/설정/인물/보레아 영구기관/쥘리앵 드 라세르.md",
+        "sha": "1cf5d67d7688f7082c14402c31b06cf95c776499",
+        "quote": "쥘리앵의 최종 목적은 가족을 죽게 만든 카를과 영구기관의 완전한 파괴다."
+      },
+      "authority": "derived_with_citation"
+    },
+    "karl-past-death": {
+      "id": "karl-past-death",
+      "value": "과거의 처형 뒤 사본과 차분기관으로 활동한다.",
+      "kind": "planned",
+      "evidence": {
+        "path": "부유해파리도감의 설정과 전개/설정/인물/보레아 영구기관/카를 얀센.md",
+        "sha": "e28ecc682977aa0a62dc42497322dbc9087684ac",
+        "quote": "1390년대 초 연합의 공개 처형으로 카를의 육체와 두뇌가 죽었다."
+      },
+      "authority": "derived_with_citation"
+    },
+    "armin-jahira": {
+      "id": "armin-jahira",
+      "value": "자히라에서 쥘리앵을 죽여 바르센을 얻고 이어 벤체를 죽인다.",
+      "kind": "planned",
+      "evidence": {
+        "path": "부유해파리도감의 설정과 전개/설정/인물/보레아 영구기관/아르민 델케시.md",
+        "sha": "ec1a227abe8fcd9b91a3e07918a353a9d5c046b2",
+        "quote": "이어 황제의 통합 개혁을 무력으로 뒷받침하는 [[벤체 케메니]]와 싸워 그를 죽인다."
+      },
+      "authority": "derived_with_citation"
+    }
+  },
+  "threads": {
+    "copies-current": {
+      "id": "copies-current",
+      "value": "사본들은 현재의 정신과 기억을 함께 유지한다.",
+      "kind": "planned",
+      "evidence": {
+        "path": "부유해파리도감의 설정과 전개/설정/장치/사본.md",
+        "sha": "3bce64bf1905269696c3df74e911c50cda1e75a8",
+        "quote": "모든 사본은 항상 현재 카를의 정신과 기억을 함께 담는다."
+      },
+      "authority": "derived_with_citation"
+    }
+  }
 }
