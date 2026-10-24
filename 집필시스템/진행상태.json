@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": 42,
+  "revision": 44,
   "project": "부유 해파리 도감",
   "repository": "glutfeste/buyu-haepari-dogam",
   "branch": "main",
@@ -71,11 +71,10 @@
         "AGENTS.md": "38fe8d1e86591e0d136a9cee2cf6b35d9e3e69f1",
         "scripts/novel_workflow.py": "cc41f7f9a8e37dd33c91df07a55614443ea67dc1",
         "부유해파리도감의 설정과 전개/설정/구문/구문.md": "40f6834b3bb8739da76a599a5f63eb32d27f928e",
-        "부유해파리도감의 설정과 전개/설정/구문/변성/괴사의 구문.md": "a656f8a9fb1ea279eea51e5ea72d2f6025b3302e",
-        "부유해파리도감의 설정과 전개/설정/구문/변성/기억의 구문.md": "c4b40c4abdaf8c43484ce2c691eecbdcc4761650",
         "부유해파리도감의 설정과 전개/설정/구문/변성/대통일이론.md": "9ba0ec9a597ef4b36b13c12c83fce8e9beed7995",
         "부유해파리도감의 설정과 전개/설정/구문/변성/인간의 구문.md": "350bc7c3d5165cbb9874df2fdc9562d4e6fb811e",
-        "부유해파리도감의 설정과 전개/설정/구문/차분기관.md": "2dec0e6820e0e1bebac69c04013340e54692b4a9",
+        "부유해파리도감의 설정과 전개/설정/생활/유체적분기.md": "99cf571f23a96b24615c1e8401b19958780fbf09",
+        "부유해파리도감의 설정과 전개/설정/인물/보레아 영구기관/카를 얀센.md": "e28ecc682977aa0a62dc42497322dbc9087684ac",
         "부유해파리도감의 설정과 전개/이야기/에피소드/12 왕보글이와 축열석.md": "dc11eca6068559db89b3dc27eca566a69a64453c",
         "원고/집필 원칙.md": "2b96a608058a57ec051526914ebfcd6bfe94f73e",
         "집필시스템/시작.md": "56b47d54df989435424ff589d584e32d2447de04"
@@ -83,7 +82,7 @@
       "artifacts": {},
       "partial": {
         "path": "집필시스템/작업/julien-karl-infiltration/context.md",
-        "sha": "f65728090f52003c5a152d28df39eed2fff85cc9",
+        "sha": "641004c8b048fbbff75ecf9c96476fb092950a45",
         "stage": "context"
       },
       "read_attestation": {},
@@ -91,8 +90,8 @@
     }
   },
   "last_event": {
-    "id": "julien-regeneration-trap-20261024-review",
-    "fingerprint": "65f916de6c1c07590d36f0452900716407a9226963267e82924ee0f60067cc30"
+    "id": "julien-necessity-20261024-proposal",
+    "fingerprint": "c12a8b92e23ea108394a5353e577da14bf3b833e9e9b416fd3c5548bd29e4fae"
   },
   "installation": {
     "date": "2026-10-14",
