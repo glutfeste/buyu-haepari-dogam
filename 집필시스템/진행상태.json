@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": 40,
+  "revision": 41,
   "project": "부유 해파리 도감",
   "repository": "glutfeste/buyu-haepari-dogam",
   "branch": "main",
@@ -83,7 +83,7 @@
       "artifacts": {},
       "partial": {
         "path": "집필시스템/작업/julien-karl-infiltration/context.md",
-        "sha": "3d313a25da3f5581c8f62cbf1a6cd029530e9395",
+        "sha": "fca7d31d89dd2859110a5bf55cc39737d375f68b",
         "stage": "context"
       },
       "read_attestation": {},
@@ -91,8 +91,8 @@
     }
   },
   "last_event": {
-    "id": "julien-biological-review-20261024-proposal",
-    "fingerprint": "1ddfcf5ab68056e0bb21829db09605cb1bc251d34ad81c665c8704ed429d4b01"
+    "id": "julien-armin-staged-death-20261024-review",
+    "fingerprint": "fff294118cd67838b3eef7e9cf3fc7e056e4da1d5d9b69b7501e10eabc0e4ca4"
   },
   "installation": {
     "date": "2026-10-14",
