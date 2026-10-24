@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": 38,
+  "revision": 40,
   "project": "부유 해파리 도감",
   "repository": "glutfeste/buyu-haepari-dogam",
   "branch": "main",
@@ -70,26 +70,20 @@
       "sources": {
         "AGENTS.md": "38fe8d1e86591e0d136a9cee2cf6b35d9e3e69f1",
         "scripts/novel_workflow.py": "cc41f7f9a8e37dd33c91df07a55614443ea67dc1",
-        "부유해파리도감의 설정과 전개/설정/부유해파리도감 설정 바이블.md": "80d059284baf36b28147e055591078026377c4c9",
-        "부유해파리도감의 설정과 전개/설정/인물/글루트페스테/콘라트 폰 뢰벤하임.md": "2680c9c307e8a9a031bbfe496faf7c9315f2dfef",
-        "부유해파리도감의 설정과 전개/설정/인물/보레아 영구기관/로베노.md": "e55919a9fa9e3a64653fc1f9a38979f816707a6b",
-        "부유해파리도감의 설정과 전개/설정/인물/보레아 영구기관/빅토르 카르포프.md": "26dc6545db75bceefbb26c962a9fa5fd0b2b5b51",
-        "부유해파리도감의 설정과 전개/설정/인물/보레아 영구기관/아르민 델케시.md": "ec1a227abe8fcd9b91a3e07918a353a9d5c046b2",
-        "부유해파리도감의 설정과 전개/설정/인물/보레아 영구기관/쥘리앵 드 라세르.md": "1cf5d67d7688f7082c14402c31b06cf95c776499",
-        "부유해파리도감의 설정과 전개/설정/인물/보레아 영구기관/카를 얀센.md": "e28ecc682977aa0a62dc42497322dbc9087684ac",
-        "부유해파리도감의 설정과 전개/설정/인물/일행/요런 펠트만.md": "d90569363bbe653fe91ac4250770b15ca6290d81",
-        "부유해파리도감의 설정과 전개/설정/지리/아우렐리아/베스페라/코르빈바르.md": "04562e3b9d3aa2ce2fc466c93bcb3ed6cf745407",
-        "부유해파리도감의 설정과 전개/이야기/에피소드/26 보레아 결전.md": "bb92f823488898b2d16abfd852d599b245d710c3",
-        "부유해파리도감의 설정과 전개/이야기/에피소드/후일담 첫 인쇄본.md": "1b8ba3a997857ed1965a68a8f1a0bb3bece3ca97",
+        "부유해파리도감의 설정과 전개/설정/구문/구문.md": "40f6834b3bb8739da76a599a5f63eb32d27f928e",
+        "부유해파리도감의 설정과 전개/설정/구문/변성/괴사의 구문.md": "a656f8a9fb1ea279eea51e5ea72d2f6025b3302e",
+        "부유해파리도감의 설정과 전개/설정/구문/변성/기억의 구문.md": "c4b40c4abdaf8c43484ce2c691eecbdcc4761650",
+        "부유해파리도감의 설정과 전개/설정/구문/변성/대통일이론.md": "9ba0ec9a597ef4b36b13c12c83fce8e9beed7995",
+        "부유해파리도감의 설정과 전개/설정/구문/변성/인간의 구문.md": "350bc7c3d5165cbb9874df2fdc9562d4e6fb811e",
+        "부유해파리도감의 설정과 전개/설정/구문/차분기관.md": "2dec0e6820e0e1bebac69c04013340e54692b4a9",
+        "부유해파리도감의 설정과 전개/이야기/에피소드/12 왕보글이와 축열석.md": "dc11eca6068559db89b3dc27eca566a69a64453c",
         "원고/집필 원칙.md": "2b96a608058a57ec051526914ebfcd6bfe94f73e",
-        "집필시스템/시작.md": "56b47d54df989435424ff589d584e32d2447de04",
-        "투고 완결 시놉시스.md": "807007510af764859522f371f498c3f2ed2b055f",
-        "투고 작품기획서.md": "3eb2358649c0afb619ff8bb971cdad26651b05e0"
+        "집필시스템/시작.md": "56b47d54df989435424ff589d584e32d2447de04"
       },
       "artifacts": {},
       "partial": {
         "path": "집필시스템/작업/julien-karl-infiltration/context.md",
-        "sha": "edf8d653435b7ee77b3cd52e8ae13320cb0cd690",
+        "sha": "3d313a25da3f5581c8f62cbf1a6cd029530e9395",
         "stage": "context"
       },
       "read_attestation": {},
@@ -97,8 +91,8 @@
     }
   },
   "last_event": {
-    "id": "related-canon-20261024-save",
-    "fingerprint": "33de1383f207d8418d88ddd9c6c4b5d3c8ec59037fe4667706b503c43dc6c368"
+    "id": "julien-biological-review-20261024-proposal",
+    "fingerprint": "1ddfcf5ab68056e0bb21829db09605cb1bc251d34ad81c665c8704ed429d4b01"
   },
   "installation": {
     "date": "2026-10-14",
