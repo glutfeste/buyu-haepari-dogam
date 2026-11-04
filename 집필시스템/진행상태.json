@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": 49,
+  "revision": 51,
   "project": "부유 해파리 도감",
   "repository": "glutfeste/buyu-haepari-dogam",
   "branch": "main",
@@ -99,6 +99,7 @@
         "scripts/novel_workflow.py": "cc41f7f9a8e37dd33c91df07a55614443ea67dc1",
         "부유해파리도감의 설정과 전개/설정/구문/변성/기억의 구문.md": "c4b40c4abdaf8c43484ce2c691eecbdcc4761650",
         "부유해파리도감의 설정과 전개/설정/구문/사역/해파리의 구문.md": "85b5cd8b2213d34208e69d48410f30f92ab2ca9a",
+        "부유해파리도감의 설정과 전개/설정/인물/글루트페스테/빅토르 크루거.md": "e53beb98d41c2b7197b9149a4321e46322166a51",
         "부유해파리도감의 설정과 전개/설정/인물/글루트페스테/콘라트 폰 뢰벤하임.md": "2680c9c307e8a9a031bbfe496faf7c9315f2dfef",
         "부유해파리도감의 설정과 전개/설정/인물/유랑방주/마르쿠스 파버.md": "dbaa0b9d1bc03f9a342d1619ef29bff100a449eb",
         "부유해파리도감의 설정과 전개/이야기/에피소드/24 보레아 비밀 기지.md": "847152b085fc559e7289c047fd5687143b47739d",
@@ -109,7 +110,7 @@
       "artifacts": {},
       "partial": {
         "path": "집필시스템/작업/konrad-feuerberg-20261104/context.md",
-        "sha": "300d8fe0b89e036671df6c5109d0045aa75f6598",
+        "sha": "5560e77eea4b4560dc43d970d816a2cb63be7b3b",
         "stage": "context"
       },
       "read_attestation": {},
@@ -117,8 +118,8 @@
     }
   },
   "last_event": {
-    "id": "konrad-20261104-parasite-proposal",
-    "fingerprint": "91d6a56c0679cb6b9cd1e7a6766bc7e736b92c04df5ea28c8cdfc5d071a1a738"
+    "id": "konrad-20261104-rebuild-partial",
+    "fingerprint": "25c7d46aa397191d3c671e8a22bbb2fc2b1656eb3e1eaba8c0b44e39c101dfb2"
   },
   "installation": {
     "date": "2026-10-14",
