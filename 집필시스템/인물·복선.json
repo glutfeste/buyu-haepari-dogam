@@ -25,12 +25,34 @@
     },
     "armin-jahira": {
       "id": "armin-jahira",
-      "value": "자히라에서 쥘리앵을 죽여 바르센을 얻고 이어 벤체를 죽인다.",
+      "value": "자히라에서 쥘리앵을 죽이고 바르센을 획득한다.",
       "kind": "planned",
       "evidence": {
         "path": "부유해파리도감의 설정과 전개/설정/인물/보레아 영구기관/아르민 델케시.md",
         "sha": "ec1a227abe8fcd9b91a3e07918a353a9d5c046b2",
-        "quote": "이어 황제의 통합 개혁을 무력으로 뒷받침하는 [[벤체 케메니]]와 싸워 그를 죽인다."
+        "quote": "[[12 왕보글이와 축열석|포르투스 자히라]]에서 [[쥘리앵 드 라세르]]를 죽이고 바르센을 차지한다."
+      },
+      "authority": "derived_with_citation"
+    },
+    "boggle-after-secret-base": {
+      "id": "boggle-after-secret-base",
+      "value": "비밀 기지전 뒤 보글이는 재생 기록과 함께 보레아로 이송된다.",
+      "kind": "planned",
+      "evidence": {
+        "path": "부유해파리도감의 설정과 전개/이야기/에피소드/24 보레아 비밀 기지.md",
+        "sha": "847152b085fc559e7289c047fd5687143b47739d",
+        "quote": "보글이와 기록 원통을 실은 연락선은 보레아로 떠난다."
+      },
+      "authority": "derived_with_citation"
+    },
+    "boggle-final-return": {
+      "id": "boggle-final-return",
+      "value": "보글이는 보레아 결전에서 카를이 죽은 뒤 넬라에게 돌아온다.",
+      "kind": "planned",
+      "evidence": {
+        "path": "부유해파리도감의 설정과 전개/이야기/에피소드/26 보레아 결전.md",
+        "sha": "bb92f823488898b2d16abfd852d599b245d710c3",
+        "quote": "연합군은 마르톤을 세계제일의 기사라 부른다. 그는 넬라가 재생을 종료한 공을 밝히고 결박과 구속함을 절단한다. 보글이는 자신의 힘으로 넬라에게 돌아간다."
       },
       "authority": "derived_with_citation"
     }
@@ -44,6 +66,17 @@
         "path": "부유해파리도감의 설정과 전개/설정/장치/사본.md",
         "sha": "3bce64bf1905269696c3df74e911c50cda1e75a8",
         "quote": "모든 사본은 항상 현재 카를의 정신과 기억을 함께 담는다."
+      },
+      "authority": "derived_with_citation"
+    },
+    "nella-faber-visit": {
+      "id": "nella-faber-visit",
+      "value": "넬라 일행은 왕보글이에게 받은 응화를 따라 유랑방주로 간다.",
+      "kind": "planned",
+      "evidence": {
+        "path": "부유해파리도감의 설정과 전개/이야기/에피소드/13 유랑방주 수련.md",
+        "sha": "a40964582cece95bad023d1f9c605a03cf7a3b2a",
+        "quote": "[[자마르 왕국]]을 떠난 넬라는 [[왕보글이]]의 말에 따라, 인계받은 [[응화]]의 불꽃이 기우는 쪽으로 [[벨테린]]의 항로를 설정한다."
       },
       "authority": "derived_with_citation"
     }
