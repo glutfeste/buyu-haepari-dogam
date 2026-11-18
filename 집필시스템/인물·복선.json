@@ -7,7 +7,7 @@
       "kind": "planned",
       "evidence": {
         "path": "부유해파리도감의 설정과 전개/설정/인물/보레아 영구기관/쥘리앵 드 라세르.md",
-        "sha": "42bf2c09cae334327e2f2d24c24bbb1dd272b9ea",
+        "sha": "be81514b29da900d0899926a174bcffa84cc422f",
         "quote": "쥘리앵의 최종 목적은 가족을 죽게 만든 카를과 영구기관의 완전한 파괴다."
       },
       "authority": "derived_with_citation"
@@ -18,7 +18,7 @@
       "kind": "planned",
       "evidence": {
         "path": "부유해파리도감의 설정과 전개/설정/인물/보레아 영구기관/카를 얀센.md",
-        "sha": "477774dca1e7dc95e44a926c14666678ad4eaa28",
+        "sha": "f7bc542892dd3171b4f18401c51aa6d42265a1a8",
         "quote": "1390년대 초 연합의 공개 처형으로 카를의 육체와 두뇌가 죽었다."
       },
       "authority": "derived_with_citation"
@@ -51,19 +51,19 @@
       "kind": "planned",
       "evidence": {
         "path": "부유해파리도감의 설정과 전개/이야기/에피소드/27 보레아 결전.md",
-        "sha": "00a602c5ec587af0685d227c3d47492a413b1810",
+        "sha": "8c13d491f67c796538ee1c513c3b3f9afee75927",
         "quote": "연합군은 마르톤을 세계제일의 기사라 부른다. 그는 넬라가 재생을 종료한 공을 밝히고 결박과 구속함을 절단한다. 보글이는 자신의 힘으로 넬라에게 돌아간다."
       },
       "authority": "derived_with_citation"
     },
     "bence-corvinbar-death": {
       "id": "bence-corvinbar-death",
-      "value": "벤체는 자히라에 출연하지 않고 코르빈바르에서 조카 마르톤과 재회한 뒤 아르민에게 죽는다.",
+      "value": "벤체는 코르빈바르에서 조카 마르톤과 재회하고, 왕위 교체 때 아르민과 교전하다 전사한다.",
       "kind": "planned",
       "evidence": {
         "path": "부유해파리도감의 설정과 전개/이야기/에피소드/22 이리해파리와 코르빈바르.md",
         "sha": "b1c0fcc1273fde3b6b1e151f9425123e4640eee1",
-        "quote": "마르톤은 삼촌의 죽음을 목격하고 아르민과 대결한다."
+        "quote": "벤체는 [[바르센]]을 지닌 아르민과 교전하며 근위병과 민간인의 피난을 엄호하다 치명상을 입어 죽는다."
       },
       "authority": "derived_with_citation"
     }
