@@ -7,7 +7,7 @@
       "kind": "planned",
       "evidence": {
         "path": "부유해파리도감의 설정과 전개/설정/인물/보레아 영구기관/쥘리앵 드 라세르.md",
-        "sha": "1cf5d67d7688f7082c14402c31b06cf95c776499",
+        "sha": "42bf2c09cae334327e2f2d24c24bbb1dd272b9ea",
         "quote": "쥘리앵의 최종 목적은 가족을 죽게 만든 카를과 영구기관의 완전한 파괴다."
       },
       "authority": "derived_with_citation"
@@ -18,7 +18,7 @@
       "kind": "planned",
       "evidence": {
         "path": "부유해파리도감의 설정과 전개/설정/인물/보레아 영구기관/카를 얀센.md",
-        "sha": "e28ecc682977aa0a62dc42497322dbc9087684ac",
+        "sha": "477774dca1e7dc95e44a926c14666678ad4eaa28",
         "quote": "1390년대 초 연합의 공개 처형으로 카를의 육체와 두뇌가 죽었다."
       },
       "authority": "derived_with_citation"
@@ -29,8 +29,8 @@
       "kind": "planned",
       "evidence": {
         "path": "부유해파리도감의 설정과 전개/설정/인물/보레아 영구기관/아르민 델케시.md",
-        "sha": "ec1a227abe8fcd9b91a3e07918a353a9d5c046b2",
-        "quote": "[[12 왕보글이와 축열석|포르투스 자히라]]에서 [[쥘리앵 드 라세르]]를 죽이고 바르센을 차지한다."
+        "sha": "2e6558dd90cead5a114419e7011260c617c0fdde",
+        "quote": "[[12 자히라 축열석 습격|포르투스 자히라]]에서 [[쥘리앵 드 라세르]]를 죽이고 바르센을 차지한다."
       },
       "authority": "derived_with_citation"
     },
@@ -39,8 +39,8 @@
       "value": "비밀 기지전 뒤 보글이는 재생 기록과 함께 보레아로 이송된다.",
       "kind": "planned",
       "evidence": {
-        "path": "부유해파리도감의 설정과 전개/이야기/에피소드/24 보레아 비밀 기지.md",
-        "sha": "847152b085fc559e7289c047fd5687143b47739d",
+        "path": "부유해파리도감의 설정과 전개/이야기/에피소드/25 보레아 비밀 기지.md",
+        "sha": "85e267d1a5bf1df56ceb1498016dd5e025b14d92",
         "quote": "보글이와 기록 원통을 실은 연락선은 보레아로 떠난다."
       },
       "authority": "derived_with_citation"
@@ -50,9 +50,20 @@
       "value": "보글이는 보레아 결전에서 카를이 죽은 뒤 넬라에게 돌아온다.",
       "kind": "planned",
       "evidence": {
-        "path": "부유해파리도감의 설정과 전개/이야기/에피소드/26 보레아 결전.md",
-        "sha": "bb92f823488898b2d16abfd852d599b245d710c3",
+        "path": "부유해파리도감의 설정과 전개/이야기/에피소드/27 보레아 결전.md",
+        "sha": "00a602c5ec587af0685d227c3d47492a413b1810",
         "quote": "연합군은 마르톤을 세계제일의 기사라 부른다. 그는 넬라가 재생을 종료한 공을 밝히고 결박과 구속함을 절단한다. 보글이는 자신의 힘으로 넬라에게 돌아간다."
+      },
+      "authority": "derived_with_citation"
+    },
+    "bence-corvinbar-death": {
+      "id": "bence-corvinbar-death",
+      "value": "벤체는 자히라에 출연하지 않고 코르빈바르에서 조카 마르톤과 재회한 뒤 아르민에게 죽는다.",
+      "kind": "planned",
+      "evidence": {
+        "path": "부유해파리도감의 설정과 전개/이야기/에피소드/22 이리해파리와 코르빈바르.md",
+        "sha": "b1c0fcc1273fde3b6b1e151f9425123e4640eee1",
+        "quote": "마르톤은 삼촌의 죽음을 목격하고 아르민과 대결한다."
       },
       "authority": "derived_with_citation"
     }
@@ -64,7 +75,7 @@
       "kind": "planned",
       "evidence": {
         "path": "부유해파리도감의 설정과 전개/설정/장치/사본.md",
-        "sha": "3bce64bf1905269696c3df74e911c50cda1e75a8",
+        "sha": "96cd12ea69cf792701a35c46172bac89ad12f533",
         "quote": "모든 사본은 항상 현재 카를의 정신과 기억을 함께 담는다."
       },
       "authority": "derived_with_citation"
@@ -74,9 +85,31 @@
       "value": "넬라 일행은 왕보글이에게 받은 응화를 따라 유랑방주로 간다.",
       "kind": "planned",
       "evidence": {
-        "path": "부유해파리도감의 설정과 전개/이야기/에피소드/13 유랑방주 수련.md",
-        "sha": "a40964582cece95bad023d1f9c605a03cf7a3b2a",
-        "quote": "[[자마르 왕국]]을 떠난 넬라는 [[왕보글이]]의 말에 따라, 인계받은 [[응화]]의 불꽃이 기우는 쪽으로 [[벨테린]]의 항로를 설정한다."
+        "path": "부유해파리도감의 설정과 전개/이야기/에피소드/18 유랑방주 수련.md",
+        "sha": "6a214a1a3dbff2d743be0ab3a25b903bfa96e62f",
+        "quote": "[[누아라]]를 떠난 넬라는 [[왕보글이]]의 말에 따라, 인계받은 [[응화]]의 불꽃이 기우는 쪽으로 [[벨테린]]의 항로를 설정한다."
+      },
+      "authority": "derived_with_citation"
+    },
+    "vex-regeneration-state-pursuit": {
+      "id": "vex-regeneration-state-pursuit",
+      "value": "자히라에서 보글이의 재생이 확인된 직후 벡실리아 이사회가 유체적분기 인간병목 해소를 위해 기술이사실과 법무이사실의 국가적 추적을 명령한다. 바로 다음 탈라푸람 편에서 특급 가이우스가 일행을 포획한다.",
+      "kind": "planned",
+      "evidence": {
+        "path": "부유해파리도감의 설정과 전개/이야기/에피소드/12 자히라 축열석 습격.md",
+        "sha": "74def184e9f85dd3664f70fecb6e19b42d054554",
+        "quote": "이사회는 보글이와 넬라 일행의 확보를 국가적 기술 사업으로 의결한다."
+      },
+      "authority": "derived_with_citation"
+    },
+    "king-nuara-regeneration-choice": {
+      "id": "king-nuara-regeneration-choice",
+      "value": "왕보글이의 수천 년 재생 연구와 재생 정지 조건 각인, 응화 인계는 메루아·임모타 이후 누아라 독립 편에서 실행된다.",
+      "kind": "planned",
+      "evidence": {
+        "path": "부유해파리도감의 설정과 전개/이야기/에피소드/17 누아라의 왕보글이.md",
+        "sha": "8905649edec5678768c3c08a53438e51bcb99fde",
+        "quote": "왕보글이는 자신이 원하는 때에 재생을 끝낼 수 있도록 넬라에게 요청한다."
       },
       "authority": "derived_with_citation"
     }
