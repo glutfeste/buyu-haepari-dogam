@@ -73,7 +73,7 @@
       "kind": "planned",
       "evidence": {
         "path": "부유해파리도감의 설정과 전개/설정/인물/일행/테오도어 린트너.md",
-        "sha": "b36359ea959c44c6c4596be17a9e269ce9d06a2a",
+        "sha": "4b5fe6e2f593d285a663a3daf68b9df9c76bb338",
         "quote": "테오도어는 메디아나의 법정에서 증거 사진의 제작과 판독, 감정에 종사했다."
       },
       "authority": "derived_with_citation"
@@ -95,7 +95,7 @@
       "kind": "planned",
       "evidence": {
         "path": "부유해파리도감의 설정과 전개/설정/인물/일행/테오도어 린트너.md",
-        "sha": "b36359ea959c44c6c4596be17a9e269ce9d06a2a",
+        "sha": "4b5fe6e2f593d285a663a3daf68b9df9c76bb338",
         "quote": "테오도어는 대표회의에 들어가기 전에 이미 그 생존 전략을 간파하고, 협상에서 이를 활용한다."
       },
       "authority": "derived_with_citation"
@@ -106,8 +106,41 @@
       "kind": "planned",
       "evidence": {
         "path": "부유해파리도감의 설정과 전개/설정/인물/보레아 영구기관/루모.md",
-        "sha": "f9112db2dee49b65b4b9290e1becb4e87618eeca",
+        "sha": "106a03411ae20069303eef39c38bdb93e9fd9085",
         "quote": "루모는 공작을 성공시키고 자신의 생존을 보전하기 위해 자신보다 강한 구문사와 정규군의 활동을 살펴 직접 행동의 장소와 시점을 고른다."
+      },
+      "authority": "derived_with_citation"
+    },
+    "marton-verasa-hero": {
+      "id": "marton-verasa-hero",
+      "value": "마르톤은 베라사 수도 쿠데타에서 루모에게 크게 부상하면서도 알과 아이들을 보호하고, 마테아와 루모가 싸우는 동안 주전파 지도자 카레크를 제압하여 첫그물의 영웅이 된다.",
+      "kind": "planned",
+      "evidence": {
+        "path": "부유해파리도감의 설정과 전개/설정/인물/뤼메리-훈디아/마르톤 케메니.md",
+        "sha": "561244716dbb91749b3cdebcc3b9479c9f82fdda",
+        "quote": "사라크와 베라사 주민들은 알과 아이들의 생존, 수도와 주권을 지킨 공로로 마르톤을 첫그물의 영웅으로 기린다."
+      },
+      "authority": "derived_with_citation"
+    },
+    "sarak-verasa-sovereignty": {
+      "id": "sarak-verasa-sovereignty",
+      "value": "사라크는 공개재판에서 처형을 철회하고 인간과 항구적 우호관계를 추구한다. 루모의 전쟁 요구를 주권 사항으로 거절하며, 알방 공격과 정예 전사들의 패배 뒤 아이와 주민의 생명을 살리려 굴복한다. 마테아와 마르톤의 승리로 첫매듭 지위를 지킨다.",
+      "kind": "planned",
+      "evidence": {
+        "path": "부유해파리도감의 설정과 전개/설정/인물/첫그물/첫매듭 사라크.md",
+        "sha": "876f3beed6405095f1dca37efe280a11e353983e",
+        "quote": "루모가 사라크를 폐위하고 카레크를 세우려는 순간 마테아가 도착했다."
+      },
+      "authority": "derived_with_citation"
+    },
+    "karek-war-faction": {
+      "id": "karek-war-faction",
+      "value": "카레크는 수석 사냥직조자이자 주전파 대표다. 루모와 함께 정권 교체를 시도하고 알방 공격에는 반대한다. 마르톤에게 제압된다.",
+      "kind": "planned",
+      "evidence": {
+        "path": "부유해파리도감의 설정과 전개/설정/인물/첫그물/카레크.md",
+        "sha": "3665b571dc16f2ccae1f00cbcb1dab92a22ae33c",
+        "quote": "카레크는 알과 어린 개체를 공격해 사라크를 굴복시키려는 루모의 방식에 반대한다."
       },
       "authority": "derived_with_citation"
     }
@@ -163,41 +196,63 @@
       "kind": "planned",
       "evidence": {
         "path": "부유해파리도감의 설정과 전개/설정/인물/일행/테오도어 린트너.md",
-        "sha": "b36359ea959c44c6c4596be17a9e269ce9d06a2a",
+        "sha": "4b5fe6e2f593d285a663a3daf68b9df9c76bb338",
         "quote": "그는 인간 측 맹약 사본과 첫그물 기록관의 낭독·대역을 대조해 여덟 물길의 이름과 관리 책임, 안전통행 권리를 확인한다."
       },
       "authority": "derived_with_citation"
     },
     "jandara-dogam-public-interest": {
       "id": "jandara-dogam-public-interest",
-      "value": "테오도어가 공식 조사단의 실종이 부를 수색·개입과 공동 수문권 협상의 실익, 갈대해파리 수문층을 통한 합의 이행 공시를 논증한다. 여론이 동요할 때 사라크는 벡실리아가 불리한 증거를 알면서도 묵살할 힘과 동기를 지녔다고 반론한다. 테오도어가 즉시 넬라를 세계 최고의 해파리 전문가라고 소개하고 넬라가 도감 편찬·판독법 출판을 선언한다. 첫그물은 묵살을 외부에서 검증할 정치적 조건이 생긴다는 이익을 알아보고 처형 요구를 생환 요구로 뒤집는다.",
+      "value": "테오도어가 공식 조사단의 실종이 부를 수색·개입과 공동 수문권 협상의 실익, 갈대해파리 수문층을 통한 합의 이행 공시를 논증한다. 여론이 동요할 때 사라크는 벡실리아가 불리한 증거를 알면서도 묵살할 힘과 동기를 지녔다고 반론한다. 테오도어가 즉시 넬라를 세계 최고의 해파리 전문가라고 소개하고 넬라가 도감 편찬·판독법 출판을 선언한다. 첫그물은 묵살을 외부에서 검증할 정치적 조건이 생긴다는 이익을 알아보고 처형 요구를 생환 요구로 뒤집는다. 사라크는 공개재판에서 처형을 철회하고 감시와 호위 아래 수도 내 교류를 허용하며, 인간과의 항구적 우호관계를 교섭한다.",
       "kind": "planned",
       "evidence": {
         "path": "부유해파리도감의 설정과 전개/이야기/에피소드/10 첫매듭의 왕.md",
-        "sha": "928011f5946f97ddb13bda8be47fc55ed6a0cd33",
+        "sha": "61db6581d8d71a674020789f7a6f7ff0e66941aa",
         "quote": "벡실리아가 증거를 묵살하는 행위 자체가 외부에서 평가될 정치적 문제가 된다. 첫그물은 이 변화가 자신들의 수문권과 생존에 직결된 이익임을 판단한다."
       },
       "authority": "derived_with_citation"
     },
     "matea-jandara-bait-signal": {
       "id": "matea-jandara-bait-signal",
-      "value": "마테아는 루모가 강자와 정규군 주변에서 직접 행동을 피하는 성향을 이용해 넬라의 내륙 조사를 미끼로 삼는다. 사전 지급한 전기 신호 표식은 구조 요청 때 작동하며, 실제 루모의 개입은 상당한 우연에 의존한다. 넬라의 귀환로 교전에서 구조 신호를 포착한 마테아가 외곽 대기 고속정으로 급습한다.",
+      "value": "마테아는 루모가 강자와 정규군 주변의 직접 활동을 피하는 성향을 이용해 넬라의 내륙 조사를 미끼로 삼고 전기 신호 표식을 지급한다. 상당한 우연 끝에 베라사 수도의 쿠데타와 알방 공격에서 넬라가 구조 신호를 발신하자 마테아는 늪을 건너 수도에 급습한다.",
       "kind": "planned",
       "evidence": {
         "path": "부유해파리도감의 설정과 전개/설정/인물/벡실리아/마테아 켈렌드리스.md",
-        "sha": "70d32af0fdb34c40a1f29bb9906fedbbc74165ca",
+        "sha": "1ccbda23047a93e3d61ce2314f0c0c227a2ef50e",
         "quote": "마테아는 상당한 우연에 의지하여 루모와 직접 교전할 기회를 기다린다"
       },
       "authority": "derived_with_citation"
     },
     "matea-jandara-signal-payoff": {
       "id": "matea-jandara-signal-payoff",
-      "value": "출발 전 넬라에게 지급된 위치 표식은 첫그물에 전원이 끊긴 상태로 압수되었다가 안전통행 때 반환된다. 루모와 교전할 때 넬라가 표식을 작동시켜 마테아의 급습을 이끈다.",
+      "value": "위치 표식은 첫그물에 전원이 끊긴 상태로 압수되었다가 공개재판의 처형 철회 직후 반환된다. 수도 쿠데타의 알방 공격에서 넬라가 표식을 작동시켜 마테아의 급습을 이끈다.",
       "kind": "planned",
       "evidence": {
         "path": "부유해파리도감의 설정과 전개/이야기/에피소드/10 첫매듭의 왕.md",
-        "sha": "928011f5946f97ddb13bda8be47fc55ed6a0cd33",
-        "quote": "넬라는 적의 구문으로 동료가 위험해지자 마테아가 지급한 표식의 스위치를 넣어 구조 신호를 발신한다."
+        "sha": "61db6581d8d71a674020789f7a6f7ff0e66941aa",
+        "quote": "넬라는 마테아에게 받은 구조용 전기 신호 표식을 작동시킨다."
+      },
+      "authority": "derived_with_citation"
+    },
+    "jandara-coup-matea-full-power": {
+      "id": "jandara-coup-matea-full-power",
+      "value": "잔다라에서 루모의 수도 쿠데타에 마테아가 급습해 전력을 발휘하며 특급 연금술사의 최고 수준의 전투 출력을 처음 보여 준다. 루모는 크게 부상해 탈출하고 마르톤은 별도로 카레크를 제압한다.",
+      "kind": "planned",
+      "evidence": {
+        "path": "부유해파리도감의 설정과 전개/설정/인물/벡실리아/마테아 켈렌드리스.md",
+        "sha": "1ccbda23047a93e3d61ce2314f0c0c227a2ef50e",
+        "quote": "이 교전에서 특급 연금술사의 실전 전력 상한이 처음 구체적으로 드러난다."
+      },
+      "authority": "derived_with_citation"
+    },
+    "jandara-submerged-record-resilience": {
+      "id": "jandara-submerged-record-resilience",
+      "value": "특급 연금술사 마테아의 전력 방전 후 파괴된 갈대밭의 물속과 퇴적층에도 광물성 수문층이 남아 있다. 수천만 마리에 이를 수 있는 갈대해파리의 광범위한 분산 기록은 마테아의 전력으로도 전체 말소가 불가능하다. 벡실리아의 불꽃 구문은 수면 위를 가열하므로 잠긴 기록층이 보존된다.",
+      "kind": "planned",
+      "evidence": {
+        "path": "부유해파리도감의 설정과 전개/설정/생태/해파리/갈대해파리.md",
+        "sha": "539bec056b323acebc6e66ad0368d37865da1a54",
+        "quote": "특급의 전력으로도 광대한 늪에 분산된 전체 기록을 말소하는 일은 불가능하다는 사실이 전투와 사후 조사에서 확인되었다"
       },
       "authority": "derived_with_citation"
     }
