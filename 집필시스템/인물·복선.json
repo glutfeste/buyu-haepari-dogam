@@ -113,11 +113,11 @@
     },
     "marton-verasa-hero": {
       "id": "marton-verasa-hero",
-      "value": "마르톤은 베라사 수도 쿠데타에서 루모에게 크게 부상하면서도 알과 아이들을 보호하고, 마테아와 루모가 싸우는 동안 주전파 지도자 카레크를 제압하여 첫그물의 영웅이 된다.",
+      "value": "첫 교전에서 마르톤은 병력의 지원을 받는 첫그물 최강의 전사 카레크에게 제압되어 생포된다. 수도 쿠데타에서는 루모에게 크게 부상하면서도 알과 아이들을 지키고, 카레크와 재대결하여 승리하면서 첫그물의 영웅이 된다.",
       "kind": "planned",
       "evidence": {
         "path": "부유해파리도감의 설정과 전개/설정/인물/뤼메리-훈디아/마르톤 케메니.md",
-        "sha": "561244716dbb91749b3cdebcc3b9479c9f82fdda",
+        "sha": "79265c9dbb81a9956e8fd10071bdeee5c6d0ffd6",
         "quote": "사라크와 베라사 주민들은 알과 아이들의 생존, 수도와 주권을 지킨 공로로 마르톤을 첫그물의 영웅으로 기린다."
       },
       "authority": "derived_with_citation"
@@ -128,18 +128,18 @@
       "kind": "planned",
       "evidence": {
         "path": "부유해파리도감의 설정과 전개/설정/인물/첫그물/첫매듭 사라크.md",
-        "sha": "0ab78e2a892b8c978960b793ed5e0a8b5e153f43",
+        "sha": "ab7cefe74581af030469e679249088cb2fcdcf07",
         "quote": "루모가 사라크를 폐위하고 카레크를 세우려는 순간 마테아가 도착했다."
       },
       "authority": "derived_with_citation"
     },
     "karek-war-faction": {
       "id": "karek-war-faction",
-      "value": "카레크는 수석 사냥직조자이자 주전파 대표다. 루모와 함께 정권 교체를 시도하고 알방 공격에는 반대한다. 마르톤에게 제압된다.",
+      "value": "카레크는 첫그물 최강의 전사이자 수석 사냥직조자이며 주전파 대표다. 경계·생포 직무를 수행하며 병력의 지원을 받아 마르톤을 직접 제압한다. 루모와 정권 교체를 시도하고 알방 공격에는 반대하며, 수도의 재대결에서 마르톤에게 제압된다.",
       "kind": "planned",
       "evidence": {
         "path": "부유해파리도감의 설정과 전개/설정/인물/첫그물/카레크.md",
-        "sha": "3665b571dc16f2ccae1f00cbcb1dab92a22ae33c",
+        "sha": "960663eaa84932720ee58a7483748ee5312b13f3",
         "quote": "카레크는 알과 어린 개체를 공격해 사라크를 굴복시키려는 루모의 방식에 반대한다."
       },
       "authority": "derived_with_citation"
@@ -207,7 +207,7 @@
       "kind": "planned",
       "evidence": {
         "path": "부유해파리도감의 설정과 전개/이야기/에피소드/10 첫매듭의 왕.md",
-        "sha": "0d25473c20f6b791f8d40e83c73d34a5109234b8",
+        "sha": "cefe5cffa5753ebe6791822659e3e55b83ee4986",
         "quote": "벡실리아가 증거를 묵살하는 행위 자체가 외부에서 평가될 정치적 문제가 된다. 첫그물은 이 변화가 자신들의 수문권과 생존에 직결된 이익임을 판단한다."
       },
       "authority": "derived_with_citation"
@@ -229,7 +229,7 @@
       "kind": "planned",
       "evidence": {
         "path": "부유해파리도감의 설정과 전개/이야기/에피소드/10 첫매듭의 왕.md",
-        "sha": "0d25473c20f6b791f8d40e83c73d34a5109234b8",
+        "sha": "cefe5cffa5753ebe6791822659e3e55b83ee4986",
         "quote": "넬라는 마테아에게 받은 구조용 전기 신호 표식을 작동시킨다."
       },
       "authority": "derived_with_citation"
@@ -262,8 +262,19 @@
       "kind": "planned",
       "evidence": {
         "path": "부유해파리도감의 설정과 전개/이야기/에피소드/10 첫매듭의 왕.md",
-        "sha": "0d25473c20f6b791f8d40e83c73d34a5109234b8",
+        "sha": "cefe5cffa5753ebe6791822659e3e55b83ee4986",
         "quote": "첫그물의 보존 기록에 적힌 공사 시기, 한 계절의 배수, 수문 재개방 순서가 넬라의 설명과 일치한다."
+      },
+      "authority": "derived_with_citation"
+    },
+    "karek-marton-first-fight-rematch": {
+      "id": "karek-marton-first-fight-rematch",
+      "value": "09편에서 카레크는 수석 사냥직조자의 직무로 출동해 병력의 지원 아래 마르톤을 직접 제압하고 일행을 생포한다. 10편 수도 쿠데타에서는 충성파가 지원 병력을 상대하는 가운데 마르톤이 카레크와 직접 재대결하고 첫 교전의 경험을 활용해 승리한다.",
+      "kind": "planned",
+      "evidence": {
+        "path": "부유해파리도감의 설정과 전개/이야기/에피소드/10 첫매듭의 왕.md",
+        "sha": "cefe5cffa5753ebe6791822659e3e55b83ee4986",
+        "quote": "부상한 마르톤은 루모가 마테아를 상대하는 동안 다시 일어나 자신을 생포했던 첫그물 최강의 전사 카레크와 재대결한다."
       },
       "authority": "derived_with_citation"
     }
