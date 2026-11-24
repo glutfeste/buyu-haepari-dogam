@@ -40,7 +40,7 @@
       "kind": "planned",
       "evidence": {
         "path": "부유해파리도감의 설정과 전개/이야기/에피소드/25 보레아 비밀 기지.md",
-        "sha": "85e267d1a5bf1df56ceb1498016dd5e025b14d92",
+        "sha": "f0bb2ced8de378560d9fb4e5c78134e2aedbc796",
         "quote": "보글이와 기록 원통을 실은 연락선은 보레아로 떠난다."
       },
       "authority": "derived_with_citation"
@@ -51,7 +51,7 @@
       "kind": "planned",
       "evidence": {
         "path": "부유해파리도감의 설정과 전개/이야기/에피소드/27 보레아 결전.md",
-        "sha": "8c13d491f67c796538ee1c513c3b3f9afee75927",
+        "sha": "309fcb489008896ec1273a84505e115c848ae158",
         "quote": "연합군은 마르톤을 세계제일의 기사라 부른다. 그는 넬라가 재생을 종료한 공을 밝히고 결박과 구속함을 절단한다. 보글이는 자신의 힘으로 넬라에게 돌아간다."
       },
       "authority": "derived_with_citation"
@@ -64,6 +64,28 @@
         "path": "부유해파리도감의 설정과 전개/이야기/에피소드/22 이리해파리와 코르빈바르.md",
         "sha": "b1c0fcc1273fde3b6b1e151f9425123e4640eee1",
         "quote": "벤체는 [[바르센]]을 지닌 아르민과 교전하며 근위병과 민간인의 피난을 엄호하다 치명상을 입어 죽는다."
+      },
+      "authority": "derived_with_citation"
+    },
+    "theodore-legal-social-practice": {
+      "id": "theodore-legal-social-practice",
+      "value": "테오도어는 법정의 증거 사진 제작·감정 및 사진관 경영을 통해 법률·계약 실무와 사교·교섭 능력을 갖춘다.",
+      "kind": "planned",
+      "evidence": {
+        "path": "부유해파리도감의 설정과 전개/설정/인물/일행/테오도어 린트너.md",
+        "sha": "e539afb2646ba9fc169fe5d62366d050bcaefd6d",
+        "quote": "테오도어는 메디아나의 법정에서 증거 사진의 제작과 판독, 감정에 종사했다."
+      },
+      "authority": "derived_with_citation"
+    },
+    "maliang-independent-poet": {
+      "id": "maliang-independent-poet",
+      "value": "마량은 현초 출신의 독립적인 시인으로 활동한다.",
+      "kind": "planned",
+      "evidence": {
+        "path": "부유해파리도감의 설정과 전개/설정/인물/현초/마량.md",
+        "sha": "b9d245be6b4df59c5b0e699d66618d5653975595",
+        "quote": "현초 출신의 떠돌이 시인. 흑수왕 마원의 차남으로, 열네 살에 처형장에서 지은 시로 생존하고 성을 잃었다."
       },
       "authority": "derived_with_citation"
     }
@@ -86,7 +108,7 @@
       "kind": "planned",
       "evidence": {
         "path": "부유해파리도감의 설정과 전개/이야기/에피소드/18 유랑방주 수련.md",
-        "sha": "6a214a1a3dbff2d743be0ab3a25b903bfa96e62f",
+        "sha": "8fa11a8b4aa6a0a4787eba8a9079f0e854c29dfc",
         "quote": "[[누아라]]를 떠난 넬라는 [[왕보글이]]의 말에 따라, 인계받은 [[응화]]의 불꽃이 기우는 쪽으로 [[벨테린]]의 항로를 설정한다."
       },
       "authority": "derived_with_citation"
@@ -97,7 +119,7 @@
       "kind": "planned",
       "evidence": {
         "path": "부유해파리도감의 설정과 전개/이야기/에피소드/12 자히라 축열석 습격.md",
-        "sha": "74def184e9f85dd3664f70fecb6e19b42d054554",
+        "sha": "b9e0cb91a20835deb798134e03c83dc89637ff63",
         "quote": "이사회는 보글이와 넬라 일행의 확보를 국가적 기술 사업으로 의결한다."
       },
       "authority": "derived_with_citation"
@@ -110,6 +132,17 @@
         "path": "부유해파리도감의 설정과 전개/이야기/에피소드/17 누아라의 왕보글이.md",
         "sha": "8905649edec5678768c3c08a53438e51bcb99fde",
         "quote": "왕보글이는 자신이 원하는 때에 재생을 끝낼 수 있도록 넬라에게 요청한다."
+      },
+      "authority": "derived_with_citation"
+    },
+    "theodore-jandara-treaty": {
+      "id": "theodore-jandara-treaty",
+      "value": "테오도어가 잔다라에서 아라와트 맹약의 권리와 당사자를 확인하고 둘째 물길 협정의 이행 공시 절차를 제안한다.",
+      "kind": "planned",
+      "evidence": {
+        "path": "부유해파리도감의 설정과 전개/설정/인물/일행/테오도어 린트너.md",
+        "sha": "e539afb2646ba9fc169fe5d62366d050bcaefd6d",
+        "quote": "그는 인간 측 맹약 사본과 첫그물 기록관의 낭독·대역을 대조해 여덟 물길의 이름과 관리 책임, 안전통행 권리를 확인한다."
       },
       "authority": "derived_with_citation"
     }
