@@ -73,7 +73,7 @@
       "kind": "planned",
       "evidence": {
         "path": "부유해파리도감의 설정과 전개/설정/인물/일행/테오도어 린트너.md",
-        "sha": "e539afb2646ba9fc169fe5d62366d050bcaefd6d",
+        "sha": "6043ef4fd386bb3fb72ffbe0f2d0c1048fd5b1c1",
         "quote": "테오도어는 메디아나의 법정에서 증거 사진의 제작과 판독, 감정에 종사했다."
       },
       "authority": "derived_with_citation"
@@ -141,8 +141,19 @@
       "kind": "planned",
       "evidence": {
         "path": "부유해파리도감의 설정과 전개/설정/인물/일행/테오도어 린트너.md",
-        "sha": "e539afb2646ba9fc169fe5d62366d050bcaefd6d",
+        "sha": "6043ef4fd386bb3fb72ffbe0f2d0c1048fd5b1c1",
         "quote": "그는 인간 측 맹약 사본과 첫그물 기록관의 낭독·대역을 대조해 여덟 물길의 이름과 관리 책임, 안전통행 권리를 확인한다."
+      },
+      "authority": "derived_with_citation"
+    },
+    "jandara-dogam-public-interest": {
+      "id": "jandara-dogam-public-interest",
+      "value": "처형 심리에서 테오도어의 세계 최고의 해파리 전문가 소개와 넬라의 도감 편찬 선언 직후, 첫그물은 갈대해파리의 공시 기능 공개가 수문권과 문명의 생존을 지킬 전략적 이익임을 깨닫고 처형 요구를 생환 요구로 뒤집는다.",
+      "kind": "planned",
+      "evidence": {
+        "path": "부유해파리도감의 설정과 전개/이야기/에피소드/10 첫매듭의 왕.md",
+        "sha": "2c2b58f94ddbecb3dd0f5d1e42751cfc9eb2200c",
+        "quote": "넬라의 기존 목표인 도감 편찬과 연구 성과의 공개가 첫그물의 생존에 직결된 이익으로 받아들여진다."
       },
       "authority": "derived_with_citation"
     }
