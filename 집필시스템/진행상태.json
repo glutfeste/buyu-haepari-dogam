@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": 74,
+  "revision": 75,
   "project": "부유 해파리 도감",
   "repository": "glutfeste/buyu-haepari-dogam",
   "branch": "main",
@@ -135,8 +135,8 @@
     }
   },
   "last_event": {
-    "id": "first-web-national-and-individual-power-20261124",
-    "fingerprint": "cf80d0c44f7370366df9eb42ca7afe49a23107743881d5c9487f4a28ee17a440"
+    "id": "maliang-canon-reconcile-20261124",
+    "fingerprint": "07a4bd40d3379243eab73381f31ce5c66c52fe97e79a59b267ad832812934fbf"
   },
   "installation": {
     "date": "2026-10-14",
