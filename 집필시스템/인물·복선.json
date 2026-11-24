@@ -73,7 +73,7 @@
       "kind": "planned",
       "evidence": {
         "path": "부유해파리도감의 설정과 전개/설정/인물/일행/테오도어 린트너.md",
-        "sha": "04b8b97fba4d73f2d8851b2b8fef841eb0357e08",
+        "sha": "b36359ea959c44c6c4596be17a9e269ce9d06a2a",
         "quote": "테오도어는 메디아나의 법정에서 증거 사진의 제작과 판독, 감정에 종사했다."
       },
       "authority": "derived_with_citation"
@@ -86,6 +86,28 @@
         "path": "부유해파리도감의 설정과 전개/설정/인물/현초/마량.md",
         "sha": "b9d245be6b4df59c5b0e699d66618d5653975595",
         "quote": "현초 출신의 떠돌이 시인. 흑수왕 마원의 차남으로, 열네 살에 처형장에서 지은 시로 생존하고 성을 잃었다."
+      },
+      "authority": "derived_with_citation"
+    },
+    "theodore-first-web-strategic-inference": {
+      "id": "theodore-first-web-strategic-inference",
+      "value": "테오도어는 대표회의에 들어가기 전 첫그물의 장기간 대외 위장에서 벡실리아와의 군사적 열세와 전면전을 최악으로 보는 생존 전략을 간파하고 협상에 활용한다.",
+      "kind": "planned",
+      "evidence": {
+        "path": "부유해파리도감의 설정과 전개/설정/인물/일행/테오도어 린트너.md",
+        "sha": "b36359ea959c44c6c4596be17a9e269ce9d06a2a",
+        "quote": "테오도어는 대표회의에 들어가기 전에 이미 그 생존 전략을 간파하고, 협상에서 이를 활용한다."
+      },
+      "authority": "derived_with_citation"
+    },
+    "lumo-avoids-superior-force": {
+      "id": "lumo-avoids-superior-force",
+      "value": "루모는 자신보다 강한 구문사와 정규군의 동향을 살피며 직접 행동할 장소와 시점을 고르고, 강한 적의 주둔지에서는 대리인·연락망·위장 신분을 활용한다.",
+      "kind": "planned",
+      "evidence": {
+        "path": "부유해파리도감의 설정과 전개/설정/인물/보레아 영구기관/루모.md",
+        "sha": "f9112db2dee49b65b4b9290e1becb4e87618eeca",
+        "quote": "루모는 공작을 성공시키고 자신의 생존을 보전하기 위해 자신보다 강한 구문사와 정규군의 활동을 살펴 직접 행동의 장소와 시점을 고른다."
       },
       "authority": "derived_with_citation"
     }
@@ -141,7 +163,7 @@
       "kind": "planned",
       "evidence": {
         "path": "부유해파리도감의 설정과 전개/설정/인물/일행/테오도어 린트너.md",
-        "sha": "04b8b97fba4d73f2d8851b2b8fef841eb0357e08",
+        "sha": "b36359ea959c44c6c4596be17a9e269ce9d06a2a",
         "quote": "그는 인간 측 맹약 사본과 첫그물 기록관의 낭독·대역을 대조해 여덟 물길의 이름과 관리 책임, 안전통행 권리를 확인한다."
       },
       "authority": "derived_with_citation"
@@ -152,8 +174,30 @@
       "kind": "planned",
       "evidence": {
         "path": "부유해파리도감의 설정과 전개/이야기/에피소드/10 첫매듭의 왕.md",
-        "sha": "5c0a0cebfccc6565e03a4f66b681adab0882f2f8",
+        "sha": "928011f5946f97ddb13bda8be47fc55ed6a0cd33",
         "quote": "벡실리아가 증거를 묵살하는 행위 자체가 외부에서 평가될 정치적 문제가 된다. 첫그물은 이 변화가 자신들의 수문권과 생존에 직결된 이익임을 판단한다."
+      },
+      "authority": "derived_with_citation"
+    },
+    "matea-jandara-bait-signal": {
+      "id": "matea-jandara-bait-signal",
+      "value": "마테아는 루모가 강자와 정규군 주변에서 직접 행동을 피하는 성향을 이용해 넬라의 내륙 조사를 미끼로 삼는다. 사전 지급한 전기 신호 표식은 구조 요청 때 작동하며, 실제 루모의 개입은 상당한 우연에 의존한다. 넬라의 귀환로 교전에서 구조 신호를 포착한 마테아가 외곽 대기 고속정으로 급습한다.",
+      "kind": "planned",
+      "evidence": {
+        "path": "부유해파리도감의 설정과 전개/설정/인물/벡실리아/마테아 켈렌드리스.md",
+        "sha": "70d32af0fdb34c40a1f29bb9906fedbbc74165ca",
+        "quote": "마테아는 상당한 우연에 의지하여 루모와 직접 교전할 기회를 기다린다"
+      },
+      "authority": "derived_with_citation"
+    },
+    "matea-jandara-signal-payoff": {
+      "id": "matea-jandara-signal-payoff",
+      "value": "출발 전 넬라에게 지급된 위치 표식은 첫그물에 전원이 끊긴 상태로 압수되었다가 안전통행 때 반환된다. 루모와 교전할 때 넬라가 표식을 작동시켜 마테아의 급습을 이끈다.",
+      "kind": "planned",
+      "evidence": {
+        "path": "부유해파리도감의 설정과 전개/이야기/에피소드/10 첫매듭의 왕.md",
+        "sha": "928011f5946f97ddb13bda8be47fc55ed6a0cd33",
+        "quote": "넬라는 적의 구문으로 동료가 위험해지자 마테아가 지급한 표식의 스위치를 넣어 구조 신호를 발신한다."
       },
       "authority": "derived_with_citation"
     }
